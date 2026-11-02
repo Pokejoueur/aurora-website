@@ -1,17 +1,24 @@
 # Aurora Website
 
-The public-facing website for the Aurora ecosystem.
+The public-facing information, documentation and communication platform for the Aurora ecosystem.
 
 ## Current implementation
 
-The initial foundation uses Astro with static output and strict TypeScript configuration.
+The application uses Astro, TypeScript strict mode, static output and native CSS.
 
-- English launch route: `/en/`
-- French: configured as a future locale; no French pages are published yet.
-- Responsive landing page and shared site layout.
-- GitHub Actions validates Astro components and builds the static output.
+- English routes under `/en/`.
+- Root route redirects to the default locale.
+- Shared navigation, footer and content-page layout.
+- Homepage covering the brand, principles, ecosystem, engineering, development, documentation and community.
+- Initial English entry pages for Aurora OS, Aurora Browser, Aurora Website, engineering, development, documentation and community.
+- A static evidence/status registry at `src/data/status.json`.
+- GitHub Actions runs Astro checks and creates a static production build.
 
-The Aurora OS and Aurora Browser cards deliberately avoid capability claims until the website repository contains verifiable public evidence.
+French is configured as a future locale; no French pages are published. Do not infer French availability from the routing configuration.
+
+## Evidence and content policy
+
+The OS and Browser pages deliberately avoid implementation claims until public evidence has been reviewed and recorded in this repository. The status registry is manually maintained, not live-synchronized with GitHub. The current logo SVG is a simplified reconstruction and must be replaced with the approved source asset before public launch.
 
 ## Requirements
 
@@ -42,4 +49,4 @@ npm run preview
 
 ## Status
 
-This repository is the source of truth for the Aurora Website. See the roadmap for phase status and exit criteria. A successful local or CI build is not evidence of a production deployment.
+This repository is the source of truth for Aurora Website. See the roadmap for phase status and exit criteria. A successful CI build is not evidence of production deployment.
