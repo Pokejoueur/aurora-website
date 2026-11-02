@@ -2,9 +2,19 @@
 import SiteLayout from "./SiteLayout.astro";
 interface Props { title: string; description: string; eyebrow: string; heading: string; lead: string; }
 const { title, description, eyebrow, heading, lead } = Astro.props;
+const labels: Record<string, string> = {
+  ecosystem: "Ecosystem", os: "Aurora OS", browser: "Aurora Browser", platform: "Aurora Platform",
+  engineering: "Engineering", development: "Development", docs: "Documentation", community: "Community",
+};
+const segments = Astro.url.pathname.split("/").filter(Boolean).slice(1);
+const crumbs = segments.map((segment, index) => ({
+  label: labels[segment] ?? segment,
+  href: "/en/" + segments.slice(0, index + 1).join("/") + "/",
+}));
 ---
 <SiteLayout title={title} description={description}>
   <section class="content-hero shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/en/">Home</a>{crumbs.map((crumb, index) => <><span aria-hidden="true">/</span>{index === crumbs.length - 1 ? <span aria-current="page">{crumb.label}</span> : <a href={crumb.href}>{crumb.label}</a>}</>)}</nav>
     <p class="eyebrow"><span class="eyebrow-line"></span>{eyebrow}</p>
     <h1>{heading}</h1>
     <p class="content-lead">{lead}</p>
