@@ -263,3 +263,35 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .status-table th, .status-table td { padding: 7px 0; border: 0; }
   .status-definitions dl > div { grid-template-columns: 1fr; gap: 8px; }
 }
+
+/* Reference-aligned Aurora identity: editorial hero, technical grid and hard geometry. */
+:root { --display: "SFMono-Regular", Consolas, "Liberation Mono", ui-monospace, monospace; }
+.site-header { background: #03080c; }
+.header-inner { min-height: 70px; }
+.brand { min-width: 250px; min-height: 70px; padding-right: 28px; border-right: 1px solid var(--line); }
+.brand-mark { border-radius: 0; }
+.main-nav { gap: clamp(16px, 3vw, 42px); }
+.main-nav a { font-size: 9px; }
+.header-status { border-color: var(--accent); clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%); }
+.hero { min-height: 500px; grid-template-columns: 1.05fr .95fr; padding-top: 42px; padding-bottom: 82px; overflow: hidden; isolation: isolate; }
+.hero::before { position:absolute; z-index:-1; inset:0; content:""; pointer-events:none; opacity:.42; background-image:linear-gradient(to right, transparent calc(50% - .5px), #18323d 50%, transparent calc(50% + .5px)),linear-gradient(to bottom, transparent calc(50% - .5px), #18323d 50%, transparent calc(50% + .5px)); background-size:100% 100%; }
+.hero h1 { max-width:690px; font-size:clamp(36px,4.6vw,64px); font-weight:600; letter-spacing:-.075em; line-height:.99; }
+.hero h1 span { color:#8fa9b9; }
+.hero-description { max-width:500px; font-family:var(--mono); font-size:12px; line-height:1.75; }
+.hero-visual { width:min(118%,610px); margin-right:-35px; }
+.hero-logo { border:0; background:transparent; }
+.hero-visual::before { position:absolute; z-index:1; inset:0; content:""; pointer-events:none; background:linear-gradient(90deg,var(--bg) 0%,transparent 23%,transparent 100%); }
+.visual-coordinate { position:relative; z-index:2; }
+.hero-index { bottom:18px; padding-top:12px; }
+.principle-strip-inner { min-height:54px; justify-content:center; gap:clamp(14px,3vw,42px); }
+.section { padding-top:100px; padding-bottom:105px; }
+.section-heading h2,.manifesto-grid h2,.closing-panel h2 { font-size:clamp(32px,3.8vw,52px); letter-spacing:-.075em; }
+.project-card { min-height:260px; padding:20px 22px; clip-path:polygon(0 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,0 100%); }
+.project-grid { gap:16px; border:0; }
+.project-card { border:1px solid var(--line); }
+.project-card:last-child { border-right:1px solid var(--line); }
+.project-type { margin-top:34px; }
+.manifesto-section { padding-block:88px; }
+.site-footer { background:#03080c; }
+@media (max-width:900px) { .brand { min-width:auto; border-right:0; padding-right:0; } .hero { min-height:460px; } .hero-visual { width:100%; margin-right:0; } }
+@media (max-width:680px) { .header-inner { min-height:64px; gap:12px; } .brand { min-height:64px; } .main-nav { gap:12px; } .main-nav a { font-size:8px; } .hero { min-height:0; padding-top:55px; padding-bottom:90px; } .hero h1 { font-size:clamp(34px,9vw,48px); } .hero-visual { width:min(100%,440px); justify-self:center; margin-top:24px; } .hero-visual::before { background:linear-gradient(180deg,var(--bg) 0%,transparent 25%); } .hero-index { bottom:24px; } .principle-strip-inner { justify-content:flex-start; overflow:hidden; white-space:nowrap; font-size:7px; } .project-grid { grid-template-columns:1fr; gap:10px; } .project-card { min-height:220px; } }
