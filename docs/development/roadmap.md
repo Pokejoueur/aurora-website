@@ -22,7 +22,7 @@ The original repository baseline was a single README. The documentation/governan
 | Evidence status registry | Prototype; static JSON records with evidence and limitations | `src/data/status.json` |
 | Documentation system | Planned; entry page exists, collections, article navigation and search are not implemented | ADR-001 |
 | Search | Planned | Not implemented |
-| Public status registry | Planned | Not implemented |
+| Public status registry | Prototype; static evidence records exist, validation tooling is not implemented | `src/data/status.json` |
 | Changelog | Planned | Not implemented |
 | Production deployment | Not verified | No deployment evidence recorded |
 
