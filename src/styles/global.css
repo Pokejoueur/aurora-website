@@ -244,3 +244,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 42px; color: var(--muted); font: 9px var(--mono); }
 .breadcrumbs a { text-decoration: none; }
 .breadcrumbs a:hover, .breadcrumbs [aria-current="page"] { color: var(--accent); }
+
+.status-table { width: 100%; border-collapse: collapse; text-align: left; }
+.status-table caption { margin-bottom: 16px; color: var(--muted); text-align: left; font: 9px var(--mono); }
+.status-table th, .status-table td { padding: 18px 14px 18px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.status-table thead th { color: var(--accent); font: 9px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.status-table tbody th { min-width: 170px; font-size: 12px; font-weight: 600; }
+.status-table tbody td:last-child { color: var(--muted); font-size: 11px; line-height: 1.75; }
+.status-definitions h2 { margin: 0 0 30px; font: 600 clamp(30px, 4vw, 46px)/1.05 var(--display); letter-spacing: -.05em; }
+.status-definitions dl { margin: 0; border-top: 1px solid var(--line); }
+.status-definitions dl > div { display: grid; grid-template-columns: 160px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.status-definitions dt { color: var(--accent); font: 9px var(--mono); }
+.status-definitions dd { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+@media (max-width: 680px) {
+  .status-table thead { display: none; }
+  .status-table, .status-table tbody, .status-table tr, .status-table th, .status-table td { display: block; width: 100%; }
+  .status-table tbody tr { padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .status-table th, .status-table td { padding: 7px 0; border: 0; }
+  .status-definitions dl > div { grid-template-columns: 1fr; gap: 8px; }
+}
