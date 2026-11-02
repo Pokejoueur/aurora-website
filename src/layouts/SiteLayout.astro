@@ -3,9 +3,9 @@ import "../styles/global.css";
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
 const navigation = [
-  { label: "Ecosystem", href: "/en/ecosystem/" },
-  { label: "Principles", href: "/en/#principles" },
-  { label: "Docs", href: "/en/docs/" },
+  { label: "Ecosystem", href: "/en/ecosystem/", external: false },
+  { label: "Principles", href: "/en/#principles", external: false },
+  { label: "Docs", href: "/en/docs/", external: false },
   { label: "GitHub ↗", href: "https://github.com/Pokejoueur/aurora-website", external: true },
 ];
 ---
