@@ -1,14 +1,16 @@
 ---
 import "../styles/global.css";
-
-interface Props {
-  title: string;
-  description: string;
-}
-
+interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
+const navigation = [
+  { label: "Ecosystem", href: "/en/ecosystem/" },
+  { label: "Engineering", href: "/en/engineering/" },
+  { label: "Development", href: "/en/development/" },
+  { label: "Documentation", href: "/en/docs/" },
+  { label: "Community", href: "/en/community/" },
+];
+const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://aurora.example");
 ---
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,7 +18,12 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#05070b" />
+    <meta name="theme-color" content="#05090d" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Aurora" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
@@ -29,26 +36,25 @@ const { title, description } = Astro.props;
           <span class="brand-name">AURORA</span>
         </a>
         <nav class="main-nav" aria-label="Main navigation">
-          <a href="/en/#ecosystem">Ecosystem</a>
-          <a href="/en/#principles">Principles</a>
-          <a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          {navigation.map((item) => <a href={item.href} aria-current={Astro.url.pathname === item.href ? "page" : undefined}>{item.label}</a>)}
         </nav>
-        <span class="header-status"><span class="status-dot"></span> IN DEVELOPMENT</span>
+        <a class="header-status" href="/en/development/"><span class="status-dot"></span> PROJECT STATUS</a>
       </div>
     </header>
-
-    <main id="main">
-      <slot />
-    </main>
-
+    <main id="main"><slot /></main>
     <footer class="site-footer">
-      <div class="shell footer-inner">
-        <a class="brand footer-brand" href="/en/" aria-label="Aurora home">
-          <img class="brand-mark" src="/aurora-logo.svg" alt="" width="30" height="30" />
-          <span class="brand-name">AURORA</span>
-        </a>
-        <p>Independent computing. Built deliberately.</p>
-        <span class="footer-meta">© {new Date().getFullYear()} Aurora Project</span>
+      <div class="shell footer-grid">
+        <div class="footer-identity">
+          <a class="brand footer-brand" href="/en/" aria-label="Aurora home">
+            <img class="brand-mark" src="/aurora-logo.svg" alt="" width="30" height="30" />
+            <span class="brand-name">AURORA</span>
+          </a>
+          <p>Independent computing.<br />Built deliberately.</p>
+        </div>
+        <div class="footer-links"><span class="footer-label">ECOSYSTEM</span><a href="/en/ecosystem/os/">Aurora OS</a><a href="/en/ecosystem/browser/">Aurora Browser</a><a href="/en/ecosystem/platform/">Aurora Platform</a></div>
+        <div class="footer-links"><span class="footer-label">ENGINEERING</span><a href="/en/engineering/">Architecture</a><a href="/en/development/">Development status</a><a href="/en/docs/">Documentation</a></div>
+        <div class="footer-links"><span class="footer-label">PROJECT</span><a href="/en/community/">Community</a><a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">GitHub ↗</a><a href="/en/development/">Project status</a></div>
+        <div class="footer-bottom"><span>© {new Date().getFullYear()} Aurora Project</span><span>Public information is evidence-led and repository-maintained.</span></div>
       </div>
     </footer>
   </body>
