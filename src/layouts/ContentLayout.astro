@@ -1,0 +1,14 @@
+---
+import SiteLayout from "./SiteLayout.astro";
+interface Props { title: string; description: string; eyebrow: string; heading: string; lead: string; }
+const { title, description, eyebrow, heading, lead } = Astro.props;
+---
+<SiteLayout title={title} description={description}>
+  <section class="content-hero shell">
+    <p class="eyebrow"><span class="eyebrow-line"></span>{eyebrow}</p>
+    <h1>{heading}</h1>
+    <p class="content-lead">{lead}</p>
+    <p class="content-meta">AURORA / PUBLIC INFORMATION / EN</p>
+  </section>
+  <slot />
+</SiteLayout>
