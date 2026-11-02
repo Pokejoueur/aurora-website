@@ -9,7 +9,7 @@ const allowed = new Set([
 const errors = [];
 
 if (registry.schemaVersion !== 1) errors.push("schemaVersion must be 1");
-if (!/^\d{4}-\d{2}-\d{2}$/.test(registry.lastReviewed ?? "")) {
+if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(registry.lastReviewed ?? "")) {
   errors.push("lastReviewed must use YYYY-MM-DD");
 }
 if (!Array.isArray(registry.entries)) errors.push("entries must be an array");
@@ -23,7 +23,7 @@ for (const [index, entry] of (registry.entries ?? []).entries()) {
   if (!allowed.has(entry.status)) errors.push(`${prefix}.status is not an allowed value`);
   if (!entry.scope?.trim()) errors.push(`${prefix}.scope is required`);
   if (!entry.limitations?.trim()) errors.push(`${prefix}.limitations is required`);
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.verifiedOn ?? "")) {
+  if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(entry.verifiedOn ?? "")) {
     errors.push(`${prefix}.verifiedOn must use YYYY-MM-DD`);
   }
   if (!Array.isArray(entry.evidence)) errors.push(`${prefix}.evidence must be an array`);
@@ -35,7 +35,10 @@ for (const [index, entry] of (registry.entries ?? []).entries()) {
       errors.push(`${prefix}.evidence contains an invalid URL`);
     }
   }
-  if (entry.status === "verified" && !entry.verificationCriteria?.trim()) {\n    errors.push(`${prefix}.verificationCriteria is required for verified status`);\n  }\n  if (entry.status !== "not-verified" && (entry.evidence?.length ?? 0) === 0) {
+  if (entry.status === "verified" && !entry.verificationCriteria?.trim()) {
+    errors.push(`${prefix}.verificationCriteria is required for verified status`);
+  }
+  if (entry.status !== "not-verified" && (entry.evidence?.length ?? 0) === 0) {
     errors.push(`${prefix} requires evidence for status ${entry.status}`);
   }
 }
