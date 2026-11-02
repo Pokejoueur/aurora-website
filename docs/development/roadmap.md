@@ -1,6 +1,6 @@
 # Aurora Website implementation roadmap
 
-- **Status:** Planned
+- **Status:** In progress
 - **Architecture reference:** [ADR-001](../architecture/adr/ADR-001.md)
 - **Last reviewed:** 2026-11-02
 
@@ -8,37 +8,39 @@ This roadmap is the authoritative implementation sequence for Aurora Website. Co
 
 ## Current baseline
 
-The repository baseline contains only the initial README. The architecture is documented in ADR-001; website implementation has not started.
+The original repository baseline was a single README. The documentation/governance set has since been merged into main. The initial Astro foundation is under review in a separate pull request.
 
 | Area | Current status | Evidence |
 |---|---|---|
 | Architecture | Designed | [ADR-001](../architecture/adr/ADR-001.md) |
-| Implementation plan | Planned | This document |
-| Astro application | Planned | No application files in the baseline |
-| Internationalized routes | Planned | Not implemented |
+| Governance | Implemented as repository documentation | [Source-of-truth policy](../governance/source-of-truth.md) |
+| Repository audit | Implemented as repository documentation | [Audit report](audit-2026-11-02.md) |
+| Astro application | Prototype / pending CI validation | Current foundation pull request |
+| English landing page | Prototype / pending CI validation | Current foundation pull request |
+| French routes/content | Planned | No French page is published |
 | Documentation system | Planned | Not implemented |
 | Search | Planned | Not implemented |
 | Public status registry | Planned | Not implemented |
 | Changelog | Planned | Not implemented |
-| Deployment | Not verified | No deployment evidence recorded |
+| Production deployment | Not verified | No deployment evidence recorded |
 
 ## Phase 0 — Repository and delivery audit
 
-**Status:** In progress; baseline inspection performed, deployment configuration not verified.
+**Status:** Completed with limitations.
 
-Tasks:
-- Inspect repository, default branch, branch protection, README, history, and tracked files.
-- Inspect workflows and deployment configuration where accessible.
-- Identify hosting constraints and any existing domain or deployment decisions.
-- Record the verified baseline and blockers in the repository.
+Tasks completed:
+- Inspected repository metadata, default branch, branch protection, tracked files, README, and recent history.
+- Confirmed no pre-existing frontend, build configuration, CI workflow, or deployment configuration in the initial repository baseline.
+- Recorded unavailable deployment information and hosting constraints in the [audit report](audit-2026-11-02.md).
 
-Exit criteria:
-- A dated audit report records what was inspected, found, and could not be verified.
-- No implementation assumptions are made from unavailable information.
+Limitations:
+- The deployment endpoint could not be inspected through the available GitHub connection.
+- GitHub Pages was not enabled in repository metadata at audit time.
+- No hosting provider or custom domain has been selected.
 
 ## Phase 1 — Project foundation
 
-**Status:** Planned
+**Status:** In progress; implementation is awaiting CI validation and review.
 
 Tasks:
 - Initialize Astro with TypeScript strict mode and static output.
@@ -47,14 +49,30 @@ Tasks:
 - Add a minimal reproducible build and CI workflow.
 - Document local development and validation commands.
 
+Implemented in the current foundation branch:
+- Astro static project manifest and configuration.
+- Strict TypeScript configuration.
+- English landing page and shared responsive layout.
+- Root redirect to the default locale.
+- Basic GitHub Actions validation/build workflow.
+- README development instructions.
+
+Not yet verified:
+- Clean dependency installation.
+- Astro type check.
+- Production build.
+- Browser rendering and responsive behavior.
+- Deployment.
+
 Exit criteria:
 - Clean dependency installation succeeds.
 - Type checking, linting, and production build pass in CI.
 - No secrets or unnecessary dependencies are introduced.
+- A lockfile is committed before treating dependency installation as reproducible.
 
 ## Phase 2 — Internationalization and routing
 
-**Status:** Planned
+**Status:** Partially established by foundation configuration; full phase remains planned.
 
 Tasks:
 - Configure en and fr locale routing with explicit prefixes.
@@ -69,7 +87,7 @@ Exit criteria:
 
 ## Phase 3 — Design system and layouts
 
-**Status:** Planned
+**Status:** Prototype foundation exists; full phase planned.
 
 Tasks:
 - Define design tokens and responsive foundations using native CSS.
