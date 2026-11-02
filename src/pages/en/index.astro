@@ -1,0 +1,168 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const projects = [
+  {
+    number: "01",
+    name: "Aurora OS",
+    type: "Operating system",
+    description:
+      "The operating-system workstream. Public implementation details will be published only when they can be supported by repository evidence.",
+    status: "NOT VERIFIED",
+    statusClass: "status-muted",
+  },
+  {
+    number: "02",
+    name: "Aurora Browser",
+    type: "Web browser",
+    description:
+      "The browser workstream. Its public architecture, implementation state, and capabilities will be documented as they are verified.",
+    status: "NOT VERIFIED",
+    statusClass: "status-muted",
+  },
+  {
+    number: "03",
+    name: "Aurora Website",
+    type: "Public platform",
+    description:
+      "The public information and documentation platform for the ecosystem. Its foundation is now being established.",
+    status: "IN DEVELOPMENT",
+    statusClass: "status-live",
+  },
+];
+---
+
+<SiteLayout
+  title="Aurora — Independent computing, built deliberately"
+  description="Aurora is an independent computing ecosystem. Explore its projects, principles, and development."
+>
+  <section class="hero shell">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="eyebrow-line"></span> AN INDEPENDENT COMPUTING ECOSYSTEM</p>
+      <h1>Build a better<br /><span>relationship with</span><br />your technology.</h1>
+      <p class="hero-description">
+        Aurora is an independent project exploring a more deliberate approach
+        to computing — from the foundations of an operating system to the
+        tools people use every day.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#ecosystem">Explore the ecosystem <span aria-hidden="true">↘</span></a>
+        <a class="text-link" href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">View the repository <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-label="Abstract Aurora orbital illustration">
+      <div class="orbit orbit-one"></div>
+      <div class="orbit orbit-two"></div>
+      <div class="orbit orbit-three"></div>
+      <div class="orbit-core">
+        <div class="core-glow"></div>
+        <span>A</span>
+      </div>
+      <span class="orbit-label label-top">SYSTEMS</span>
+      <span class="orbit-label label-right">SECURITY</span>
+      <span class="orbit-label label-bottom">INDEPENDENCE</span>
+      <span class="orbit-label label-left">ENGINEERING</span>
+      <span class="visual-coordinate">48°51' N&nbsp; 2°21' E</span>
+    </div>
+
+    <div class="hero-index">
+      <span>01 / 03</span>
+      <span>ONE ECOSYSTEM · MULTIPLE WORKSTREAMS</span>
+    </div>
+  </section>
+
+  <section class="principle-strip" aria-label="Project principles">
+    <div class="shell principle-strip-inner">
+      <span>SECURITY BY DESIGN</span>
+      <span class="strip-separator">✳</span>
+      <span>OPEN ENGINEERING</span>
+      <span class="strip-separator">✳</span>
+      <span>MEASURED PROGRESS</span>
+      <span class="strip-separator">✳</span>
+      <span>USER SOVEREIGNTY</span>
+    </div>
+  </section>
+
+  <section class="section shell" id="ecosystem">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE ECOSYSTEM</p>
+        <h2>Three workstreams.<br /><span>One direction.</span></h2>
+      </div>
+      <p class="section-intro">
+        Each part has a distinct responsibility. Progress is published with
+        evidence, not assumptions.
+      </p>
+    </div>
+
+    <div class="project-grid">
+      {projects.map((project) => (
+        <article class="project-card">
+          <div class="project-card-top">
+            <span class="project-number">{project.number}</span>
+            <span class:list={["project-status", project.statusClass]}>
+              <span class="status-dot"></span>{project.status}
+            </span>
+          </div>
+          <div class="project-card-body">
+            <p class="project-type">{project.type}</p>
+            <h3>{project.name}</h3>
+            <p class="project-description">{project.description}</p>
+          </div>
+          <div class="project-card-bottom">
+            <span>PUBLIC PROJECT RECORD</span>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </article>
+      ))}
+    </div>
+    <p class="evidence-note">
+      Status note — “Not verified” means that this website does not yet publish
+      sufficient evidence to make a stronger public claim. It is not a claim
+      that no work exists.
+    </p>
+  </section>
+
+  <section class="manifesto-section" id="principles">
+    <div class="shell manifesto-grid">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE APPROACH</p>
+        <h2>Ambition is easy.<br /><span>Engineering is proof.</span></h2>
+      </div>
+      <div class="manifesto-content">
+        <p class="manifesto-lead">
+          We believe the foundations of computing deserve the same care as
+          the experiences built on top of them.
+        </p>
+        <div class="principle-list">
+          <div class="principle-item">
+            <span>01</span>
+            <div><h3>Understandable by design</h3><p>Prefer systems whose boundaries, behavior, and trade-offs can be explained.</p></div>
+          </div>
+          <div class="principle-item">
+            <span>02</span>
+            <div><h3>Security is structural</h3><p>Make trust boundaries and least privilege part of the architecture, not an afterthought.</p></div>
+          </div>
+          <div class="principle-item">
+            <span>03</span>
+            <div><h3>Evidence over claims</h3><p>Distinguish what is designed, implemented, tested, and integrated — and show the evidence.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing-section shell">
+    <div class="closing-panel">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> FOLLOW THE WORK</p>
+        <h2>Built in the open.<br /><span>Documented as it grows.</span></h2>
+      </div>
+      <a class="button button-light" href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">
+        Explore Aurora on GitHub <span aria-hidden="true">↗</span>
+      </a>
+      <div class="closing-orb" aria-hidden="true"></div>
+    </div>
+  </section>
+</SiteLayout>
