@@ -12,7 +12,7 @@ The application uses Astro, TypeScript strict mode, static output and native CSS
 - Homepage covering the brand, principles, ecosystem, engineering, development, documentation and community.
 - Initial English entry pages for Aurora OS, Aurora Browser, Aurora Website, engineering, development, documentation and community.
 - A static evidence/status registry at `src/data/status.json`.
-- GitHub Actions runs Astro checks and creates a static production build.
+- GitHub Actions validates the public status registry, runs Astro checks and creates a static production build.
 
 French is configured as a future locale; no French pages are published. Do not infer French availability from the routing configuration.
 
