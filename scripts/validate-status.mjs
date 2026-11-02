@@ -4,7 +4,7 @@ const file = new URL("../src/data/status.json", import.meta.url);
 const registry = JSON.parse(await readFile(file, "utf8"));
 const allowed = new Set([
   "implemented", "tested", "integrated", "prototype",
-  "designed", "planned", "blocked", "not-verified",
+  "designed", "planned", "blocked", "not-verified", "verified",
 ]);
 const errors = [];
 
@@ -35,7 +35,7 @@ for (const [index, entry] of (registry.entries ?? []).entries()) {
       errors.push(`${prefix}.evidence contains an invalid URL`);
     }
   }
-  if (entry.status !== "not-verified" && (entry.evidence?.length ?? 0) === 0) {
+  if (entry.status === "verified" && !entry.verificationCriteria?.trim()) {\n    errors.push(`${prefix}.verificationCriteria is required for verified status`);\n  }\n  if (entry.status !== "not-verified" && (entry.evidence?.length ?? 0) === 0) {
     errors.push(`${prefix} requires evidence for status ${entry.status}`);
   }
 }
