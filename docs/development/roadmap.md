@@ -15,8 +15,8 @@ The original repository baseline was a single README. The documentation/governan
 | Architecture | Designed | [ADR-001](../architecture/adr/ADR-001.md) |
 | Governance | Implemented as repository documentation | [Source-of-truth policy](../governance/source-of-truth.md) |
 | Repository audit | Implemented as repository documentation | [Audit report](audit-2026-11-02.md) |
-| Astro application | Prototype / pending CI validation | Current foundation pull request |
-| English landing page | Prototype / pending CI validation | Current foundation pull request |
+| Astro application | Prototype; CI check and static build passed | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/41508408287) |
+| English landing page | Prototype; included in successful static build | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/41508408287) |
 | French routes/content | Planned | No French page is published |
 | Documentation system | Planned | Not implemented |
 | Search | Planned | Not implemented |
@@ -40,7 +40,7 @@ Limitations:
 
 ## Phase 1 — Project foundation
 
-**Status:** In progress; implementation is awaiting CI validation and review.
+**Status:** In progress; Astro check and static build pass in CI, with reproducibility and review items remaining.
 
 Tasks:
 - Initialize Astro with TypeScript strict mode and static output.
@@ -65,10 +65,12 @@ Not yet verified:
 - Deployment.
 
 Exit criteria:
-- Clean dependency installation succeeds.
-- Type checking, linting, and production build pass in CI.
-- No secrets or unnecessary dependencies are introduced.
-- A lockfile is committed before treating dependency installation as reproducible.
+- [x] Dependency installation succeeds in CI.
+- [x] Astro/TypeScript check and production build pass in CI.
+- [ ] Add a committed lockfile and switch CI to a reproducible install (`npm ci`).
+- [ ] Decide whether a dedicated formatter/linter is justified; do not add tooling without a defined rule set.
+- [ ] Complete browser-level responsive and accessibility review.
+- [x] No secrets or unnecessary dependencies were introduced in the reviewed foundation changes.
 
 ## Phase 2 — Internationalization and routing
 
