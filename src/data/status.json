@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-11-02",
+  "entries": [
+    {
+      "id": "website-foundation",
+      "name": "Aurora Website foundation",
+      "status": "prototype",
+      "scope": "Astro application, English landing page and shared layout",
+      "evidence": [
+        "https://github.com/Pokejoueur/aurora-website/pull/2",
+        "https://github.com/Pokejoueur/aurora-website/actions/runs/41528945600"
+      ],
+      "verifiedOn": "2026-11-02",
+      "limitations": "The successful CI run validates the current pull request build only. It does not establish production deployment or full browser-level accessibility."
+    },
+    {
+      "id": "aurora-os-public-evidence",
+      "name": "Aurora OS public implementation status",
+      "status": "not-verified",
+      "scope": "Publicly publishable OS implementation evidence in this website repository",
+      "evidence": [],
+      "verifiedOn": "2026-11-02",
+      "limitations": "No product implementation evidence has been reviewed for this website update."
+    },
+    {
+      "id": "aurora-browser-public-evidence",
+      "name": "Aurora Browser public implementation status",
+      "status": "not-verified",
+      "scope": "Publicly publishable browser implementation evidence in this website repository",
+      "evidence": [],
+      "verifiedOn": "2026-11-02",
+      "limitations": "No product implementation evidence has been reviewed for this website update."
+    },
+    {
+      "id": "website-documentation",
+      "name": "Documentation system",
+      "status": "planned",
+      "scope": "Searchable documentation collections and navigation",
+      "evidence": [
+        "https://github.com/Pokejoueur/aurora-website/blob/main/docs/architecture/adr/ADR-001.md"
+      ],
+      "verifiedOn": "2026-11-02",
+      "limitations": "The ADR records an accepted design decision; no documentation collection or search implementation is included yet."
+    }
+  ]
+}
