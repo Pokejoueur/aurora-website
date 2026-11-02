@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Aurora</title>
+  <desc id="desc">A white geometric A and four-point star above a dark mountain range under an aurora.</desc>
+  <rect width="512" height="512" rx="76" fill="#05070b"/>
+  <path d="M0 190 58 150 112 174 154 126 208 163 256 117 304 163 358 126 400 174 454 150 512 190V0H0Z" fill="#081426"/>
+  <path d="M0 244 70 211 132 248 192 224 256 261 320 224 380 248 442 211 512 244V0H0Z" fill="#091a32"/>
+  <path d="M0 284c76-76 128-59 188-15 37 27 67 40 102 31 52-13 86-65 139-67 34-1 60 18 83 44v104H0Z" fill="#00d9b5" opacity=".16"/>
+  <path d="M0 326c72-58 116-37 169 7 42 35 82 59 122 46 53-17 94-76 143-76 31 0 56 18 78 41v75H0Z" fill="#00d9b5" opacity=".28"/>
+  <g fill="#dbe8f5">
+    <circle cx="74" cy="74" r="2"/><circle cx="143" cy="103" r="1.6"/><circle cx="226" cy="68" r="1.5"/><circle cx="364" cy="83" r="1.8"/><circle cx="433" cy="129" r="1.5"/><circle cx="93" cy="183" r="1.4"/><circle cx="398" cy="202" r="1.5"/>
+  </g>
+  <path d="M0 378 64 349 104 365 151 342 197 375 235 357 274 384 319 353 365 371 414 337 462 361 512 340V512H0Z" fill="#07101f"/>
+  <path d="M0 417 57 388 103 411 153 387 207 422 256 402 310 428 364 397 417 419 466 389 512 411V512H0Z" fill="#03060c"/>
+  <path fill="#fff" fill-rule="evenodd" d="M256 78 397 388 351 361 256 164 161 361 115 388 256 78Z"/>
+  <path fill="#fff" d="M256 212 269 278 335 291 269 304 256 370 243 304 177 291 243 278Z"/>
+  <path d="M256 212 269 278 335 291 269 304 256 370 243 304 177 291 243 278Z" fill="#fff"/>
+</svg>
