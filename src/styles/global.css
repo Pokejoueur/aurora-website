@@ -3,17 +3,17 @@
   font-family: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --bg: #05070b;
-  --surface: #090d14;
-  --surface-raised: #0d131d;
-  --line: #26303d;
-  --line-soft: #18212d;
-  --muted: #b8c2d0;
-  --text: #f7f9fc;
-  --accent: #00dfbd;
-  --accent-ink: #001a16;
+  --bg: #05090d;
+  --surface: #08121a;
+  --surface-raised: #0b1720;
+  --line: #263b46;
+  --line-soft: #1b2d36;
+  --muted: #a4b4c2;
+  --text: #f2f6f8;
+  --accent: #00d5df;
+  --accent-ink: #001719;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", ui-monospace, monospace;
-  --display: "SFMono-Regular", Consolas, "Liberation Mono", ui-monospace, monospace;
+  --display: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -160,17 +160,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 /* Shared content pages and homepage extensions */
-:root {
-  --bg: #05090d;
-  --surface: #08121a;
-  --surface-raised: #0b1720;
-  --line: #263b46;
-  --line-soft: #1b2d36;
-  --text: #f2f6f8;
-  --muted: #a4b4c2;
-  --accent: #00d5df;
-  --accent-ink: #001719;
-}
 .brand-mark { border-radius: 2px; }
 .main-nav a[aria-current="page"] { color: var(--accent); }
 .header-status { text-decoration: none; }
