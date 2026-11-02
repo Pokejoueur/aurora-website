@@ -4,10 +4,9 @@ interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
 const navigation = [
   { label: "Ecosystem", href: "/en/ecosystem/" },
-  { label: "Engineering", href: "/en/engineering/" },
-  { label: "Development", href: "/en/development/" },
-  { label: "Documentation", href: "/en/docs/" },
-  { label: "Community", href: "/en/community/" },
+  { label: "Principles", href: "/en/#principles" },
+  { label: "Docs", href: "/en/docs/" },
+  { label: "GitHub ↗", href: "https://github.com/Pokejoueur/aurora-website", external: true },
 ];
 ---
 <!doctype html>
@@ -34,9 +33,9 @@ const navigation = [
           <span class="brand-name">AURORA</span>
         </a>
         <nav class="main-nav" aria-label="Main navigation">
-          {navigation.map((item) => <a href={item.href} aria-current={Astro.url.pathname === item.href ? "page" : undefined}>{item.label}</a>)}
+          {navigation.map((item) => <a href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined} aria-current={!item.external && Astro.url.pathname === item.href ? "page" : undefined}>{item.label}</a>)}
         </nav>
-        <a class="header-status" href="/en/development/"><span class="status-dot"></span> PROJECT STATUS</a>
+        <a class="header-status" href="/en/development/"><span class="status-dot"></span> IN DEVELOPMENT</a>
       </div>
     </header>
     <main id="main"><slot /></main>
