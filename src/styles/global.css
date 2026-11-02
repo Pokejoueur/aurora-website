@@ -251,3 +251,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .main-nav a:last-child { display: inline; }
   .header-status { display: none; }
 }
+
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 42px; color: var(--muted); font: 9px var(--mono); }
+.breadcrumbs a { text-decoration: none; }
+.breadcrumbs a:hover, .breadcrumbs [aria-current="page"] { color: var(--accent); }
