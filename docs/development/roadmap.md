@@ -196,7 +196,7 @@ Do not force-push, rewrite history, delete user data, or commit secrets. Use foc
 
 ## Status vocabulary
 
-Use the project-wide evidence vocabulary: implemented, tested, integrated, prototype, designed, planned, blocked, and not-verified. These statuses are not interchangeable.
+Use the project-wide evidence vocabulary: planned, designed, implemented, tested, integrated, prototype, verified, blocked, and not-verified. These statuses are not interchangeable. `verified` requires explicit acceptance criteria in addition to test evidence.
 
 
 ## 2026-11-02 implementation update
