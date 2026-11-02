@@ -15,10 +15,12 @@ The original repository baseline was a single README. The documentation/governan
 | Architecture | Designed | [ADR-001](../architecture/adr/ADR-001.md) |
 | Governance | Implemented as repository documentation | [Source-of-truth policy](../governance/source-of-truth.md) |
 | Repository audit | Implemented as repository documentation | [Audit report](audit-2026-11-02.md) |
-| Astro application | Prototype; CI check and static build passed | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/41508408287) |
+| Astro application | Prototype; CI check and static build passed on the initial foundation and the visual-refinement commit | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/41528945600) |
 | English landing page | Prototype; included in successful static build | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/41508408287) |
 | French routes/content | Planned | No French page is published |
-| Documentation system | Planned | Not implemented |
+| Public section routes | Prototype; ecosystem, engineering, development, docs and community entry pages added on the feature branch | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2) |
+| Evidence status registry | Prototype; static JSON records with evidence and limitations | `src/data/status.json` |
+| Documentation system | Planned; entry page exists, collections, article navigation and search are not implemented | ADR-001 |
 | Search | Planned | Not implemented |
 | Public status registry | Planned | Not implemented |
 | Changelog | Planned | Not implemented |
@@ -89,7 +91,7 @@ Exit criteria:
 
 ## Phase 3 — Design system and layouts
 
-**Status:** Prototype foundation exists; full phase planned.
+**Status:** In progress; shared navigation/footer, content layout, responsive page primitives and homepage extensions are present on the feature branch. Browser-level accessibility review remains outstanding.
 
 Tasks:
 - Define design tokens and responsive foundations using native CSS.
@@ -103,7 +105,7 @@ Exit criteria:
 
 ## Phase 4 — Content and documentation
 
-**Status:** Planned
+**Status:** In progress; initial English ecosystem, engineering, development, documentation and community entry routes exist. Validated Markdown collections, article navigation and search remain planned.
 
 Tasks:
 - Configure Astro content collections and validated schemas.
@@ -147,10 +149,13 @@ Exit criteria:
 
 ## Phase 7 — Public product content
 
-**Status:** Planned
+**Status:** In progress; initial workstream pages are present but intentionally contain evidence limitations rather than unverified product claims.
 
 Tasks:
-- Build the home page and public sections for Aurora OS, Aurora Browser, technology, security, downloads, and about.
+- Expand the homepage into the eight approved content areas.
+- Build public sections for Aurora OS, Aurora Browser, and Aurora Website.
+- Add engineering, development, documentation, and community entry routes.
+- Keep OS and Browser technical details at not-verified until source evidence is reviewed.
 - Publish only claims supported by the repository's evidence registry.
 - Publish downloads only when artifact provenance and integrity can be verified.
 
@@ -192,3 +197,21 @@ Do not force-push, rewrite history, delete user data, or commit secrets. Use foc
 ## Status vocabulary
 
 Use the project-wide evidence vocabulary: implemented, tested, integrated, prototype, designed, planned, blocked, and not-verified. These statuses are not interchangeable.
+
+
+## 2026-11-02 implementation update
+
+The current feature branch now includes:
+- An expanded homepage covering the brand introduction, principles, ecosystem, engineering philosophy, development status, documentation entry points, and community contribution entry point.
+- Shared navigation and a multi-column footer linking to implemented English routes.
+- Reusable content-page layout and initial routes for the ecosystem overview, Aurora OS, Aurora Browser, Aurora Website platform, engineering, development, documentation, and community.
+- A static evidence/status registry at `src/data/status.json`.
+- Explicit limitations on OS and Browser public claims because product implementation evidence was not reviewed as part of this website change.
+
+Not yet verified on this update:
+- CI for the latest branch head.
+- Rendering at the specified viewport matrix.
+- Keyboard and screen-reader review.
+- WCAG 2.2 AA contrast and interaction audit.
+- Sitemap, production canonical domain, deployment, and browser-level route checks.
+- Original supplied logo asset fidelity; the current repository SVG remains a simplified reconstruction and must be replaced by the approved source asset.
