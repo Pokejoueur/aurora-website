@@ -41,8 +41,9 @@ Use only these status values:
 - planned
 - blocked
 - not-verified
+- verified
 
-Every public status claim must have:
+A `verified` label is reserved for a feature that satisfies explicit acceptance criteria; executed tests alone justify at most `tested`.\n\nEvery public status claim must have:
 - a traceable evidence reference;
 - a verification date;
 - enough scope and context to understand the claim;
