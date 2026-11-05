@@ -3,10 +3,10 @@ import "../styles/global.css";
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
 const navigation = [
-  { label: "Ecosystem", href: "/en/ecosystem/", external: false },
-  { label: "Principles", href: "/en/#principles", external: false },
-  { label: "Docs", href: "/en/docs/", external: false },
-  { label: "GitHub ↗", href: "https://github.com/Pokejoueur/aurora-website", external: true },
+  { label: "Ecosystem", href: "/en/ecosystem/", arrow: true },
+  { label: "Principles", href: "/en/#approach", arrow: false },
+  { label: "Docs", href: "/en/docs/", arrow: true },
+  { label: "GitHub", href: "https://github.com/Pokejoueur/aurora-website", arrow: true, external: true },
 ];
 ---
 <!doctype html>
@@ -16,7 +16,7 @@ const navigation = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#05090d" />
+    <meta name="theme-color" content="#03080c" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -26,32 +26,27 @@ const navigation = [
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
+    <header class="site-header reference-header">
       <div class="shell header-inner">
         <a class="brand" href="/en/" aria-label="Aurora home">
-          <img class="brand-mark" src="/aurora-logo.svg" alt="" width="38" height="38" />
+          <img class="brand-mark" src="/aurora-mark.svg" alt="" width="44" height="44" />
           <span class="brand-name">AURORA</span>
         </a>
         <nav class="main-nav" aria-label="Main navigation">
-          {navigation.map((item) => <a href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined} aria-current={!item.external && Astro.url.pathname === item.href ? "page" : undefined}>{item.label}</a>)}
+          {navigation.map((item) => <a href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined}>{item.label}{item.arrow && <span class="nav-arrow" aria-hidden="true">{item.external ? "↗" : "⌄"}</span>}</a>)}
         </nav>
         <a class="header-status" href="/en/development/"><span class="status-dot"></span> IN DEVELOPMENT</a>
       </div>
     </header>
     <main id="main"><slot /></main>
-    <footer class="site-footer">
-      <div class="shell footer-grid">
-        <div class="footer-identity">
-          <a class="brand footer-brand" href="/en/" aria-label="Aurora home">
-            <img class="brand-mark" src="/aurora-logo.svg" alt="" width="30" height="30" />
-            <span class="brand-name">AURORA</span>
-          </a>
-          <p>Independent computing.<br />Built deliberately.</p>
-        </div>
-        <div class="footer-links"><span class="footer-label">ECOSYSTEM</span><a href="/en/ecosystem/os/">Aurora OS</a><a href="/en/ecosystem/browser/">Aurora Browser</a><a href="/en/ecosystem/platform/">Aurora Platform</a></div>
-        <div class="footer-links"><span class="footer-label">ENGINEERING</span><a href="/en/engineering/">Architecture</a><a href="/en/development/">Development status</a><a href="/en/docs/">Documentation</a></div>
-        <div class="footer-links"><span class="footer-label">PROJECT</span><a href="/en/community/">Community</a><a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">GitHub ↗</a><a href="/en/development/">Project status</a></div>
-        <div class="footer-bottom"><span>© {new Date().getFullYear()} Aurora Project</span><span>Public information is evidence-led and repository-maintained.</span></div>
+    <footer class="reference-footer">
+      <div class="shell reference-footer-inner">
+        <a class="brand footer-brand" href="/en/" aria-label="Aurora home">
+          <img class="brand-mark" src="/aurora-mark.svg" alt="" width="34" height="34" />
+          <span class="brand-name">AURORA</span>
+        </a>
+        <p>Independent computing. Built deliberately.</p>
+        <div class="reference-footer-meta"><span>© {new Date().getFullYear()} Aurora Project</span><a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">GitHub ↗</a><a href="/en/docs/">Docs ↗</a><a href="/en/development/">Status ↗</a></div>
       </div>
     </footer>
   </body>
