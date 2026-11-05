@@ -2,7 +2,7 @@
 
 - **Status:** In progress
 - **Architecture reference:** [ADR-001](../architecture/adr/ADR-001.md)
-- **Last reviewed:** 2026-11-02
+- **Last reviewed:** 2026-11-06
 
 This roadmap is the authoritative implementation sequence for Aurora Website. Completion requires evidence against each phase's exit criteria; discussion or source-code presence alone is insufficient.
 
@@ -15,11 +15,11 @@ The original repository baseline was a single README. The documentation/governan
 | Architecture | Designed | [ADR-001](../architecture/adr/ADR-001.md) |
 | Governance | Implemented as repository documentation | [Source-of-truth policy](../governance/source-of-truth.md) |
 | Repository audit | Implemented as repository documentation | [Audit report](audit-2026-11-02.md) |
-| Astro application | Prototype; CI check and static build passed on the initial foundation and the visual-refinement commit | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/41528945600) |
-| English landing page | Prototype; included in successful static build | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/41508408287) |
+| Astro application | Prototype; dependency installation, Astro check and static build pass on the latest reference-led revision | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [latest successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/42132987619) |
+| English landing page | Prototype; reference-led product homepage included in successful static build | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [latest successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/42132987619) |
 | French routes/content | Planned | No French page is published |
 | Public section routes | Prototype; ecosystem, engineering, development, docs and community entry pages added on the feature branch | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2) |
-| Evidence status registry | Prototype; static JSON records with evidence and limitations | `src/data/status.json` |
+| Evidence status registry | Prototype; static JSON records with evidence and limitations, including planned OS add-on and Lumen extension catalogues | `src/data/status.json` |
 | Documentation system | Planned; entry page exists, collections, article navigation and search are not implemented | ADR-001 |
 | Search | Planned | Not implemented |
 | Public status registry | Prototype; static evidence records exist, validation tooling is not implemented | `src/data/status.json` |
@@ -91,7 +91,7 @@ Exit criteria:
 
 ## Phase 3 — Design system and layouts
 
-**Status:** In progress; shared navigation/footer, content layout, responsive page primitives and homepage extensions are present on the feature branch. Browser-level accessibility review remains outstanding.
+**Status:** In progress; reference-led homepage, compact navigation/footer, product cards and responsive primitives are implemented on the feature branch. Browser-level visual and accessibility review remains outstanding.
 
 Tasks:
 - Define design tokens and responsive foundations using native CSS.
@@ -149,7 +149,7 @@ Exit criteria:
 
 ## Phase 7 — Public product content
 
-**Status:** In progress; initial workstream pages are present but intentionally contain evidence limitations rather than unverified product claims.
+**Status:** In progress; homepage and dedicated OS/Lumen pages are product-led. Informational destinations for OS add-ons and Lumen extensions exist, but catalogues and downloadable artifacts are not available.
 
 Tasks:
 - Expand the homepage into the eight approved content areas.
@@ -215,3 +215,21 @@ Not yet verified on this update:
 - WCAG 2.2 AA contrast and interaction audit.
 - Sitemap, production canonical domain, deployment, and browser-level route checks.
 - Original supplied logo asset fidelity; the current repository SVG remains a simplified reconstruction and must be replaced by the approved source asset.
+
+
+## 2026-11-06 reference-led homepage update
+
+The homepage now follows the supplied visual reference more closely:
+- Compact brand header with the Aurora geometric mark, ecosystem navigation and development indicator.
+- Horizontal hero with a technical grid, cyan horizon/emblem artwork, concise positioning and two direct actions.
+- Narrow principles strip, three workstream cards and a compact engineering/approach band.
+- Minimal single-row footer.
+- Aurora OS and Lumen (Aurora Browser) are the two primary product destinations; the website is positioned as their public information platform.
+- Added dedicated informational routes for Aurora OS add-ons and Lumen extensions. Both are explicitly marked planned/not available; no download, compatibility or installation claims are made.
+- CI run [42132987619](https://github.com/Pokejoueur/aurora-website/actions/runs/42132987619) passed dependency installation, Astro/TypeScript check, static build and artifact upload for commit `f4cf630`.
+
+Still not verified:
+- Browser rendering against the supplied screenshot at the full viewport matrix.
+- Keyboard/screen-reader and WCAG 2.2 AA review.
+- Exact logo source-asset fidelity; the new mark and hero artwork are vector reconstructions based on the supplied brand reference.
+- Production deployment and live preview URL.
