@@ -6,6 +6,19 @@ import ContentLayout from "../../../layouts/ContentLayout.astro";
     <div><p class="eyebrow">CURRENT PUBLIC STATUS</p><h2>Not verified</h2><p class="content-copy">No browser implementation, compatibility matrix, performance benchmark or security assessment has been reviewed for this website update. This page intentionally avoids capability and security guarantees.</p></div>
     <div><p class="eyebrow">ENGINEERING AREAS</p><ul class="content-list"><li>Product purpose and scope</li><li>Browser architecture and process model</li><li>Privacy and data-handling policy</li><li>Web platform compatibility</li><li>Known limitations and test evidence</li></ul></div>
   </section>
+  <section class="section shell article-content">
+    <h2>Product scope to make explicit</h2>
+    <p class="content-copy">A browser is a security-sensitive application: it processes hostile remote content, manages credentials and sessions, and mediates access to local resources. Lumen's public documentation should make these responsibilities visible instead of relying on broad privacy or security claims.</p>
+    <div class="principle-grid">
+      <article class="principle-card"><span>01 / WEB PLATFORM</span><h3>Compatibility</h3><p>Document supported web standards, rendering behavior and known compatibility gaps against repeatable test suites.</p></article>
+      <article class="principle-card"><span>02 / ISOLATION</span><h3>Content boundaries</h3><p>Explain how sites, tabs, processes and privileged browser components are separated. No isolation guarantee is claimed until implemented and tested.</p></article>
+      <article class="principle-card"><span>03 / PRIVACY</span><h3>Data transparency</h3><p>Specify local storage, synchronization, telemetry, crash reporting and any external services before describing the privacy model.</p></article>
+      <article class="principle-card"><span>04 / EXTENSIBILITY</span><h3>Permission review</h3><p>Define extension permissions, provenance, update policy and compatibility checks before accepting third-party code.</p></article>
+    </div>
+    <h2>What a credible browser release must publish</h2>
+    <ul class="content-list"><li>Supported operating systems and minimum runtime requirements.</li><li>Rendering engine and web-platform compatibility information.</li><li>Process and site-isolation design, including known limitations.</li><li>Permission model, extension policy and update mechanism.</li><li>Privacy disclosures, security advisories and reproducible test results.</li></ul>
+    <p class="evidence-note">This is a documentation and verification checklist. It does not assert that Lumen currently implements any listed capability.</p>
+  </section>
   <section class="section shell product-destination">
     <div><p class="eyebrow"><span class="eyebrow-line"></span> EXTEND THE BROWSER</p><h2>Lumen extensions</h2><p class="content-copy">A dedicated destination for extensions designed for Lumen, the Aurora Browser. The extension directory is not published yet; no installation or compatibility claims are made until packages and review criteria exist.</p></div>
     <a class="button button-primary" href="/en/ecosystem/browser/extensions/">Explore extensions <span aria-hidden="true">↗</span></a>
