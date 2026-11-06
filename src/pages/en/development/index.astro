@@ -8,7 +8,7 @@ import status from "../../../data/status.json";
       <caption>Public development status — last reviewed {status.lastReviewed}</caption>
       <thead><tr><th scope="col">Workstream</th><th scope="col">Reported stage</th><th scope="col">Evidence status</th><th scope="col">Limitations</th><th scope="col">Evidence</th></tr></thead>
       <tbody>
-        {status.entries.map((entry) => <tr><th scope="row">{entry.name}</th><td>{entry.reportedStage ?? (entry.reportedProgress !== undefined ? "Project-reported estimate (not a readiness metric)" : "—")}</td><td><span class="status-label">{entry.status.toUpperCase()}</span></td><td>{entry.limitations}</td><td>{entry.evidence.map((url, index) => <a href={url} target="_blank" rel="noreferrer">Source {index + 1} ↗</a>)}</td></tr>)}
+        {status.entries.map((entry) => <tr><th scope="row">{entry.name}</th><td>{entry.reportedStage ?? "—"}</td><td><span class="status-label">{entry.status.toUpperCase()}</span></td><td>{entry.limitations}</td><td>{entry.evidence.map((url, index) => <a href={url} target="_blank" rel="noreferrer">Source {index + 1} ↗</a>)}</td></tr>)}
       </tbody>
     </table>
     <p class="evidence-note">This registry is static and repository-maintained; it is not a live GitHub synchronization service. “Reported stage” records project-provided progress information. “Evidence status” records what has been supported by publicly reviewable implementation or test evidence. An internal estimate is deliberately not presented as a completion percentage or release-readiness score.</p>
