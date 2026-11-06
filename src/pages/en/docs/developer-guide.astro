@@ -1,9 +1,50 @@
 ---
 import DocsLayout from "../../../layouts/DocsLayout.astro";
 ---
-<DocsLayout title="Aurora Developer Guide" description="Developer workflow and contribution information for Aurora Website." heading="Developer guide" eyebrow="DOCUMENTATION / DEVELOPERS">
-<p class="docs-kicker">WEBSITE DEVELOPMENT</p><h2>Work from the repository.</h2><p>The Aurora Website repository uses Astro, TypeScript strict mode, static output and native CSS. The repository is the source of truth for this workstream.</p><h2>Local environment</h2><p>Use Node.js 22.22.0 or newer and npm. From a local clone:</p><pre><code>npm install
-npm run dev</code></pre><h2>Validation</h2><pre><code>npm run check
+<DocsLayout title="Aurora Developer Guide" description="Set up, validate and contribute to the Aurora Website repository." heading="Developer guide" eyebrow="DOCUMENTATION / DEVELOPERS">
+<p class="docs-kicker">FOR DEVELOPERS</p>
+<h2>Start with the repository you are changing.</h2>
+<p>Aurora is developed across separate workstreams. This guide covers the public <a href="https://github.com/Pokejoueur/aurora-website">Aurora Website repository</a>; it does not imply access to private repositories or describe unverified OS or browser APIs.</p>
+<div class="docs-callout"><strong>Repository scope</strong><p>Website source: public GitHub repository. Aurora OS: private repository. The browser repository and its implementation details have not been verified by this website workstream.</p></div>
+<h2>Requirements</h2>
+<ul><li>Node.js 22.22.0 or newer (the repository pins its version in <code>.nvmrc</code>).</li><li>npm, included with Node.js.</li><li>Git and access to the public website repository.</li></ul>
+<h2>Clone and run locally</h2>
+<pre><code>git clone https://github.com/Pokejoueur/aurora-website.git
+cd aurora-website
+git switch main
+git switch -c feat/short-description
+npm install
+npm run dev</code></pre>
+<p>Open the local URL printed by Astro (normally <code>http://localhost:4321</code>). Keep your changes on a feature branch rather than committing directly to <code>main</code>.</p>
+<h2>Validate before opening a pull request</h2>
+<pre><code>npm run check
 npm run build
-npm run preview</code></pre><p>The check script validates the public status registry and runs Astro checks. The build creates static files in <code>dist/</code>.</p><h2>Contribution discipline</h2><ul><li>Inspect the branch and working tree before editing.</li><li>Keep changes small and reviewable.</li><li>Do not add unsupported product claims or fake metrics.</li><li>Run checks and inspect the rendered result before proposing a merge.</li></ul><p><a href="https://github.com/Pokejoueur/aurora-website">Open the website repository ↗</a></p>
+npm run preview</code></pre>
+<p><code>npm run check</code> validates the public status registry and runs Astro checks. <code>npm run build</code> generates the static site in <code>dist/</code>. <code>npm run preview</code> serves that built output locally; it does not deploy the site.</p>
+<h2>Where to make changes</h2>
+<ul>
+  <li><code>src/pages/en/</code> — English routes and page content.</li>
+  <li><code>src/layouts/</code> — shared page and documentation layouts.</li>
+  <li><code>src/styles/global.css</code> — global design system and responsive styling.</li>
+  <li><code>src/data/status.json</code> — public status claims and evidence references.</li>
+  <li><code>docs/</code> — architecture decisions, governance and website roadmap.</li>
+  <li><code>public/</code> — static assets and hosting headers.</li>
+  <li><code>.github/workflows/ci.yml</code> — automated validation and build.</li>
+</ul>
+<h2>Contribution workflow</h2>
+<ol>
+  <li>Inspect the current branch, working tree, relevant page and existing conventions.</li>
+  <li>Create a focused branch and make one coherent change.</li>
+  <li>Keep product claims tied to evidence from the relevant product repository or test report.</li>
+  <li>Run the validation commands and inspect the rendered pages at desktop and mobile widths.</li>
+  <li>Review the complete diff for broken links, accessibility regressions, unsupported claims and unrelated changes.</li>
+  <li>Open a pull request with its purpose, scope, validation results and known limitations.</li>
+</ol>
+<h2>Engineering references</h2>
+<ul>
+  <li><a href="/en/engineering/architecture/">Architecture overview</a> and <a href="/en/engineering/security/">security model</a>.</li>
+  <li><a href="/en/development/roadmap/">Website roadmap</a> and <a href="/en/development/verification/">verification record</a>.</li>
+  <li><a href="/en/community/contributing/">Contribution page</a> and <a href="/en/docs/reference/">status terminology</a>.</li>
+</ul>
+<p><a href="https://github.com/Pokejoueur/aurora-website">Open the website repository ↗</a></p>
 </DocsLayout>

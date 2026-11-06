@@ -7,7 +7,9 @@
       "name": "Aurora Website foundation and homepage",
       "status": "prototype",
       "scope": "Astro static application, reference-led English homepage, shared layout and responsive styling",
-      "evidence": ["https://github.com/Pokejoueur/aurora-website/pull/2"],
+      "evidence": [
+        "https://github.com/Pokejoueur/aurora-website/pull/2"
+      ],
       "verifiedOn": "2026-11-06",
       "limitations": "CI validates installation, status registry, Astro/TypeScript checks and static build. Browser visual comparison, accessibility audit and production deployment are not yet verified."
     },
@@ -16,7 +18,9 @@
       "name": "Public website information architecture",
       "status": "prototype",
       "scope": "Ecosystem, engineering, development, documentation, downloads, community and legal routes",
-      "evidence": ["https://github.com/Pokejoueur/aurora-website/pull/2"],
+      "evidence": [
+        "https://github.com/Pokejoueur/aurora-website/pull/2"
+      ],
       "verifiedOn": "2026-11-06",
       "limitations": "The routes and page content are implemented in this branch. Full route crawl, browser testing, broken-link validation and content review remain outstanding."
     },
@@ -25,7 +29,9 @@
       "name": "Documentation index search",
       "status": "prototype",
       "scope": "Client-side filtering of the static documentation landing-page entries",
-      "evidence": ["https://github.com/Pokejoueur/aurora-website/pull/2"],
+      "evidence": [
+        "https://github.com/Pokejoueur/aurora-website/pull/2"
+      ],
       "verifiedOn": "2026-11-06",
       "limitations": "This is a small client-side filter over the documentation index, not full-text indexing across article bodies. Pagefind remains a future enhancement."
     },
@@ -36,7 +42,9 @@
       "scope": "Publicly publishable OS implementation evidence reviewed for this website",
       "evidence": [],
       "verifiedOn": "2026-11-06",
-      "limitations": "No OS source implementation or test report has been reviewed for this website update. No OS feature is claimed as implemented or tested here."
+      "limitations": "The 70% figure is an estimate reported by the project owner, not an independently measured completion metric. It does not mean the OS is installable, feature-complete, tested as a whole or production-ready. No OS source implementation or test report has been reviewed for this public website update.",
+      "reportedProgress": 70,
+      "reportedProgressLabel": "Project-reported development estimate"
     },
     {
       "id": "lumen-browser-public-evidence",
@@ -45,14 +53,17 @@
       "scope": "Publicly publishable browser implementation evidence reviewed for this website",
       "evidence": [],
       "verifiedOn": "2026-11-06",
-      "limitations": "No browser source implementation, compatibility matrix or test report has been reviewed for this website update. No browser capability is claimed as implemented or tested here."
+      "limitations": "Lumen is in active development. No browser source implementation, compatibility matrix or test report has been reviewed for this public website update. No browser capability is claimed as implemented or tested here.",
+      "reportedStage": "In development"
     },
     {
       "id": "aurora-os-addons-catalogue",
       "name": "Aurora OS add-on catalogue",
       "status": "planned",
       "scope": "Public catalogue and verified distribution entry point for Aurora OS add-ons",
-      "evidence": ["https://github.com/Pokejoueur/aurora-website/pull/2"],
+      "evidence": [
+        "https://github.com/Pokejoueur/aurora-website/pull/2"
+      ],
       "verifiedOn": "2026-11-06",
       "limitations": "An informational destination page exists. No add-on packages, compatibility data, checksums or installation resources are published."
     },
@@ -61,7 +72,9 @@
       "name": "Lumen extension directory",
       "status": "planned",
       "scope": "Public directory and verified distribution entry point for Lumen extensions",
-      "evidence": ["https://github.com/Pokejoueur/aurora-website/pull/2"],
+      "evidence": [
+        "https://github.com/Pokejoueur/aurora-website/pull/2"
+      ],
       "verifiedOn": "2026-11-06",
       "limitations": "An informational destination page exists. No extension packages, compatibility data or installation resources are published."
     },

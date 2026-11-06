@@ -3,8 +3,26 @@ import ContentLayout from "../../../layouts/ContentLayout.astro";
 ---
 <ContentLayout title="Lumen — Aurora Browser" description="Discover Lumen, the Aurora Browser workstream, its development status and planned extension ecosystem." eyebrow="ECOSYSTEM / WEB BROWSER" heading="Lumen" lead="The Aurora Browser workstream. Lumen is being developed as an independent browsing experience; its architecture, privacy model, supported technologies and limitations will be documented from reviewed project evidence.">
   <section class="section shell content-columns">
-    <div><p class="eyebrow">CURRENT PUBLIC STATUS</p><h2>Not verified</h2><p class="content-copy">No browser implementation, compatibility matrix, performance benchmark or security assessment has been reviewed for this website update. This page intentionally avoids capability and security guarantees.</p></div>
+    <div><p class="eyebrow">DEVELOPMENT STATUS</p><h2>In development</h2><p class="content-copy">Lumen, the Aurora Browser, is currently in development. It is an active product workstream, not a released browser.</p><p class="eyebrow">PUBLIC EVIDENCE STATUS</p><h3>Not verified</h3><p class="content-copy">No browser implementation, compatibility matrix, performance benchmark or security assessment has been reviewed for this website update. No release or capability guarantee is made.</p></div>
     <div><p class="eyebrow">ENGINEERING AREAS</p><ul class="content-list"><li>Product purpose and scope</li><li>Browser architecture and process model</li><li>Privacy and data-handling policy</li><li>Web platform compatibility</li><li>Known limitations and test evidence</li></ul></div>
+  </section>
+  <section class="section shell article-content">
+    <h2>Product direction</h2>
+    <p class="content-copy">Lumen is the browser workstream of the Aurora ecosystem. Its development is intended to complement Aurora OS while remaining a distinct application with its own architecture, compatibility requirements and security responsibilities. The website will document concrete design and implementation decisions as they become reviewable.</p>
+    <p class="content-copy">The current development stage should not be confused with a public release. No supported-platform list, rendering-engine claim, compatibility level or privacy guarantee is published until it can be backed by project evidence.</p>
+    <h2>Product scope to make explicit</h2>
+    <p class="content-copy">A browser is a security-sensitive application: it processes hostile remote content, manages credentials and sessions, and mediates access to local resources. Lumen's public documentation should make these responsibilities visible instead of relying on broad privacy or security claims.</p>
+    <div class="principle-grid">
+      <article class="principle-card"><span>01 / WEB PLATFORM</span><h3>Compatibility</h3><p>Document supported web standards, rendering behavior and known compatibility gaps against repeatable test suites.</p></article>
+      <article class="principle-card"><span>02 / ISOLATION</span><h3>Content boundaries</h3><p>Explain how sites, tabs, processes and privileged browser components are separated. No isolation guarantee is claimed until implemented and tested.</p></article>
+      <article class="principle-card"><span>03 / PRIVACY</span><h3>Data transparency</h3><p>Specify local storage, synchronization, telemetry, crash reporting and any external services before describing the privacy model.</p></article>
+      <article class="principle-card"><span>04 / EXTENSIBILITY</span><h3>Permission review</h3><p>Define extension permissions, provenance, update policy and compatibility checks before accepting third-party code.</p></article>
+    </div>
+    <h2>Development priorities</h2>
+    <ul class="content-list"><li>Define the browser's application architecture and the boundary between privileged browser code and untrusted web content.</li><li>Document the rendering and networking stack, including third-party components and their update responsibilities.</li><li>Specify site data, credentials, sessions, telemetry and crash-reporting behavior before making privacy claims.</li><li>Define extension permissions, provenance, review and update policies before distributing third-party code.</li><li>Establish repeatable compatibility, security and performance test criteria.</li></ul>
+    <h2>What a credible browser release must publish</h2>
+    <ul class="content-list"><li>Supported operating systems and minimum runtime requirements.</li><li>Rendering engine and web-platform compatibility information.</li><li>Process and site-isolation design, including known limitations.</li><li>Permission model, extension policy and update mechanism.</li><li>Privacy disclosures, security advisories and reproducible test results.</li></ul>
+    <p class="evidence-note">This is a documentation and verification checklist. It does not assert that Lumen currently implements any listed capability.</p>
   </section>
   <section class="section shell product-destination">
     <div><p class="eyebrow"><span class="eyebrow-line"></span> EXTEND THE BROWSER</p><h2>Lumen extensions</h2><p class="content-copy">A dedicated destination for extensions designed for Lumen, the Aurora Browser. The extension directory is not published yet; no installation or compatibility claims are made until packages and review criteria exist.</p></div>

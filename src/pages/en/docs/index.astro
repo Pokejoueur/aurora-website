@@ -1,12 +1,52 @@
 ---
 import ContentLayout from "../../../layouts/ContentLayout.astro";
 ---
-<ContentLayout title="Aurora Documentation" description="Structured documentation for exploring, using and developing Aurora." eyebrow="DOCUMENTATION" heading="Understand how Aurora works." lead="Choose an entry point. Documentation distinguishes available project information from guides that depend on unreleased software.">
-<section class="section shell"><div class="docs-search"><label for="docs-filter">SEARCH DOCUMENTATION</label><input id="docs-filter" type="search" placeholder="Search topics, guides and references…" autocomplete="off" /><p id="docs-search-status" aria-live="polite">Browse the available documentation pages below.</p></div><div class="docs-card-grid" id="docs-results"><a data-search="getting started orientation ecosystem status" href="/en/docs/getting-started/"><span>01 / ORIENTATION</span><strong>Getting started</strong><small>Understand the ecosystem and current project status.</small></a><a data-search="user guide installation usage configuration" href="/en/docs/user-guide/"><span>02 / USERS</span><strong>User guide</strong><small>Installation and usage documentation status.</small></a><a data-search="developer guide build test contribute" href="/en/docs/developer-guide/"><span>03 / DEVELOPERS</span><strong>Developer guide</strong><small>Development workflow and repository guidance.</small></a><a data-search="reference terminology definitions interfaces" href="/en/docs/reference/"><span>04 / REFERENCE</span><strong>Technical reference</strong><small>Terminology, evidence labels and project references.</small></a><a data-search="faq questions answers support" href="/en/docs/faq/"><span>05 / HELP</span><strong>Frequently asked questions</strong><small>Answers about project scope, availability and evidence.</small></a><a data-search="architecture security privacy engineering" href="/en/engineering/"><span>06 / ENGINEERING</span><strong>Engineering library</strong><small>Architecture, security, privacy and decisions.</small></a></div></section>
+<ContentLayout title="Aurora Documentation" description="Practical documentation for people exploring, using and developing Aurora." eyebrow="DOCUMENTATION" heading="Find the right place to start." lead="Choose a path based on what you want to do. Each guide states what is available today and what still depends on a future verified release.">
+<section class="section shell">
+  <div class="docs-audience-grid">
+    <article class="docs-audience-card">
+      <p class="eyebrow"><span class="eyebrow-line"></span> FOR USERS</p>
+      <h2>Explore Aurora with confidence.</h2>
+      <p>Understand the products, check what is currently available and find the right information before installing or trying anything.</p>
+      <a class="button button-primary" href="/en/docs/getting-started/">Start here <span aria-hidden="true">↗</span></a>
+      <ul>
+        <li><a href="/en/docs/user-guide/">User guide and release readiness</a></li>
+        <li><a href="/en/docs/faq/">Frequently asked questions</a></li>
+        <li><a href="/en/downloads/">Verified downloads</a></li>
+      </ul>
+    </article>
+    <article class="docs-audience-card">
+      <p class="eyebrow"><span class="eyebrow-line"></span> FOR DEVELOPERS</p>
+      <h2>Understand the system. Build with us.</h2>
+      <p>Find repository setup, development commands, architecture notes, contribution expectations and evidence-backed project status.</p>
+      <a class="button button-primary" href="/en/docs/developer-guide/">Developer guide <span aria-hidden="true">↗</span></a>
+      <ul>
+        <li><a href="/en/engineering/architecture/">Architecture and engineering</a></li>
+        <li><a href="/en/development/">Roadmap and verification status</a></li>
+        <li><a href="/en/community/contributing/">Contribution workflow</a></li>
+      </ul>
+    </article>
+  </div>
+  <div class="docs-search">
+    <label for="docs-filter">SEARCH ALL DOCUMENTATION</label>
+    <input id="docs-filter" type="search" placeholder="Try “installation”, “build”, “security”…" autocomplete="off" />
+    <p id="docs-search-status" role="status" aria-live="polite">Browse the available documentation pages below.</p>
+  </div>
+  <div class="docs-card-grid" id="docs-results">
+    <a data-search="getting started orientation ecosystem status products availability" href="/en/docs/getting-started/"><span>01 / ORIENTATION</span><strong>Getting started</strong><small>Choose a product, understand current availability and find your next step.</small></a>
+    <a data-search="user guide installation usage configuration support release" href="/en/docs/user-guide/"><span>02 / USERS</span><strong>User guide</strong><small>What user instructions exist today and what will be published with a verified release.</small></a>
+    <a data-search="developer guide build test contribute setup workflow website astro" href="/en/docs/developer-guide/"><span>03 / DEVELOPERS</span><strong>Developer guide</strong><small>Set up the website repository, run checks and contribute changes.</small></a>
+    <a data-search="reference terminology definitions interfaces status evidence" href="/en/docs/reference/"><span>04 / REFERENCE</span><strong>Technical reference</strong><small>Definitions for status labels and evidence terminology.</small></a>
+    <a data-search="faq questions answers support installation downloads" href="/en/docs/faq/"><span>05 / HELP</span><strong>Frequently asked questions</strong><small>Answers about project scope, availability and support.</small></a>
+    <a data-search="architecture security privacy engineering adr decisions" href="/en/engineering/"><span>06 / ENGINEERING</span><strong>Engineering library</strong><small>Architecture, security, privacy and technical decisions.</small></a>
+  </div>
+  <p class="docs-no-results" id="docs-no-results" hidden>No matching pages. Try a broader term or browse the <a href="/en/engineering/">engineering library</a>.</p>
+</section>
 <script>
 const input = document.querySelector<HTMLInputElement>("#docs-filter");
 const results = [...document.querySelectorAll<HTMLAnchorElement>("#docs-results a")];
 const status = document.querySelector<HTMLElement>("#docs-search-status");
+const empty = document.querySelector<HTMLElement>("#docs-no-results");
 input?.addEventListener("input", () => {
   const query = input.value.trim().toLowerCase();
   let visible = 0;
@@ -15,7 +55,8 @@ input?.addEventListener("input", () => {
     item.hidden = !match;
     if (match) visible += 1;
   }
-  if (status) status.textContent = query ? visible + " matching documentation page(s)." : "Browse the available documentation pages below.";
+  if (status) status.textContent = query ? visible + " matching page(s)." : "Browse the available documentation pages below.";
+  if (empty) empty.hidden = visible !== 0;
 });
 </script>
 </ContentLayout>

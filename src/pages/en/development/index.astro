@@ -6,12 +6,12 @@ import status from "../../../data/status.json";
   <section class="section shell">
     <table class="status-table">
       <caption>Public development status — last reviewed {status.lastReviewed}</caption>
-      <thead><tr><th scope="col">Workstream</th><th scope="col">Status</th><th scope="col">Limitations</th><th scope="col">Evidence</th></tr></thead>
+      <thead><tr><th scope="col">Workstream</th><th scope="col">Reported stage</th><th scope="col">Evidence status</th><th scope="col">Limitations</th><th scope="col">Evidence</th></tr></thead>
       <tbody>
-        {status.entries.map((entry) => <tr><th scope="row">{entry.name}</th><td><span class="status-label">{entry.status.toUpperCase()}</span></td><td>{entry.limitations}</td><td>{entry.evidence.map((url, index) => <a href={url} target="_blank" rel="noreferrer">Source {index + 1} ↗</a>)}</td></tr>)}
+        {status.entries.map((entry) => <tr><th scope="row">{entry.name}</th><td>{entry.reportedProgress !== undefined ? `${entry.reportedProgress}% estimated (project-reported)` : entry.reportedStage ?? "—"}</td><td><span class="status-label">{entry.status.toUpperCase()}</span></td><td>{entry.limitations}</td><td>{entry.evidence.map((url, index) => <a href={url} target="_blank" rel="noreferrer">Source {index + 1} ↗</a>)}</td></tr>)}
       </tbody>
     </table>
-    <p class="evidence-note">This registry is static and repository-maintained; it is not a live GitHub synchronization service.</p>
+    <p class="evidence-note">This registry is static and repository-maintained; it is not a live GitHub synchronization service. “Reported stage” records project-provided progress information. “Evidence status” records what has been independently supported by public implementation or test evidence. The Aurora OS 70% figure is an estimate, not a verified readiness score.</p>
     <p><a class="text-link" href="https://github.com/Pokejoueur/aurora-website/blob/main/docs/development/roadmap.md">Read the implementation roadmap ↗</a></p>
   </section>
   <section class="section shell status-definitions">
