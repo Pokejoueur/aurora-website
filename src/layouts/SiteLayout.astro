@@ -3,10 +3,11 @@ import "../styles/global.css";
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
 const navigation = [
-  { label: "Ecosystem", href: "/en/ecosystem/", arrow: true },
-  { label: "Principles", href: "/en/#approach", arrow: false },
-  { label: "Docs", href: "/en/docs/", arrow: true },
-  { label: "GitHub", href: "https://github.com/Pokejoueur/aurora-website", arrow: true, external: true },
+  { label: "Ecosystem", href: "/en/ecosystem/" },
+  { label: "Engineering", href: "/en/engineering/" },
+  { label: "Development", href: "/en/development/" },
+  { label: "Docs", href: "/en/docs/" },
+  { label: "Community", href: "/en/community/" },
 ];
 ---
 <!doctype html>
@@ -33,7 +34,8 @@ const navigation = [
           <span class="brand-name">AURORA</span>
         </a>
         <nav class="main-nav" aria-label="Main navigation">
-          {navigation.map((item) => <a href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined}>{item.label}{item.arrow && <span class="nav-arrow" aria-hidden="true">{item.external ? "↗" : "⌄"}</span>}</a>)}
+          {navigation.map((item) => <a href={item.href} aria-current={Astro.url.pathname === item.href ? "page" : undefined}>{item.label}</a>)}
+          <a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">GitHub <span class="nav-arrow" aria-hidden="true">↗</span></a>
         </nav>
         <a class="header-status" href="/en/development/"><span class="status-dot"></span> IN DEVELOPMENT</a>
       </div>
@@ -46,8 +48,14 @@ const navigation = [
           <span class="brand-name">AURORA</span>
         </a>
         <p>Independent computing. Built deliberately.</p>
-        <div class="reference-footer-meta"><span>© {new Date().getFullYear()} Aurora Project</span><a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">GitHub ↗</a><a href="/en/docs/">Docs ↗</a><a href="/en/development/">Status ↗</a></div>
+        <div class="footer-link-groups">
+          <div><span>ECOSYSTEM</span><a href="/en/ecosystem/os/">Aurora OS</a><a href="/en/ecosystem/browser/">Lumen Browser</a><a href="/en/downloads/">Downloads</a></div>
+          <div><span>ENGINEERING</span><a href="/en/engineering/architecture/">Architecture</a><a href="/en/engineering/security/">Security</a><a href="/en/development/">Development status</a></div>
+          <div><span>RESOURCES</span><a href="/en/docs/">Documentation</a><a href="/en/community/">Community</a><a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+          <div><span>INFORMATION</span><a href="/en/legal/privacy/">Privacy</a><a href="/en/legal/accessibility/">Accessibility</a><a href="/en/legal/licenses/">Licenses</a></div>
+        </div>
       </div>
+      <div class="shell footer-bottom"><span>© {new Date().getFullYear()} Aurora Project</span><span>Public information · Evidence-led development</span><a href="/en/development/">Project status ↗</a></div>
     </footer>
   </body>
 </html>
