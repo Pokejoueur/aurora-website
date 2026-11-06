@@ -1,0 +1,17 @@
+---
+import SiteLayout from "./SiteLayout.astro";
+interface Props { title: string; description: string; heading: string; eyebrow: string; }
+const { title, description, heading, eyebrow } = Astro.props;
+const links = [
+  ["Overview", "/en/docs/"], ["Getting started", "/en/docs/getting-started/"],
+  ["User guide", "/en/docs/user-guide/"], ["Developer guide", "/en/docs/developer-guide/"],
+  ["Reference", "/en/docs/reference/"], ["FAQ", "/en/docs/faq/"],
+];
+---
+<SiteLayout title={title} description={description}>
+  <section class="content-hero shell docs-hero"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/docs/">Documentation</a><span>/</span><span aria-current="page">{heading}</span></nav><p class="eyebrow"><span class="eyebrow-line"></span>{eyebrow}</p><h1>{heading}</h1><p class="content-meta">AURORA / DOCUMENTATION / EN</p></section>
+  <div class="shell docs-shell">
+    <aside class="docs-sidebar" aria-label="Documentation navigation"><p>DOCUMENTATION</p>{links.map(([label, href]) => <a href={href} aria-current={Astro.url.pathname === href ? "page" : undefined}>{label}</a>)}<p>ENGINEERING</p><a href="/en/engineering/architecture/">Architecture</a><a href="/en/engineering/security/">Security</a><a href="/en/engineering/decisions/">ADRs</a></aside>
+    <article class="docs-article"><slot /></article>
+  </div>
+</SiteLayout>
