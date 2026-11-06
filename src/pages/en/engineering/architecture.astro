@@ -1,0 +1,11 @@
+---
+import ContentLayout from "../../../layouts/ContentLayout.astro";
+---
+<ContentLayout title="Aurora Architecture" description="Architecture information and evidence boundaries for Aurora." eyebrow="ENGINEERING / ARCHITECTURE" heading="Architecture" lead="A system architecture is a description of responsibilities and boundaries. It is not proof that every described component has been implemented.">
+<section class="section shell article-content">
+<h2>Architecture overview</h2><p class="content-copy">Aurora's long-term technical direction is described in project-level architecture material. This public website repository does not contain sufficient product source evidence to assert the current operational state of the OS or browser.</p>
+<div class="architecture-flow" aria-label="Conceptual system layers"><div><span>01</span><strong>Kernel and platform foundations</strong><small>DESIGN CONTEXT — implementation not verified here</small></div><i aria-hidden="true">↓</i><div><span>02</span><strong>Isolated system services</strong><small>DESIGN CONTEXT — integration not verified here</small></div><i aria-hidden="true">↓</i><div><span>03</span><strong>User-facing products</strong><small>Aurora OS · Lumen Browser</small></div></div>
+<h2>Questions an architecture description must answer</h2><ul class="content-list"><li>Which component owns each resource?</li><li>Where are privilege boundaries enforced?</li><li>How are services discovered and authenticated?</li><li>What happens when a service fails or is compromised?</li><li>Which invariants are tested, and by what test environment?</li></ul>
+<h2>Evidence boundary</h2><p class="content-copy">The website's accepted architecture is recorded in <a href="https://github.com/Pokejoueur/aurora-website/blob/main/docs/architecture/adr/ADR-001.md">ADR-001</a>. Product architecture claims require supporting OS or browser specifications and source references before publication.</p>
+</section>
+</ContentLayout>
