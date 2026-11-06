@@ -1,12 +1,11 @@
 ---
 import ContentLayout from "../../../layouts/ContentLayout.astro";
 ---
-<ContentLayout title="Engineering" description="Engineering principles, architecture decisions and evidence boundaries for Aurora." eyebrow="ENGINEERING" heading="Understand the foundations." lead="Engineering information should explain decisions, boundaries and trade-offs. This section will publish technical detail only when the relevant source material can be reviewed and cited.">
-  <section class="section shell">
-    <div class="project-grid">
-      <article class="project-card"><p class="project-type">ARCHITECTURE</p><h2>System architecture</h2><p class="project-description">Architecture documentation is planned. Product-level implementation claims are not verified by this website repository.</p></article>
-      <article class="project-card"><p class="project-type">SECURITY</p><h2>Security model</h2><p class="project-description">Threat models, trust boundaries and limitations require explicit, reviewed engineering evidence.</p></article>
-      <article class="project-card"><p class="project-type">DECISIONS</p><h2>Architecture records</h2><p class="project-description">The website architecture decision is recorded in ADR-001.</p><a class="text-link" href="https://github.com/Pokejoueur/aurora-website/blob/main/docs/architecture/adr/ADR-001.md">Read ADR-001 ↗</a></article>
-    </div>
-  </section>
+<ContentLayout title="Engineering" description="Engineering principles, architecture decisions and evidence boundaries for Aurora." eyebrow="ENGINEERING" heading="Understand the foundations." lead="Engineering information should explain decisions, boundaries and trade-offs. Technical detail is published with its evidence boundary made explicit.">
+<section class="section shell"><div class="docs-card-grid">
+<a href="/en/engineering/architecture/"><span>01 / SYSTEM DESIGN</span><strong>Architecture</strong><small>Responsibilities, components and trust boundaries.</small></a>
+<a href="/en/engineering/security/"><span>02 / THREAT MODEL</span><strong>Security</strong><small>Privileges, isolation, attack surface and validation.</small></a>
+<a href="/en/engineering/privacy/"><span>03 / DATA HANDLING</span><strong>Privacy</strong><small>Data collection, local processing and policy status.</small></a>
+<a href="/en/engineering/decisions/"><span>04 / ADRs</span><strong>Technical decisions</strong><small>Context, alternatives and architectural consequences.</small></a>
+</div><p class="evidence-note">Product-specific implementation details remain NOT VERIFIED until reviewed against their respective source repositories and test reports.</p></section>
 </ContentLayout>
