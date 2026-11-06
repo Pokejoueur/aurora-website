@@ -1,0 +1,23 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+---
+<ContentLayout title="About Aurora — Independent Computing Project" description="Learn about the Aurora computing project, its two product workstreams, engineering principles and current public information." eyebrow="PROJECT / ABOUT" heading="About the Aurora project" lead="Aurora is an independent software project focused on building a coherent computing ecosystem around an operating system and a browser. The public information below separates project objectives from verified implementation.">
+  <section class="section shell article-content">
+    <h2>What the project is building</h2>
+    <p class="content-copy"><strong>Aurora OS</strong> is a from-scratch operating-system project written in Rust, following a capability-based microkernel direction. <strong>Lumen</strong> is the web-browser workstream of the Aurora ecosystem. They are distinct products with separate implementation and verification requirements.</p>
+    <p class="content-copy">This website is the public information and documentation platform for those two products. It is not a third product, and its successful build does not demonstrate that the OS or browser is ready for use.</p>
+    <h2>Engineering priorities</h2>
+    <div class="principle-grid">
+      <article class="principle-card"><span>01 / CORRECTNESS</span><h3>Correctness before features</h3><p>Prefer behavior that can be specified, reviewed and tested over claims based on appearance or source-code presence alone.</p></article>
+      <article class="principle-card"><span>02 / SECURITY</span><h3>Explicit trust boundaries</h3><p>Make authority, privilege, external inputs and component responsibilities explicit. Treat external content and dependencies as untrusted.</p></article>
+      <article class="principle-card"><span>03 / RELIABILITY</span><h3>Evidence over estimates</h3><p>Distinguish designed, implemented, tested, integrated and verified work. Publish limitations alongside progress.</p></article>
+      <article class="principle-card"><span>04 / PERFORMANCE</span><h3>Measure before optimizing</h3><p>Evaluate resource use and latency with repeatable measurements rather than unsupported performance claims.</p></article>
+    </div>
+    <h2>Who maintains Aurora?</h2>
+    <p class="content-copy">A verified public team page, maintainer biography or list of professional credentials is not currently available. This page therefore does not assign names, roles or experience that have not been approved for publication. Maintainer information can be added when the project owner decides what should be public.</p>
+    <h2>Repository and source availability</h2>
+    <p class="content-copy">The <a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">Aurora Website repository</a> is public. The Aurora OS repository is currently private, and this website does not contain the OS implementation. No public timeline or commitment to change that visibility has been published. The website will describe repository access as it exists, rather than implying that every product repository is open.</p>
+    <h2>Follow the project</h2>
+    <p class="content-copy">The <a href="/en/development/">development status register</a> is the reference for reported stages, evidence and limitations. Read the <a href="/en/engineering/architecture/">architecture overview</a> for the current technical direction, or visit <a href="/en/community/">Community</a> for verified contribution and feedback entry points.</p>
+  </section>
+</ContentLayout>
