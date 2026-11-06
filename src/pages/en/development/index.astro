@@ -6,9 +6,9 @@ import status from "../../../data/status.json";
   <section class="section shell">
     <table class="status-table">
       <caption>Public development status — last reviewed {status.lastReviewed}</caption>
-      <thead><tr><th scope="col">Workstream</th><th scope="col">Status</th><th scope="col">Limitations</th></tr></thead>
+      <thead><tr><th scope="col">Workstream</th><th scope="col">Status</th><th scope="col">Limitations</th><th scope="col">Evidence</th></tr></thead>
       <tbody>
-        {status.entries.map((entry) => <tr><th scope="row">{entry.name}</th><td><span class="status-label">{entry.status.toUpperCase()}</span></td><td>{entry.limitations}</td></tr>)}
+        {status.entries.map((entry) => <tr><th scope="row">{entry.name}</th><td><span class="status-label">{entry.status.toUpperCase()}</span></td><td>{entry.limitations}</td><td>{entry.evidence.map((url, index) => <a href={url} target="_blank" rel="noreferrer">Source {index + 1} ↗</a>)}</td></tr>)}
       </tbody>
     </table>
     <p class="evidence-note">This registry is static and repository-maintained; it is not a live GitHub synchronization service.</p>
