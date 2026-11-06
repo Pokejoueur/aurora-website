@@ -1,6 +1,23 @@
 ---
 import ContentLayout from "../../layouts/ContentLayout.astro";
 ---
-<ContentLayout title="Aurora Downloads" description="Public release and download availability for Aurora OS and Lumen." eyebrow="DOWNLOADS / RELEASES" heading="Downloads, when releases are ready." lead="This page is the release entry point for Aurora OS and Lumen. It will list only real artifacts with version, compatibility, integrity and verification information.">
-<section class="section shell"><div class="release-panel"><p class="eyebrow">PUBLIC RELEASE STATUS</p><h2>No stable public release listed.</h2><p class="content-copy">No verified Aurora OS installer, system image, Lumen browser build or signed release artifact is published through this website at this time.</p><div class="release-requirements"><span>VERSION</span><span>PLATFORM / ARCHITECTURE</span><span>CHECKSUMS</span><span>SIGNATURE</span><span>RELEASE NOTES</span></div><p class="evidence-note">Release entries will be added only when the corresponding artifacts and verification records exist.</p></div></section>
+<ContentLayout title="Download Aurora OS & Lumen — Release Status | Aurora" description="Check the verified release and download status for Aurora OS and Lumen. No stable public product release is currently listed." eyebrow="DOWNLOADS / RELEASES" heading="Aurora downloads and release status" lead="This is the official release entry point for Aurora OS and Lumen. Only verified artifacts with version, compatibility, integrity and release information will be listed.">
+<section class="section shell">
+  <div class="release-panel">
+    <p class="eyebrow">PUBLIC RELEASE STATUS</p>
+    <h2>No stable public release listed.</h2>
+    <p class="content-copy">No verified Aurora OS installer, system image, Lumen browser build or signed release artifact is published through this website at this time. Do not use unofficial package links as substitutes.</p>
+    <div class="release-requirements"><span>VERSION</span><span>PLATFORM / ARCHITECTURE</span><span>CHECKSUMS</span><span>SIGNATURE</span><span>RELEASE NOTES</span></div>
+    <p class="evidence-note">A release entry will be added only when the corresponding artifact and verification record exist.</p>
+  </div>
+</section>
+<section class="section shell article-content">
+  <h2>What to do while releases are unavailable</h2>
+  <ul class="content-list">
+    <li><a href="/en/development/">Follow development status</a> and distinguish reported project stages from verified implementation.</li>
+    <li><a href="/en/docs/faq/">Read the FAQ</a> for availability, repository access and contribution information.</li>
+    <li><a href="/en/community/">Visit the community page</a> for currently verified feedback and contribution entry points.</li>
+    <li><a href="/en/engineering/architecture/">Review the architecture direction</a> without treating design goals as released functionality.</li>
+  </ul>
+</section>
 </ContentLayout>

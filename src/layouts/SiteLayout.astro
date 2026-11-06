@@ -4,7 +4,8 @@ interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
 const navigation = [
   { label: "Products", href: "/en/ecosystem/" },
-  { label: "For users", href: "/en/docs/user-guide/" },
+  { label: "About", href: "/en/about/" },
+  { label: "Getting started", href: "/en/docs/getting-started/" },
   { label: "For developers", href: "/en/docs/developer-guide/" },
   { label: "Engineering", href: "/en/engineering/" },
   { label: "Status", href: "/en/development/" },
@@ -22,6 +23,9 @@ const navigation = [
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="Aurora" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
@@ -35,7 +39,7 @@ const navigation = [
         </a>
         <nav class="main-nav" aria-label="Main navigation">
           {navigation.map((item) => <a href={item.href} aria-current={Astro.url.pathname === item.href || (item.href !== "/en/ecosystem/" && Astro.url.pathname.startsWith(item.href)) ? "page" : undefined}>{item.label}</a>)}
-          <a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">GitHub <span class="nav-arrow" aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">Website source <span class="nav-arrow" aria-hidden="true">↗</span></a>
         </nav>
         <a class="header-status" href="/en/development/"><span class="status-dot"></span> IN DEVELOPMENT</a>
       </div>
@@ -50,12 +54,12 @@ const navigation = [
         <p>Independent computing. Built deliberately.</p>
         <div class="footer-link-groups">
           <div><span>ECOSYSTEM</span><a href="/en/ecosystem/os/">Aurora OS</a><a href="/en/ecosystem/browser/">Lumen Browser</a><a href="/en/downloads/">Downloads</a></div>
-          <div><span>FOR USERS</span><a href="/en/docs/">Documentation home</a><a href="/en/docs/getting-started/">Getting started</a><a href="/en/docs/user-guide/">User guide</a><a href="/en/docs/faq/">FAQ and help</a></div>
-          <div><span>FOR DEVELOPERS</span><a href="/en/docs/developer-guide/">Developer guide</a><a href="/en/engineering/architecture/">Architecture</a><a href="/en/community/contributing/">Contribute</a><a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">GitHub ↗</a></div>
-          <div><span>PROJECT</span><a href="/en/community/">Community</a><a href="/en/development/">Development status</a><a href="/en/legal/privacy/">Privacy</a><a href="/en/legal/accessibility/">Accessibility</a><a href="/en/legal/licenses/">Licenses</a></div>
+          <div><span>FOR USERS</span><a href="/en/docs/">Documentation home</a><a href="/en/docs/getting-started/">Getting started</a><a href="/en/docs/faq/">FAQ and help</a></div>
+          <div><span>FOR DEVELOPERS</span><a href="/en/docs/developer-guide/">Developer guide</a><a href="/en/engineering/architecture/">Architecture</a><a href="/en/community/contributing/">Contribute</a><a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">Website source ↗</a></div>
+          <div><span>PROJECT</span><a href="/en/about/">About Aurora</a><a href="/en/community/">Community</a><a href="/en/development/">Development status</a><a href="/en/legal/privacy/">Privacy</a><a href="/en/legal/accessibility/">Accessibility</a><a href="/en/legal/licenses/">Licenses</a></div>
         </div>
       </div>
-      <div class="shell footer-bottom"><span>© {new Date().getFullYear()} Aurora Project</span><span>Public information · Evidence-led development</span><a href="/en/development/">Project status ↗</a></div>
+      <div class="shell footer-bottom"><span>© {new Date().getFullYear()} Aurora Project</span><span>Public information · Evidence-led development</span><a href="/en/development/">Project status ↘</a></div>
     </footer>
   </body>
 </html>

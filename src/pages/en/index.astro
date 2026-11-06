@@ -1,27 +1,26 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import status from "../../data/status.json";
-const osStatus = status.entries.find((entry) => entry.id === "aurora-os-public-evidence");
 const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser-public-evidence");
 ---
-<SiteLayout title="Aurora — Independent computing. Built deliberately." description="Discover Aurora OS and Lumen, the Aurora Browser. Independent computing, built deliberately and documented with evidence.">
+<SiteLayout title="Aurora — Independent Rust OS & Lumen Browser (In Development)" description="Aurora is an independent computing project developing a from-scratch Rust operating system and Lumen, its web browser. Both are in development.">
   <section class="home-cinema">
     <div class="shell">
       <div class="home-cinema-inner">
         <div class="home-cinema-copy">
-          <p class="eyebrow"><span class="eyebrow-line"></span> AN INDEPENDENT COMPUTING ECOSYSTEM</p>
-          <h1>Technology,<br />on a <span>different</span><br />horizon.</h1>
-          <p class="home-cinema-description">A new foundation for personal computing. Built deliberately, from the system up.</p>
+          <p class="eyebrow"><span class="eyebrow-line"></span> AN INDEPENDENT COMPUTING PROJECT</p>
+          <h1>An operating system<br />and browser, <span>built deliberately.</span></h1>
+          <p class="home-cinema-description">Aurora OS is a from-scratch operating-system project written in Rust, following a capability-based microkernel direction. Lumen is its web browser. Both are in development.</p>
           <div class="home-cinema-actions">
-            <a class="button button-primary" href="#ecosystem">Discover Aurora <span aria-hidden="true">↘</span></a>
-            <a class="text-link" href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">Source <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary" href="/en/development/">Follow verified progress <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="/en/engineering/architecture/">Read the architecture</a>
           </div>
         </div>
         <div class="home-cinema-art">
           <img src="/aurora-hero.svg" alt="Aurora's geometric symbol above a luminous planetary horizon" width="760" height="480" fetchpriority="high" />
         </div>
       </div>
-      <div class="home-cinema-foot"><span>01 — A NEW COMPUTING ECOSYSTEM</span><span>OS / BROWSER / OPEN ENGINEERING</span></div>
+      <div class="home-cinema-foot"><span>01 — INDEPENDENT COMPUTING</span><span>OS / BROWSER / PUBLIC PROJECT NOTES</span></div>
     </div>
   </section>
 
@@ -30,7 +29,7 @@ const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser
       <span>BUILT FROM THE FOUNDATION</span>
       <p>One system.<br /><em>A wider horizon.</em></p>
       <div class="home-cinema-bridge-line" aria-hidden="true"></div>
-      <span>FROM THE KERNEL TO THE EVERYDAY</span>
+      <span>FROM SYSTEM FOUNDATIONS TO EVERYDAY SOFTWARE</span>
     </div>
   </section>
 
@@ -39,9 +38,9 @@ const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser
       <div class="home-cinema-product-copy">
         <p class="home-cinema-section-label">01 / OPERATING SYSTEM</p>
         <h2>Aurora <span>OS</span></h2>
-        <p>A capability-based operating system, built from the ground up in Rust.</p>
-        <div class="home-cinema-status"><i></i><span>IN DEVELOPMENT · PROJECT-REPORTED ESTIMATE: {osStatus?.reportedProgress ?? 70}%</span></div>
-        <a class="home-cinema-link" href="/en/ecosystem/os/">EXPLORE AURORA OS <span>↗</span></a>
+        <p>A from-scratch operating-system project written in Rust, with a capability-based microkernel direction. The OS repository is private; public implementation evidence has not yet been independently reviewed on this website.</p>
+        <div class="home-cinema-status"><i></i><span>IN DEVELOPMENT · PUBLIC EVIDENCE NOT VERIFIED</span></div>
+        <a class="home-cinema-link" href="/en/ecosystem/os/">EXPLORE AURORA OS <span>↘</span></a>
       </div>
       <div class="home-concept home-concept-os" role="img" aria-label="Conceptual visual representing Aurora OS, not a product screenshot">
         <div class="home-os-ring"></div><div class="home-os-horizon"></div><div class="home-os-core"><span>AU</span></div>
@@ -52,9 +51,9 @@ const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser
       <div class="home-cinema-product-copy">
         <p class="home-cinema-section-label">02 / WEB BROWSER</p>
         <h2>Lumen</h2>
-        <p>The Aurora Browser. A separate application, designed as part of the wider ecosystem.</p>
-        <div class="home-cinema-status"><i></i><span>{browserStatus?.reportedStage?.toUpperCase() ?? "IN DEVELOPMENT"}</span></div>
-        <a class="home-cinema-link" href="/en/ecosystem/browser/">EXPLORE LUMEN <span>↗</span></a>
+        <p>The web-browser workstream of the Aurora ecosystem. Its rendering engine, supported platforms and privacy behavior are not yet documented as verified product capabilities.</p>
+        <div class="home-cinema-status"><i></i><span>{browserStatus?.reportedStage?.toUpperCase() ?? "IN DEVELOPMENT"} · PUBLIC EVIDENCE NOT VERIFIED</span></div>
+        <a class="home-cinema-link" href="/en/ecosystem/browser/">EXPLORE LUMEN <span>↘</span></a>
       </div>
       <div class="home-concept home-concept-lumen" role="img" aria-label="Conceptual browser interface for Lumen, not a product screenshot">
         <div class="home-lumen-window">
@@ -65,9 +64,13 @@ const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser
       </div>
     </article>
   </section>
+
   <section class="home-cinema-end shell">
-    <p>Independent engineering. Explicit design. Progress documented with evidence.</p>
-    <a class="home-cinema-link" href="/en/docs/">EXPLORE THE PROJECT <span>↗</span></a>
+    <p>Progress is reported with explicit evidence boundaries. No public release is currently verified.</p>
+    <div class="home-cinema-actions">
+      <a class="home-cinema-link" href="/en/development/">VIEW DEVELOPMENT STATUS <span>↘</span></a>
+      <a class="home-cinema-link" href="/en/docs/faq/">READ THE FAQ <span>↘</span></a>
+    </div>
   </section>
   <style>
     .home-cinema-art { min-height: 0; }
