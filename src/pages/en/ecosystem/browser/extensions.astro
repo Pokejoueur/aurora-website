@@ -1,11 +1,43 @@
 ---
 import ContentLayout from "../../../../layouts/ContentLayout.astro";
 ---
-<ContentLayout title="Lumen Extensions" description="The planned extension directory for Lumen, the Aurora Browser." eyebrow="LUMEN / EXTENSIONS" heading="Lumen extensions" lead="A dedicated directory for browser extensions built for Lumen, the Aurora Browser. Compatibility and installation information will be published only when they can be verified.">
+<ContentLayout title="Lumen Extensions" description="A manually curated, static preview of ideas for the future Lumen browser extension directory." eyebrow="LUMEN / EXTENSIONS" heading="Shape your browsing experience." lead="A curated shortlist of extension ideas for Lumen, the Aurora Browser. These are suggestions, not available extensions: each listing will be chosen and maintained manually.">
   <section class="section shell product-catalogue">
-    <p class="eyebrow">DIRECTORY STATUS</p><h2>Not available yet</h2>
-    <p class="content-copy">No extension packages or verified installation resources are currently published on this website. This page is an entry point for the future directory, not an extension store.</p>
-    <p class="catalogue-status"><span class="status-dot"></span> PLANNED — EXTENSION DIRECTORY</p>
+    <div class="catalogue-intro">
+      <p class="eyebrow">STATIC CURATION / NO SUBMISSIONS</p>
+      <h2>Quality over quantity.</h2>
+      <p class="content-copy">The extension directory will be a hand-picked collection. There will be no publisher accounts, public submissions, automated popularity rankings or direct package hosting at this stage. Compatibility, permissions and provenance must be checked before an actual extension is listed.</p>
+      <p class="catalogue-status"><span class="status-dot"></span> PLANNED — CURATED DIRECTORY</p>
+    </div>
+
+    <section class="catalogue-group" aria-labelledby="lumen-must-have">
+      <div class="catalogue-heading"><p class="eyebrow">01 / FOUNDATION</p><h2 id="lumen-must-have">Must-have</h2><p>Practical browser tools that support safer, more controlled everyday browsing.</p></div>
+      <div class="catalogue-grid">
+        <article class="catalogue-card"><span>IDEA / PRIVACY</span><h3>Tracker &amp; Content Control</h3><p>Give users clear control over third-party tracking and unwanted page elements, with understandable rules.</p></article>
+        <article class="catalogue-card"><span>IDEA / SECURITY</span><h3>Password Manager</h3><p>Support secure credential storage and autofill through a carefully reviewed integration.</p></article>
+        <article class="catalogue-card"><span>IDEA / WORKFLOW</span><h3>Tab &amp; Session Manager</h3><p>Save, restore and organize browsing sessions without losing track of open work.</p></article>
+      </div>
+    </section>
+
+    <section class="catalogue-group" aria-labelledby="lumen-trending">
+      <div class="catalogue-heading"><p class="eyebrow">02 / EDITORIAL PICKS</p><h2 id="lumen-trending">Trending ideas</h2><p>Ideas selected for further consideration. This label is editorial only; it does not represent installs, ratings or live trend data.</p></div>
+      <div class="catalogue-grid">
+        <article class="catalogue-card"><span>IDEA / READING</span><h3>Reader Mode</h3><p>Present article content in a focused layout with adjustable typography and reduced visual noise.</p></article>
+        <article class="catalogue-card"><span>IDEA / NAVIGATION</span><h3>Vertical Tabs</h3><p>Explore a compact, structured tab workspace that remains usable with many open pages.</p></article>
+        <article class="catalogue-card"><span>IDEA / LANGUAGE</span><h3>Page Translation</h3><p>Offer transparent translation controls and make it clear when page content is sent to an external service.</p></article>
+      </div>
+    </section>
+
+    <section class="catalogue-group" aria-labelledby="lumen-developer">
+      <div class="catalogue-heading"><p class="eyebrow">03 / ADVANCED</p><h2 id="lumen-developer">Developer &amp; power-user tools</h2><p>Tools that help inspect pages, debug workflows and customize the browser.</p></div>
+      <div class="catalogue-grid">
+        <article class="catalogue-card"><span>IDEA / DEVELOPMENT</span><h3>Web Inspector Enhancements</h3><p>Improve access to page diagnostics, network details and debugging workflows.</p></article>
+        <article class="catalogue-card"><span>IDEA / CUSTOMIZATION</span><h3>Interface Themes</h3><p>Customize browser appearance while preserving readable contrast and consistent controls.</p></article>
+        <article class="catalogue-card"><span>IDEA / PRODUCTIVITY</span><h3>Focus &amp; Site Rules</h3><p>Set per-site schedules or focus rules with explicit, reviewable permissions.</p></article>
+      </div>
+    </section>
+
+    <p class="evidence-note">All entries on this page are proposals only. No extension is currently offered, tested for Lumen compatibility, or approved for installation.</p>
     <a class="text-link" href="/en/ecosystem/browser/">← Back to Lumen</a>
   </section>
 </ContentLayout>
