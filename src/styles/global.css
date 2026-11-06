@@ -536,3 +536,32 @@ body { background:var(--bg); }
  .reference-definitions > div { grid-template-columns:1fr; gap:8px; }
  .release-panel { padding:22px; }
 }
+
+.home-principles { display:grid; grid-template-columns:minmax(210px,.85fr) 2.8fr; gap:30px; padding-block:48px; border-bottom:1px solid var(--line); }
+.home-principles-heading h2 { margin:0; font:600 clamp(24px,2.8vw,36px)/1.05 var(--display); letter-spacing:-.06em; }
+.home-principles-heading h2 span { color:#91aabd; }
+.home-principles-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border:1px solid var(--line); }
+.home-principles-grid article { padding:16px; border-right:1px solid var(--line); }
+.home-principles-grid article:last-child { border-right:0; }
+.home-principles-grid article > span { color:var(--accent); font:8px var(--mono); letter-spacing:.1em; }
+.home-principles-grid h3 { margin:20px 0 8px; font:600 14px var(--display); }
+.home-principles-grid p { margin:0; color:#bdcbd5; font:9px/1.7 var(--mono); }
+.status-table tbody td:last-child a { display:block; color:var(--accent); font:9px/1.8 var(--mono); text-decoration:none; }
+.status-table tbody td:last-child a:hover { text-decoration:underline; }
+.not-found { min-height:65vh; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; padding-block:70px; }
+.not-found h1 { margin:0; font:600 clamp(40px,7vw,76px)/1 var(--display); letter-spacing:-.07em; }
+.not-found h1 span { color:#91aabd; }
+.not-found .content-copy { max-width:520px; }
+@media(max-width:1000px) {
+ .home-principles { grid-template-columns:1fr; }
+ .home-principles-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .home-principles-grid article:nth-child(2) { border-right:0; }
+ .home-principles-grid article:nth-child(-n+2) { border-bottom:1px solid var(--line); }
+}
+@media(max-width:680px) {
+ .home-principles { padding-block:38px; }
+ .home-principles-grid { grid-template-columns:1fr; }
+ .home-principles-grid article { border-right:0; border-bottom:1px solid var(--line); }
+ .home-principles-grid article:last-child { border-bottom:0; }
+ .home-principles-grid h3 { margin-top:12px; }
+}
