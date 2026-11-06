@@ -1,12 +1,21 @@
 ---
 import ContentLayout from "../../../layouts/ContentLayout.astro";
 ---
-<ContentLayout title="Documentation" description="Documentation entry points for exploring, using and developing Aurora." eyebrow="DOCUMENTATION" heading="Understand how Aurora works." lead="Documentation is a core product surface. The complete searchable documentation system is planned; these entry points describe its intended organization without implying that unavailable guides already exist.">
-  <section class="section shell">
-    <div class="project-grid">
-      <article class="project-card"><p class="project-type">01 / ORIENTATION</p><h2>Explore Aurora</h2><p class="project-description">Understand the ecosystem, project responsibilities and current public status.</p><a class="text-link" href="/en/ecosystem/">Explore the ecosystem ↗</a></article>
-      <article class="project-card"><p class="project-type">02 / USER GUIDES</p><h2>Use Aurora</h2><p class="project-description">Installation and user guides will be published when supported by available releases and verified procedures.</p><span class="status-label">PLANNED</span></article>
-      <article class="project-card"><p class="project-type">03 / ENGINEERING</p><h2>Develop Aurora</h2><p class="project-description">Developer setup, architecture, interfaces and contribution guides require reviewed source material.</p><a class="text-link" href="/en/engineering/">Engineering ↗</a></article>
-    </div>
-  </section>
+<ContentLayout title="Aurora Documentation" description="Structured documentation for exploring, using and developing Aurora." eyebrow="DOCUMENTATION" heading="Understand how Aurora works." lead="Choose an entry point. Documentation distinguishes available project information from guides that depend on unreleased software.">
+<section class="section shell"><div class="docs-search"><label for="docs-filter">SEARCH DOCUMENTATION</label><input id="docs-filter" type="search" placeholder="Search topics, guides and references…" autocomplete="off" /><p id="docs-search-status" aria-live="polite">Browse the available documentation pages below.</p></div><div class="docs-card-grid" id="docs-results"><a data-search="getting started orientation ecosystem status" href="/en/docs/getting-started/"><span>01 / ORIENTATION</span><strong>Getting started</strong><small>Understand the ecosystem and current project status.</small></a><a data-search="user guide installation usage configuration" href="/en/docs/user-guide/"><span>02 / USERS</span><strong>User guide</strong><small>Installation and usage documentation status.</small></a><a data-search="developer guide build test contribute" href="/en/docs/developer-guide/"><span>03 / DEVELOPERS</span><strong>Developer guide</strong><small>Development workflow and repository guidance.</small></a><a data-search="reference terminology definitions interfaces" href="/en/docs/reference/"><span>04 / REFERENCE</span><strong>Technical reference</strong><small>Terminology, evidence labels and project references.</small></a><a data-search="faq questions answers support" href="/en/docs/faq/"><span>05 / HELP</span><strong>Frequently asked questions</strong><small>Answers about project scope, availability and evidence.</small></a><a data-search="architecture security privacy engineering" href="/en/engineering/"><span>06 / ENGINEERING</span><strong>Engineering library</strong><small>Architecture, security, privacy and decisions.</small></a></div></section>
+<script>
+const input = document.querySelector("#docs-filter");
+const results = [...document.querySelectorAll("#docs-results a")];
+const status = document.querySelector("#docs-search-status");
+input?.addEventListener("input", () => {
+  const query = input.value.trim().toLowerCase();
+  let visible = 0;
+  for (const item of results) {
+    const match = !query || (item.textContent + " " + item.dataset.search).toLowerCase().includes(query);
+    item.hidden = !match;
+    if (match) visible += 1;
+  }
+  status.textContent = query ? visible + " matching documentation page(s)." : "Browse the available documentation pages below.";
+});
+</script>
 </ContentLayout>
