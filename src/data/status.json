@@ -42,9 +42,8 @@
       "scope": "Publicly publishable OS implementation evidence reviewed for this website",
       "evidence": [],
       "verifiedOn": "2026-11-06",
-      "limitations": "The 70% figure is an estimate reported by the project owner, not an independently measured completion metric. It does not mean the OS is installable, feature-complete, tested as a whole or production-ready. No OS source implementation or test report has been reviewed for this public website update.",
-      "reportedProgress": 70,
-      "reportedProgressLabel": "Project-reported development estimate"
+      "limitations": "The project previously supplied an internal percentage estimate; it is intentionally not published as a completion or readiness metric. The OS repository is private. No OS source implementation or consolidated test report has been reviewed for this public website update.",
+      "reportedStage": "In development"
     },
     {
       "id": "lumen-browser-public-evidence",
