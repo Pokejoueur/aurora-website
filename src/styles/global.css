@@ -617,3 +617,16 @@ body { background:var(--bg); }
  .audience-start-card + .audience-start-card { border-top:1px solid var(--line); border-left:0; }
  .audience-start-card { min-height:180px; padding:18px; }
 }
+
+
+/* Reading comfort: retain mono labels, use a more readable text face for long-form docs. */
+.docs-article p,.docs-article li,.article-content p { font:14px/1.85 var(--display); }
+.docs-article .docs-callout p { font:14px/1.8 var(--display); }
+.docs-article .reference-definitions dd { font:13px/1.75 var(--display); }
+.docs-article pre,.docs-article code { font-family:var(--mono); }
+.docs-audience-card > p:not(.eyebrow):not(.docs-kicker) { font:13px/1.75 var(--display); }
+.docs-card-grid small { font:11px/1.7 var(--display); }
+@media(max-width:680px) {
+ .reference-header .main-nav a { font-size:9px; }
+ .docs-article p,.docs-article li,.article-content p { font-size:14px; }
+}
