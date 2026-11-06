@@ -21,95 +21,112 @@ const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser
     </div>
   </section>
   <section class="reference-principles" aria-label="Aurora principles"><div class="shell reference-principles-inner"><span>SECURITY BY DESIGN</span><b aria-hidden="true">✦</b><span>OPEN ENGINEERING</span><b aria-hidden="true">✦</b><span>MEASURED PROGRESS</span><b aria-hidden="true">✦</b><span>USER SOVEREIGNTY</span></div></section>
-  <section class="home-intro shell" aria-labelledby="home-intro-title">
-    <div class="home-intro-index"><span>01</span><span>THE IDEA</span></div>
-    <div class="home-intro-main">
-      <p class="eyebrow"><span class="eyebrow-line"></span> COMPUTING, RECONSIDERED</p>
-      <h2 id="home-intro-title">The tools we use<br />should make sense<br /><span>from the inside out.</span></h2>
+
+  <section class="signal-manifest shell" aria-labelledby="signal-manifest-title">
+    <div class="signal-rail"><span>AU / 001</span><span>INDEPENDENT SYSTEMS RESEARCH</span><span>EST. IN DEVELOPMENT</span></div>
+    <div class="signal-manifest-main">
+      <p class="signal-kicker"><i></i> THE AURORA THESIS</p>
+      <h2 id="signal-manifest-title">Computing should be<br /><em>under your control.</em></h2>
+      <p class="signal-manifest-copy">Not another layer of abstraction. A better foundation: systems with explicit boundaries, understandable behavior and technology that answers to its users.</p>
     </div>
-    <div class="home-intro-aside">
-      <p>Aurora is an independent computing project built around a simple belief: the systems we rely on should be understandable, secure by design and shaped around the people who use them.</p>
-      <a class="home-inline-link" href="/en/engineering/">Explore our engineering approach <span aria-hidden="true">↗</span></a>
+    <div class="signal-manifest-mark" aria-hidden="true">
+      <span class="signal-mark-cross signal-mark-cross-a"></span><span class="signal-mark-cross signal-mark-cross-b"></span>
+      <span class="signal-mark-ring signal-mark-ring-a"></span><span class="signal-mark-ring signal-mark-ring-b"></span>
+      <span class="signal-mark-core"></span><span class="signal-mark-coordinate">48° / 00°</span>
     </div>
   </section>
 
-  <section class="home-products" id="ecosystem" aria-labelledby="home-products-title">
+  <section class="signal-ecosystem" id="ecosystem" aria-labelledby="signal-ecosystem-title">
     <div class="shell">
-      <div class="home-section-topline"><span>02 / THE ECOSYSTEM</span><span>TWO PRODUCTS · ONE DIRECTION</span></div>
-      <div class="home-products-heading">
-        <h2 id="home-products-title">A foundation.<br /><span>And what runs on it.</span></h2>
-        <p>Aurora OS and Lumen are separate products with a shared direction. Each has its own engineering challenges, development path and evidence.</p>
+      <div class="signal-section-head"><span>02 — SYSTEMS IN DEVELOPMENT</span><span>ONE ECOSYSTEM / TWO PRODUCTS</span></div>
+      <div class="signal-ecosystem-title">
+        <h2 id="signal-ecosystem-title">Two distinct layers.<br /><em>One direction.</em></h2>
+        <p>From the machine's foundations to the surface of the web. Each product has a separate scope, architecture and development path.</p>
       </div>
 
-      <article class="home-product home-product-os">
-        <div class="home-product-copy">
-          <p class="home-product-kicker">01 — OPERATING SYSTEM</p>
-          <h3>Aurora OS</h3>
-          <p class="home-product-lead">A new foundation for personal computing.</p>
-          <p>Built from scratch in Rust, Aurora OS follows a capability-based microkernel architecture. The project focuses on explicit authority, clear service boundaries and a system that can be understood and reasoned about.</p>
-          <a class="home-inline-link" href="/en/ecosystem/os/">Discover Aurora OS <span aria-hidden="true">↗</span></a>
+      <article class="signal-product signal-os">
+        <div class="signal-product-index"><span>PRODUCT 01</span><span>FOUNDATION / KERNEL</span><span>RUST</span></div>
+        <div class="signal-os-visual" aria-hidden="true">
+          <div class="signal-os-grid"></div>
+          <div class="signal-os-crosshair"></div>
+          <div class="signal-os-rings"><i></i><i></i><i></i></div>
+          <div class="signal-os-node"><span>AU</span></div>
+          <span class="signal-os-label signal-os-label-a">KERNEL SPACE</span>
+          <span class="signal-os-label signal-os-label-b">CAPABILITY GRAPH</span>
+          <span class="signal-os-label signal-os-label-c">AUTHORITY / EXPLICIT</span>
+          <span class="signal-os-coord">X 042.18 / Y 019.64</span>
         </div>
-        <div class="home-os-progress" aria-label="Aurora OS project-reported development estimate">
-          <div class="home-progress-label"><span>PROJECT-REPORTED PROGRESS</span><span>NOT A RELEASE READINESS SCORE</span></div>
-          <div class="home-progress-number">{osStatus?.reportedProgress ?? 70}<span>%</span></div>
-          <div class="home-progress-track" role="img" aria-label={`${osStatus?.reportedProgress ?? 70}% estimated progress reported by the project`}><span style={`--progress: ${osStatus?.reportedProgress ?? 70}%`}></span></div>
-          <p>This percentage is the project's own development estimate. It is not an independently measured completion metric and does not imply that the OS is installable or production-ready.</p>
-          <div class="home-os-tags"><span>RUST</span><span>MICROKERNEL</span><span>CAPABILITY-BASED</span></div>
+        <div class="signal-product-content">
+          <p class="signal-product-type">01 / OPERATING SYSTEM</p>
+          <h3>Aurora <span>OS</span></h3>
+          <p class="signal-product-statement">A foundation designed to be reasoned about.</p>
+          <p class="signal-product-description">Built from scratch in Rust around a capability-based microkernel architecture. Aurora OS explores explicit authority, isolated services and clear trust boundaries.</p>
+          <div class="signal-os-meter">
+            <div class="signal-meter-top"><span>PROJECT-REPORTED DEVELOPMENT ESTIMATE</span><strong>{osStatus?.reportedProgress ?? 70}<b>%</b></strong></div>
+            <div class="signal-meter-line" role="img" aria-label={`${osStatus?.reportedProgress ?? 70}% project-reported development estimate`}><i style={`--meter-value:${osStatus?.reportedProgress ?? 70}%`}></i></div>
+            <p>Owner-reported estimate only. Not independently measured, and not a release-readiness or production-completion score.</p>
+          </div>
+          <a class="signal-link" href="/en/ecosystem/os/">EXPLORE AURORA OS <span>↗</span></a>
         </div>
       </article>
 
-      <article class="home-product home-product-lumen">
-        <div class="home-lumen-art" aria-label="Lumen browser identity graphic">
-          <div class="home-lumen-orbit home-lumen-orbit-one"></div>
-          <div class="home-lumen-orbit home-lumen-orbit-two"></div>
-          <div class="home-lumen-core"><span>L</span></div>
-          <span class="home-lumen-art-label">LUMEN / 02</span>
-          <span class="home-lumen-art-caption">BROWSER WORKSTREAM</span>
-        </div>
-        <div class="home-product-copy">
-          <p class="home-product-kicker">02 — WEB BROWSER</p>
+      <article class="signal-product signal-lumen">
+        <div class="signal-product-index"><span>PRODUCT 02</span><span>APPLICATION / WEB</span><span>IN DEVELOPMENT</span></div>
+        <div class="signal-product-content">
+          <p class="signal-product-type">02 / WEB BROWSER</p>
           <h3>Lumen</h3>
-          <p class="home-product-lead">A considered way to explore the web.</p>
-          <p>Lumen is the Aurora Browser, currently in development. It is a distinct application with its own architecture, compatibility requirements and security responsibilities. Its capabilities will be documented as they are implemented and verified.</p>
-          <div class="home-lumen-status"><span class="home-status-pulse"></span>{browserStatus?.reportedStage?.toUpperCase() ?? "IN DEVELOPMENT"}</div>
-          <a class="home-inline-link" href="/en/ecosystem/browser/">Discover Lumen <span aria-hidden="true">↗</span></a>
+          <p class="signal-product-statement">A clearer window onto the web.</p>
+          <p class="signal-product-description">Lumen is the Aurora Browser: a separate application with its own architecture, compatibility requirements and security responsibilities. Its capabilities will be described as implementation and verification progress.</p>
+          <div class="signal-lumen-status"><i></i><span>{browserStatus?.reportedStage?.toUpperCase() ?? "IN DEVELOPMENT"}</span><span>WORKSTREAM ACTIVE</span></div>
+          <a class="signal-link" href="/en/ecosystem/browser/">EXPLORE LUMEN <span>↗</span></a>
+        </div>
+        <div class="signal-lumen-visual" aria-hidden="true">
+          <div class="signal-browser-chrome">
+            <div class="signal-browser-controls"><i></i><i></i><i></i></div>
+            <span>LUMEN / BROWSER CONCEPT</span><span>—</span>
+          </div>
+          <div class="signal-browser-stage">
+            <div class="signal-browser-side"><span>01</span><span>02</span><span>03</span><span>04</span></div>
+            <div class="signal-browser-content">
+              <span class="signal-browser-overline">A MORE DELIBERATE WEB</span>
+              <strong>Clarity<br /><em>over noise.</em></strong>
+              <div class="signal-browser-lines"><i></i><i></i><i></i></div>
+              <span class="signal-browser-url">LUMEN://EXPERIENCE</span>
+            </div>
+            <div class="signal-browser-orbit"><i></i><i></i><i></i></div>
+          </div>
+          <div class="signal-browser-foot"><span>INTERFACE STUDY / 002</span><span>CONCEPTUAL VISUAL — NOT A PRODUCT SCREENSHOT</span></div>
         </div>
       </article>
     </div>
   </section>
 
-  <section class="home-principles-editorial shell" aria-labelledby="home-principles-title">
-    <div class="home-section-topline"><span>03 / WHAT GUIDES US</span><span>PRINCIPLES, NOT SLOGANS</span></div>
-    <div class="home-principles-layout">
-      <h2 id="home-principles-title">Good technology<br /><span>earns trust.</span></h2>
-      <div class="home-principles-list">
-        <article><span>01</span><div><h3>Security is structural.</h3><p>Privilege boundaries, isolation and failure containment belong in the architecture—not in a list of promises.</p></div></article>
-        <article><span>02</span><div><h3>Privacy is deliberate.</h3><p>Collect less, explain data handling clearly and give people meaningful control.</p></div></article>
-        <article><span>03</span><div><h3>Complexity should be legible.</h3><p>Prefer explicit interfaces, maintainable systems and decisions that can be inspected.</p></div></article>
-        <article><span>04</span><div><h3>Progress needs evidence.</h3><p>Separate architectural intent, implementation, tests and release readiness. Never present one as another.</p></div></article>
-      </div>
+  <section class="signal-principles shell" aria-labelledby="signal-principles-title">
+    <div class="signal-section-head"><span>03 — DESIGN CONSTRAINTS</span><span>NON-NEGOTIABLES</span></div>
+    <div class="signal-principles-head"><h2 id="signal-principles-title">Principles are<br /><em>engineering constraints.</em></h2><p>These are not claims about completed features. They are the standards against which architecture and implementation should be evaluated.</p></div>
+    <div class="signal-principle-list">
+      <article><span>01</span><h3>Authority must be explicit.</h3><p>Privilege should be granted deliberately, bounded by architecture and open to inspection.</p><b>SECURITY</b></article>
+      <article><span>02</span><h3>Data should have a reason to exist.</h3><p>Minimize collection and make data handling understandable and controllable.</p><b>PRIVACY</b></article>
+      <article><span>03</span><h3>Complexity must remain legible.</h3><p>Prefer explicit interfaces, maintainable components and documented trade-offs.</p><b>CLARITY</b></article>
+      <article><span>04</span><h3>Progress must be evidenced.</h3><p>Distinguish design, implementation, tests, integration and release readiness.</p><b>RIGOUR</b></article>
     </div>
   </section>
 
-  <section class="home-explore" aria-labelledby="home-explore-title">
+  <section class="signal-index">
     <div class="shell">
-      <div class="home-section-topline"><span>04 / GO DEEPER</span><span>ENGINEERING · DOCUMENTATION · STATUS</span></div>
-      <div class="home-explore-heading">
-        <h2 id="home-explore-title">Look under<br /><span>the surface.</span></h2>
-        <p>Follow the decisions, read the documentation and see what is actually being built.</p>
-      </div>
-      <div class="home-explore-links">
-        <a href="/en/engineering/architecture/"><span class="home-explore-number">01</span><span class="home-explore-copy"><strong>Architecture</strong><small>System structure, responsibilities and interfaces</small></span><span class="home-explore-arrow">↗</span></a>
-        <a href="/en/engineering/security/"><span class="home-explore-number">02</span><span class="home-explore-copy"><strong>Security</strong><small>Threats, privilege boundaries and limitations</small></span><span class="home-explore-arrow">↗</span></a>
-        <a href="/en/docs/"><span class="home-explore-number">03</span><span class="home-explore-copy"><strong>Documentation</strong><small>Guides for users, developers and contributors</small></span><span class="home-explore-arrow">↗</span></a>
-        <a href="/en/development/"><span class="home-explore-number">04</span><span class="home-explore-copy"><strong>Development status</strong><small>Reported progress, evidence and project roadmap</small></span><span class="home-explore-arrow">↗</span></a>
-      </div>
+      <div class="signal-section-head"><span>04 — TECHNICAL INDEX</span><span>OPEN THE SYSTEM</span></div>
+      <div class="signal-index-layout"><h2>Go beyond<br /><em>the interface.</em></h2><div class="signal-index-links">
+        <a href="/en/engineering/architecture/"><span>DOC / 001</span><strong>Architecture</strong><small>Structure, responsibilities and interfaces</small><b>↗</b></a>
+        <a href="/en/engineering/security/"><span>DOC / 002</span><strong>Security model</strong><small>Threats, privilege boundaries and limitations</small><b>↗</b></a>
+        <a href="/en/docs/"><span>DOC / 003</span><strong>Documentation</strong><small>Guides for users, developers and contributors</small><b>↗</b></a>
+        <a href="/en/development/"><span>DOC / 004</span><strong>Development status</strong><small>Reported progress, evidence and roadmap</small><b>↗</b></a>
+      </div></div>
     </div>
   </section>
 
-  <section class="home-closing shell">
-    <div class="home-closing-rule"></div>
-    <div><p class="eyebrow"><span class="eyebrow-line"></span> FOLLOW THE WORK</p><h2>Built in the open.<br /><span>Grounded in engineering.</span></h2><p>Explore the public repository, follow development and see how Aurora takes shape.</p></div>
-    <a class="button button-primary" href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">Explore the project <span aria-hidden="true">↗</span></a>
+  <section class="signal-footer-cta shell">
+    <div class="signal-footer-symbol" aria-hidden="true"><i></i><i></i><i></i><b>AU</b></div>
+    <div><p class="signal-kicker"><i></i> THE WORK IS OPEN</p><h2>Built deliberately.<br /><em>Verified over time.</em></h2><p>Follow the engineering, inspect the decisions and track what is actually implemented.</p></div>
+    <a class="signal-link" href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">OPEN THE REPOSITORY <span>↗</span></a>
   </section>
 </SiteLayout>
