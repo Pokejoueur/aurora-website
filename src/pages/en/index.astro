@@ -21,46 +21,95 @@ const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser
     </div>
   </section>
   <section class="reference-principles" aria-label="Aurora principles"><div class="shell reference-principles-inner"><span>SECURITY BY DESIGN</span><b aria-hidden="true">✦</b><span>OPEN ENGINEERING</span><b aria-hidden="true">✦</b><span>MEASURED PROGRESS</span><b aria-hidden="true">✦</b><span>USER SOVEREIGNTY</span></div></section>
-  <section class="audience-start shell" aria-labelledby="audience-start-title">
-    <div class="audience-start-heading">
-      <p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT STEP</p>
-      <h2 id="audience-start-title">What brings you to Aurora?</h2>
-      <p>Whether you want to understand the products or work on the code, start with the path that fits you.</p>
+  <section class="home-intro shell" aria-labelledby="home-intro-title">
+    <div class="home-intro-index"><span>01</span><span>THE IDEA</span></div>
+    <div class="home-intro-main">
+      <p class="eyebrow"><span class="eyebrow-line"></span> COMPUTING, RECONSIDERED</p>
+      <h2 id="home-intro-title">The tools we use<br />should make sense<br /><span>from the inside out.</span></h2>
     </div>
-    <div class="audience-start-grid">
-      <a href="/en/docs/getting-started/" class="audience-start-card">
-        <span>01 / EXPLORING AURORA</span>
-        <strong>I'm here to learn or use Aurora.</strong>
-        <small>Explore Aurora OS and Lumen, check current availability and find user-facing guidance.</small>
-        <b>START HERE <i aria-hidden="true">↗</i></b>
-      </a>
-      <a href="/en/docs/developer-guide/" class="audience-start-card">
-        <span>02 / BUILDING AURORA</span>
-        <strong>I'm here to develop or contribute.</strong>
-        <small>Set up the website repository, understand the architecture and follow the contribution workflow.</small>
-        <b>OPEN DEVELOPER GUIDE <i aria-hidden="true">↗</i></b>
-      </a>
+    <div class="home-intro-aside">
+      <p>Aurora is an independent computing project built around a simple belief: the systems we rely on should be understandable, secure by design and shaped around the people who use them.</p>
+      <a class="home-inline-link" href="/en/engineering/">Explore our engineering approach <span aria-hidden="true">↗</span></a>
     </div>
   </section>
-  <section class="home-principles shell" id="principles">
-    <div class="home-principles-heading"><p class="eyebrow"><span class="eyebrow-line"></span> PRINCIPLES</p><h2>Technology should<br /><span>work for people.</span></h2></div>
-    <div class="home-principles-grid">
-      <article><span>01 / PRIVACY</span><h3>Privacy by default.</h3><p>Minimize unnecessary data collection and make data handling understandable and controllable.</p></article>
-      <article><span>02 / SECURITY</span><h3>Security by design.</h3><p>Treat privilege boundaries and failure containment as architectural responsibilities.</p></article>
-      <article><span>03 / CLARITY</span><h3>Understandable systems.</h3><p>Prefer inspectable decisions, maintainable components and clear technical documentation.</p></article>
-      <article><span>04 / SOVEREIGNTY</span><h3>User sovereignty.</h3><p>Give users meaningful control over their computing environment and its behavior.</p></article>
+
+  <section class="home-products" id="ecosystem" aria-labelledby="home-products-title">
+    <div class="shell">
+      <div class="home-section-topline"><span>02 / THE ECOSYSTEM</span><span>TWO PRODUCTS · ONE DIRECTION</span></div>
+      <div class="home-products-heading">
+        <h2 id="home-products-title">A foundation.<br /><span>And what runs on it.</span></h2>
+        <p>Aurora OS and Lumen are separate products with a shared direction. Each has its own engineering challenges, development path and evidence.</p>
+      </div>
+
+      <article class="home-product home-product-os">
+        <div class="home-product-copy">
+          <p class="home-product-kicker">01 — OPERATING SYSTEM</p>
+          <h3>Aurora OS</h3>
+          <p class="home-product-lead">A new foundation for personal computing.</p>
+          <p>Built from scratch in Rust, Aurora OS follows a capability-based microkernel architecture. The project focuses on explicit authority, clear service boundaries and a system that can be understood and reasoned about.</p>
+          <a class="home-inline-link" href="/en/ecosystem/os/">Discover Aurora OS <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="home-os-progress" aria-label="Aurora OS project-reported development estimate">
+          <div class="home-progress-label"><span>PROJECT-REPORTED PROGRESS</span><span>NOT A RELEASE READINESS SCORE</span></div>
+          <div class="home-progress-number">{osStatus?.reportedProgress ?? 70}<span>%</span></div>
+          <div class="home-progress-track" role="img" aria-label={`${osStatus?.reportedProgress ?? 70}% estimated progress reported by the project`}><span style={`--progress: ${osStatus?.reportedProgress ?? 70}%`}></span></div>
+          <p>This percentage is the project's own development estimate. It is not an independently measured completion metric and does not imply that the OS is installable or production-ready.</p>
+          <div class="home-os-tags"><span>RUST</span><span>MICROKERNEL</span><span>CAPABILITY-BASED</span></div>
+        </div>
+      </article>
+
+      <article class="home-product home-product-lumen">
+        <div class="home-lumen-art" aria-label="Lumen browser identity graphic">
+          <div class="home-lumen-orbit home-lumen-orbit-one"></div>
+          <div class="home-lumen-orbit home-lumen-orbit-two"></div>
+          <div class="home-lumen-core"><span>L</span></div>
+          <span class="home-lumen-art-label">LUMEN / 02</span>
+          <span class="home-lumen-art-caption">BROWSER WORKSTREAM</span>
+        </div>
+        <div class="home-product-copy">
+          <p class="home-product-kicker">02 — WEB BROWSER</p>
+          <h3>Lumen</h3>
+          <p class="home-product-lead">A considered way to explore the web.</p>
+          <p>Lumen is the Aurora Browser, currently in development. It is a distinct application with its own architecture, compatibility requirements and security responsibilities. Its capabilities will be documented as they are implemented and verified.</p>
+          <div class="home-lumen-status"><span class="home-status-pulse"></span>{browserStatus?.reportedStage?.toUpperCase() ?? "IN DEVELOPMENT"}</div>
+          <a class="home-inline-link" href="/en/ecosystem/browser/">Discover Lumen <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
     </div>
   </section>
-  <section class="reference-ecosystem shell" id="ecosystem">
-    <div class="reference-ecosystem-intro"><p class="eyebrow"><span class="eyebrow-line"></span> THE ECOSYSTEM</p><h2>Two products.<br /><span>One direction.</span></h2><p>Aurora OS and Lumen are the products. This platform connects them through documentation, add-ons, extensions and verifiable project updates.</p></div>
-    <div class="reference-project-grid">
-      <a class="reference-project-card" href="/en/ecosystem/os/"><div class="reference-card-top"><span>01</span><span class="reference-status"><i></i> {osStatus?.reportedProgress ?? 70}% REPORTED</span></div><div><p class="project-type">OPERATING SYSTEM</p><h3>Aurora OS</h3><p>A from-scratch operating system in Rust, designed around a capability-based microkernel. The project reports an estimated {osStatus?.reportedProgress ?? 70}% development progress.</p></div><span class="reference-card-link">EXPLORE AURORA OS ↗</span></a>
-      <a class="reference-project-card" href="/en/ecosystem/browser/"><div class="reference-card-top"><span>02</span><span class="reference-status"><i></i> {browserStatus?.reportedStage?.toUpperCase() ?? "IN DEVELOPMENT"}</span></div><div><p class="project-type">WEB BROWSER</p><h3>Lumen <small>/ Aurora Browser</small></h3><p>The Aurora Browser is in development. Its architecture, compatibility and security properties will be documented as they are implemented and verified.</p></div><span class="reference-card-link">EXPLORE LUMEN ↗</span></a>
+
+  <section class="home-principles-editorial shell" aria-labelledby="home-principles-title">
+    <div class="home-section-topline"><span>03 / WHAT GUIDES US</span><span>PRINCIPLES, NOT SLOGANS</span></div>
+    <div class="home-principles-layout">
+      <h2 id="home-principles-title">Good technology<br /><span>earns trust.</span></h2>
+      <div class="home-principles-list">
+        <article><span>01</span><div><h3>Security is structural.</h3><p>Privilege boundaries, isolation and failure containment belong in the architecture—not in a list of promises.</p></div></article>
+        <article><span>02</span><div><h3>Privacy is deliberate.</h3><p>Collect less, explain data handling clearly and give people meaningful control.</p></div></article>
+        <article><span>03</span><div><h3>Complexity should be legible.</h3><p>Prefer explicit interfaces, maintainable systems and decisions that can be inspected.</p></div></article>
+        <article><span>04</span><div><h3>Progress needs evidence.</h3><p>Separate architectural intent, implementation, tests and release readiness. Never present one as another.</p></div></article>
+      </div>
     </div>
   </section>
-  <section class="reference-approach" id="approach"><div class="shell reference-approach-inner"><div class="reference-approach-heading"><p class="eyebrow"><span class="eyebrow-line"></span> THE APPROACH</p><h2>Ambition is easy.<br /><span>Engineering is proof.</span></h2></div><p class="reference-approach-lead">We believe the foundations of computing deserve the same care as the experiences built on top of them.</p><div class="reference-approach-point"><span>01</span><p>Understandable<br />by design</p></div><div class="reference-approach-point"><span>02</span><p>Security is<br />structural</p></div><div class="reference-approach-point"><span>03</span><p>Evidence over<br />claims</p></div></div></section>
-  <section class="home-section shell" id="engineering"><div class="home-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> ENGINEERING</p><h2>Built from the<br /><span>foundations.</span></h2></div><p>Engineering pages explain the architecture, trust boundaries and trade-offs behind Aurora. Product implementation claims remain separate from architectural intent.</p></div><div class="home-link-grid"><a href="/en/engineering/architecture/"><span>01 / ARCHITECTURE</span><strong>System architecture</strong><small>Responsibilities, boundaries and interfaces ↗</small></a><a href="/en/engineering/security/"><span>02 / SECURITY</span><strong>Security model</strong><small>Threats, privileges and limitations ↗</small></a><a href="/en/engineering/privacy/"><span>03 / PRIVACY</span><strong>Privacy approach</strong><small>Data handling and policy status ↗</small></a></div></section>
-  <section class="home-section home-section-alt" id="development"><div class="shell"><div class="home-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> DEVELOPMENT</p><h2>Progress you can<br /><span>inspect.</span></h2></div><p>Product stages are reported transparently. The OS percentage is a project estimate; it is not a substitute for subsystem-level implementation and test evidence.</p></div><div class="home-status-panel"><div><span class="home-status-number">01</span><strong>Aurora OS</strong><span class="status-label">{osStatus?.reportedProgress ?? 70}% REPORTED</span><p>Project-reported development estimate. This is not a verified readiness score or a claim that an installable, production-ready OS exists.</p></div><div><span class="home-status-number">02</span><strong>Lumen Browser</strong><span class="status-label">{browserStatus?.reportedStage?.toUpperCase() ?? "IN DEVELOPMENT"}</span><p>Lumen is being developed. Browser capabilities, compatibility and security properties are not presented as verified.</p></div></div><a class="text-link" href="/en/development/">Explore development status and roadmap ↗</a></div></section>
-  <section class="home-section shell" id="documentation"><div class="home-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> DOCUMENTATION</p><h2>Understand how<br /><span>Aurora works.</span></h2></div><p>Documentation is organized around exploring the ecosystem, using products when releases exist, and understanding how to develop them.</p></div><div class="home-link-grid"><a href="/en/docs/getting-started/"><span>01 / ORIENTATION</span><strong>Getting started</strong><small>Understand the projects and their current status ↗</small></a><a href="/en/docs/user-guide/"><span>02 / USERS</span><strong>User documentation</strong><small>Installation and usage guides when available ↗</small></a><a href="/en/docs/developer-guide/"><span>03 / DEVELOPERS</span><strong>Developer documentation</strong><small>Architecture, setup and contribution ↗</small></a></div></section>
-  <section class="home-section home-community"><div class="shell home-community-inner"><div><p class="eyebrow"><span class="eyebrow-line"></span> COMMUNITY</p><h2>Built openly.<br /><span>Improved together.</span></h2><p>Start with the public website repository. Additional community channels will be listed once configured and verified.</p></div><a class="button button-primary" href="/en/community/">Community and contributions <span aria-hidden="true">↗</span></a></div></section>
+
+  <section class="home-explore" aria-labelledby="home-explore-title">
+    <div class="shell">
+      <div class="home-section-topline"><span>04 / GO DEEPER</span><span>ENGINEERING · DOCUMENTATION · STATUS</span></div>
+      <div class="home-explore-heading">
+        <h2 id="home-explore-title">Look under<br /><span>the surface.</span></h2>
+        <p>Follow the decisions, read the documentation and see what is actually being built.</p>
+      </div>
+      <div class="home-explore-links">
+        <a href="/en/engineering/architecture/"><span class="home-explore-number">01</span><span class="home-explore-copy"><strong>Architecture</strong><small>System structure, responsibilities and interfaces</small></span><span class="home-explore-arrow">↗</span></a>
+        <a href="/en/engineering/security/"><span class="home-explore-number">02</span><span class="home-explore-copy"><strong>Security</strong><small>Threats, privilege boundaries and limitations</small></span><span class="home-explore-arrow">↗</span></a>
+        <a href="/en/docs/"><span class="home-explore-number">03</span><span class="home-explore-copy"><strong>Documentation</strong><small>Guides for users, developers and contributors</small></span><span class="home-explore-arrow">↗</span></a>
+        <a href="/en/development/"><span class="home-explore-number">04</span><span class="home-explore-copy"><strong>Development status</strong><small>Reported progress, evidence and project roadmap</small></span><span class="home-explore-arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-closing shell">
+    <div class="home-closing-rule"></div>
+    <div><p class="eyebrow"><span class="eyebrow-line"></span> FOLLOW THE WORK</p><h2>Built in the open.<br /><span>Grounded in engineering.</span></h2><p>Explore the public repository, follow development and see how Aurora takes shape.</p></div>
+    <a class="button button-primary" href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">Explore the project <span aria-hidden="true">↗</span></a>
+  </section>
 </SiteLayout>
