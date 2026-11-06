@@ -6,6 +6,19 @@ import ContentLayout from "../../../layouts/ContentLayout.astro";
     <div><p class="eyebrow">CURRENT PUBLIC STATUS</p><h2>Not verified</h2><p class="content-copy">This website update has not reviewed a public OS source repository or test report. Kernel, service, storage, package-management, hardware-support and security capabilities are not presented here as implemented or tested.</p></div>
     <div><p class="eyebrow">ENGINEERING AREAS</p><ul class="content-list"><li>System and kernel architecture</li><li>User-space and service boundaries</li><li>Capability and security model</li><li>Storage and package lifecycle</li><li>Hardware support and verification reports</li></ul></div>
   </section>
+  <section class="section shell article-content">
+    <h2>Project direction</h2>
+    <p class="content-copy">Aurora OS is being approached as a from-scratch operating-system project, with a Rust implementation and a capability-based microkernel direction. This describes the project's stated engineering direction; it is not evidence that a kernel, capability system or service boundary is already implemented.</p>
+    <div class="principle-grid">
+      <article class="principle-card"><span>01 / KERNEL</span><h3>Small privileged core</h3><p>Keep the kernel's responsibilities narrow and make privileged operations explicit. The exact subsystem boundary and mechanism require a published design and implementation evidence.</p></article>
+      <article class="principle-card"><span>02 / AUTHORITY</span><h3>Capability-oriented access</h3><p>Model resource access around explicitly granted authority and least privilege rather than ambient access. Concrete capability semantics remain to be documented and verified.</p></article>
+      <article class="principle-card"><span>03 / SERVICES</span><h3>Isolated components</h3><p>Define service ownership, communication contracts and failure boundaries before claiming isolation or fault containment.</p></article>
+      <article class="principle-card"><span>04 / VALIDATION</span><h3>Evidence-led progress</h3><p>Publish source references, test environments, acceptance criteria and limitations for each subsystem as evidence becomes available.</p></article>
+    </div>
+    <h2>What a usable OS release must document</h2>
+    <ul class="content-list"><li>Supported CPU architectures, firmware modes and hardware constraints.</li><li>Boot process, installation or image-writing procedure and recovery path.</li><li>Storage model, filesystem support and data-integrity guarantees.</li><li>Service lifecycle, permissions and update mechanism.</li><li>Known issues, security assumptions and reproducible test results.</li></ul>
+    <p class="evidence-note">These are engineering requirements and areas for future documentation, not a statement that the corresponding features are available.</p>
+  </section>
   <section class="section shell product-destination">
     <div><p class="eyebrow"><span class="eyebrow-line"></span> EXTEND THE SYSTEM</p><h2>Aurora OS add-ons</h2><p class="content-copy">A dedicated entry point for add-ons and complementary components built for Aurora OS. The catalogue is not published yet; installation links will appear only when packages and their integrity information are available.</p></div>
     <a class="button button-primary" href="/en/ecosystem/os/add-ons/">Explore OS add-ons <span aria-hidden="true">↗</span></a>
