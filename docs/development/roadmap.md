@@ -3,233 +3,122 @@
 - **Status:** In progress
 - **Architecture reference:** [ADR-001](../architecture/adr/ADR-001.md)
 - **Last reviewed:** 2026-11-06
+- **Source of truth:** This repository
 
-This roadmap is the authoritative implementation sequence for Aurora Website. Completion requires evidence against each phase's exit criteria; discussion or source-code presence alone is insufficient.
+The roadmap tracks the public website only. It does not establish implementation status for Aurora OS or Lumen. Product claims require evidence from their respective repositories and test reports.
 
-## Current baseline
+## Current delivery snapshot
 
-The original repository baseline was a single README. The documentation/governance set has since been merged into main. The initial Astro foundation is under review in a separate pull request.
-
-| Area | Current status | Evidence |
+| Area | Status | Notes |
 |---|---|---|
-| Architecture | Designed | [ADR-001](../architecture/adr/ADR-001.md) |
-| Governance | Implemented as repository documentation | [Source-of-truth policy](../governance/source-of-truth.md) |
-| Repository audit | Implemented as repository documentation | [Audit report](audit-2026-11-02.md) |
-| Astro application | Prototype; dependency installation, Astro check and static build pass on the latest reference-led revision | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [latest successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/42132987619) |
-| English landing page | Prototype; reference-led product homepage included in successful static build | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2), [latest successful CI run](https://github.com/Pokejoueur/aurora-website/actions/runs/42132987619) |
-| French routes/content | Planned | No French page is published |
-| Public section routes | Prototype; ecosystem, engineering, development, docs and community entry pages added on the feature branch | [Foundation pull request](https://github.com/Pokejoueur/aurora-website/pull/2) |
-| Evidence status registry | Prototype; static JSON records with evidence and limitations, including planned OS add-on and Lumen extension catalogues | `src/data/status.json` |
-| Documentation system | Planned; entry page exists, collections, article navigation and search are not implemented | ADR-001 |
-| Search | Planned | Not implemented |
-| Public status registry | Prototype; static evidence records exist, validation tooling is not implemented | `src/data/status.json` |
-| Changelog | Planned | Not implemented |
-| Production deployment | Not verified | No deployment evidence recorded |
+| Astro + TypeScript strict foundation | PROTOTYPE | Static Astro application; CI passed on an earlier revision. Expanded site revision awaits its own CI result. |
+| Reference-led homepage | PROTOTYPE | Brand, four principles, OS/Browser positioning, engineering, development, docs and community entry points. Browser comparison remains outstanding. |
+| Global navigation and footer | IMPLEMENTED IN BRANCH | Shared links across ecosystem, engineering, development, docs, community, downloads and legal information. Browser keyboard/mobile review remains outstanding. |
+| Product pages | PROTOTYPE | Aurora OS and Lumen have dedicated pages; capabilities are intentionally marked NOT VERIFIED. |
+| Add-on / extension destinations | PLANNED | Informational routes exist; no packages or install links are published. |
+| Engineering pages | PROTOTYPE | Architecture, security, privacy and ADR overview explain evidence boundaries. |
+| Development pages | PROTOTYPE | Status registry, roadmap, changelog and verification pages. |
+| Documentation | PROTOTYPE | Getting started, user, developer, reference and FAQ routes. User guides remain scoped/planned where no release exists. |
+| Documentation search | PROTOTYPE | Client-side filtering on the documentation index only; not full-text search. Pagefind remains planned. |
+| Downloads | PLANNED | Release information page; no verified artifacts available. |
+| Community | PROTOTYPE | Contribution and feedback entry points link to the public website repository. No forum or chat platform is claimed. |
+| Legal and accessibility information | PROTOTYPE | Scope/intent pages exist; legal review and WCAG 2.2 AA audit are not complete. |
+| Production hosting | NOT VERIFIED | No provider, production domain or deployment has been configured. |
 
-## Phase 0 — Repository and delivery audit
+## Phase 0 — Audit and governance
 
-**Status:** Completed with limitations.
+**Status: COMPLETED WITH LIMITATIONS**
 
-Tasks completed:
-- Inspected repository metadata, default branch, branch protection, tracked files, README, and recent history.
-- Confirmed no pre-existing frontend, build configuration, CI workflow, or deployment configuration in the initial repository baseline.
-- Recorded unavailable deployment information and hosting constraints in the [audit report](audit-2026-11-02.md).
+- Repository baseline, architecture, governance and deployment limitations recorded.
+- ADR-001 accepted for Astro, TypeScript strict mode, static output, native CSS and repository-managed content.
+- Hosting provider and domain remain undecided.
 
-Limitations:
-- The deployment endpoint could not be inspected through the available GitHub connection.
-- GitHub Pages was not enabled in repository metadata at audit time.
-- No hosting provider or custom domain has been selected.
+## Phase 1 — Foundation and design system
 
-## Phase 1 — Project foundation
+**Status: PROTOTYPE**
 
-**Status:** In progress; Astro check and static build pass in CI, with reproducibility and review items remaining.
+Implemented in the current feature branch:
+- Astro static output and strict TypeScript configuration.
+- Reference-led Aurora design tokens and responsive CSS.
+- Shared page layout, navigation, footer, breadcrumbs and 404 page.
+- Static security headers for compatible static hosts.
+- Status registry validation and GitHub Actions build workflow.
 
-Tasks:
-- Initialize Astro with TypeScript strict mode and static output.
-- Establish minimal project scripts and dependency policy.
-- Add formatting/linting and type-checking appropriate to the selected stack.
-- Add a minimal reproducible build and CI workflow.
-- Document local development and validation commands.
+Remaining:
+- Commit a lockfile and switch CI to `npm ci`.
+- Complete browser testing at 360, 390, 768, 1024, 1366 and 1920px.
+- Complete keyboard and screen-reader review.
+- Verify CSP and response headers on the chosen host.
+- Confirm logo source asset fidelity.
 
-Implemented in the current foundation branch:
-- Astro static project manifest and configuration.
-- Strict TypeScript configuration.
-- English landing page and shared responsive layout.
-- Root redirect to the default locale.
-- Basic GitHub Actions validation/build workflow.
-- README development instructions.
+## Phase 2 — Product and information architecture
 
-Not yet verified:
-- Clean dependency installation.
-- Astro type check.
-- Production build.
-- Browser rendering and responsive behavior.
-- Deployment.
+**Status: PROTOTYPE**
 
-Exit criteria:
-- [x] Dependency installation succeeds in CI.
-- [x] Astro/TypeScript check and production build pass in CI.
-- [ ] Add a committed lockfile and switch CI to a reproducible install (`npm ci`).
-- [ ] Decide whether a dedicated formatter/linter is justified; do not add tooling without a defined rule set.
-- [ ] Complete browser-level responsive and accessibility review.
-- [x] No secrets or unnecessary dependencies were introduced in the reviewed foundation changes.
+- Dedicated Aurora OS and Lumen pages.
+- Separate informational destinations for Aurora OS add-ons and Lumen extensions.
+- Ecosystem overview and platform page.
+- Downloads page that does not invent release artifacts.
 
-## Phase 2 — Internationalization and routing
+Remaining:
+- Review the OS and Browser repositories before adding technical capabilities.
+- Connect real add-on and extension catalogue destinations when their repositories/stores are confirmed.
+- Add real release artifacts, checksums, signatures and compatibility data only after publication criteria are met.
 
-**Status:** Partially established by foundation configuration; full phase remains planned.
+## Phase 3 — Engineering and development transparency
 
-Tasks:
-- Configure en and fr locale routing with explicit prefixes.
-- Redirect / to /en/.
-- Implement translation keys and locale-aware URL helpers.
-- Show language switching only when the target translation exists.
-- Ensure no fabricated French pages or silent fallback content.
+**Status: PROTOTYPE**
 
-Exit criteria:
-- Route tests cover root redirect, localized routes, missing translations, and switcher behavior.
-- HTML language, canonical, and hreflang metadata are correct.
+- Architecture, security, privacy and ADR routes.
+- Static status registry with explicit evidence and limitations.
+- Roadmap, changelog and verification routes.
 
-## Phase 3 — Design system and layouts
+Remaining:
+- Link product-level claims to exact source revisions and test reports.
+- Add dated build, boot, integration and security reports when real reports are available.
+- Add content schema validation and link checking.
 
-**Status:** In progress; reference-led homepage, compact navigation/footer, product cards and responsive primitives are implemented on the feature branch. Browser-level visual and accessibility review remains outstanding.
+## Phase 4 — Documentation
 
-Tasks:
-- Define design tokens and responsive foundations using native CSS.
-- Build accessible navigation, footer, and shared page primitives.
-- Create the main website layout and dedicated documentation layout.
-- Validate keyboard navigation, focus states, contrast, and responsive behavior.
+**Status: PROTOTYPE**
 
-Exit criteria:
-- Layouts work at mobile, tablet, and desktop widths.
-- Accessibility checks have no known critical blockers.
+- Documentation landing page and article navigation.
+- Getting started, user guide scope, developer guide, reference and FAQ.
+- Small client-side search over documentation index entries.
 
-## Phase 4 — Content and documentation
+Remaining:
+- Move long-form documentation into validated Markdown content collections.
+- Implement full-text search with Pagefind after content structure stabilizes.
+- Add generated table of contents, previous/next links and related articles.
+- Add versioning only when multiple supported product versions exist.
 
-**Status:** In progress; initial English ecosystem, engineering, development, documentation and community entry routes exist. Validated Markdown collections, article navigation and search remain planned.
+## Phase 5 — Community, legal and release
 
-Tasks:
-- Configure Astro content collections and validated schemas.
-- Establish localized page and documentation content structures.
-- Implement documentation routes, sections, navigation, and metadata.
-- Add internal-link validation.
+**Status: PROTOTYPE / PLANNED**
 
-Exit criteria:
-- Invalid content metadata fails validation.
-- Documentation routes and navigation are generated from repository content.
-- Missing translations are handled explicitly.
+- Contribution and feedback pages.
+- Privacy, accessibility and license information.
+- Downloads and release entry point.
 
-## Phase 5 — Search
+Remaining:
+- Verify license terms for each repository and brand asset.
+- Review legal/privacy text against actual hosting and data processing.
+- Confirm a contact or community channel before listing it.
+- Complete accessibility and performance audits.
 
-**Status:** Planned
+## Phase 6 — Deployment and launch
 
-Tasks:
-- Integrate Pagefind into the production build.
-- Generate locale-separated indexes.
-- Implement accessible search interaction, excerpts, and useful result context.
+**Status: NOT VERIFIED**
+
+Recommended first host: Cloudflare Pages, using Git integration, `npm run build`, `dist`, and Node.js 22.22.0 or newer. Hosting instructions are documented in the repository README.
 
 Exit criteria:
-- Search works on a production build.
-- English and French results are isolated.
-- Search index is regenerated reproducibly.
+- A reviewed PR is merged to `main`.
+- Production deployment succeeds and a real hostname is confirmed.
+- Canonical URL and sitemap are configured for the real domain.
+- All routes and internal links are checked against the deployed site.
+- Security headers, HTTPS, redirects, 404 handling and caching are checked.
+- Responsive, accessibility and performance reviews are recorded.
+- No unsupported product or release claims are published.
 
-## Phase 6 — Project status and changelog
-
-**Status:** Planned
-
-Tasks:
-- Add a versioned, schema-validated public status registry.
-- Enforce required evidence references and verification dates.
-- Add status presentation that preserves the distinction between implementation, testing, and integration.
-- Add a curated changelog for official releases and significant technical milestones.
-
-Exit criteria:
-- Invalid or unsupported status records are rejected.
-- Public entries link to verifiable evidence.
-- Changelog entries do not imply unverified completion.
-
-## Phase 7 — Public product content
-
-**Status:** In progress; homepage and dedicated OS/Lumen pages are product-led. Informational destinations for OS add-ons and Lumen extensions exist, but catalogues and downloadable artifacts are not available.
-
-Tasks:
-- Expand the homepage into the eight approved content areas.
-- Build public sections for Aurora OS, Aurora Browser, and Aurora Website.
-- Add engineering, development, documentation, and community entry routes.
-- Keep OS and Browser technical details at not-verified until source evidence is reviewed.
-- Publish only claims supported by the repository's evidence registry.
-- Publish downloads only when artifact provenance and integrity can be verified.
-
-Exit criteria:
-- All public claims have evidence or are explicitly presented as plans/designs.
-- No private information or unsupported download is published.
-
-## Phase 8 — Production readiness and deployment
-
-**Status:** Planned
-
-Tasks:
-- Test routes, content, search, and production build.
-- Review WCAG 2.2 AA accessibility.
-- Validate security headers and Content Security Policy.
-- Measure Core Web Vitals.
-- Select and verify static hosting constraints.
-- Configure deployment and operational documentation.
-
-Exit criteria:
-- CI passes on the release candidate.
-- No unresolved critical security or accessibility issue is known.
-- Performance targets are measured, not assumed: LCP <= 2.5 s, INP <= 200 ms, CLS <= 0.1.
-- Deployment is verified from a production URL.
-
-## Working protocol
-
-For each phase:
-1. Inspect current repository state and relevant architecture.
-2. Make the smallest coherent change.
-3. Run targeted checks and tests.
-4. Review the full diff for correctness, scope, and security.
-5. Record outcomes and evidence in the repository.
-6. Report failures and blockers without relabeling them as completed.
-7. Do not start the next phase until exit criteria are met or an explicit exception is recorded.
-
-Do not force-push, rewrite history, delete user data, or commit secrets. Use focused branches and reviewable changes. Do not push or merge changes without appropriate explicit authorization.
-
-## Status vocabulary
-
-Use the project-wide evidence vocabulary: planned, designed, implemented, tested, integrated, prototype, verified, blocked, and not-verified. These statuses are not interchangeable. `verified` requires explicit acceptance criteria in addition to test evidence.
-
-
-## 2026-11-02 implementation update
-
-The current feature branch now includes:
-- An expanded homepage covering the brand introduction, principles, ecosystem, engineering philosophy, development status, documentation entry points, and community contribution entry point.
-- Shared navigation and a multi-column footer linking to implemented English routes.
-- Reusable content-page layout and initial routes for the ecosystem overview, Aurora OS, Aurora Browser, Aurora Website platform, engineering, development, documentation, and community.
-- A static evidence/status registry at `src/data/status.json`.
-- Explicit limitations on OS and Browser public claims because product implementation evidence was not reviewed as part of this website change.
-
-Not yet verified on this update:
-- CI for the latest branch head.
-- Rendering at the specified viewport matrix.
-- Keyboard and screen-reader review.
-- WCAG 2.2 AA contrast and interaction audit.
-- Sitemap, production canonical domain, deployment, and browser-level route checks.
-- Original supplied logo asset fidelity; the current repository SVG remains a simplified reconstruction and must be replaced by the approved source asset.
-
-
-## 2026-11-06 reference-led homepage update
-
-The homepage now follows the supplied visual reference more closely:
-- Compact brand header with the Aurora geometric mark, ecosystem navigation and development indicator.
-- Horizontal hero with a technical grid, cyan horizon/emblem artwork, concise positioning and two direct actions.
-- Narrow principles strip, three workstream cards and a compact engineering/approach band.
-- Minimal single-row footer.
-- Aurora OS and Lumen (Aurora Browser) are the two primary product destinations; the website is positioned as their public information platform.
-- Added dedicated informational routes for Aurora OS add-ons and Lumen extensions. Both are explicitly marked planned/not available; no download, compatibility or installation claims are made.
-- CI run [42132987619](https://github.com/Pokejoueur/aurora-website/actions/runs/42132987619) passed dependency installation, Astro/TypeScript check, static build and artifact upload for commit `f4cf630`.
-
-Still not verified:
-- Browser rendering against the supplied screenshot at the full viewport matrix.
-- Keyboard/screen-reader and WCAG 2.2 AA review.
-- Exact logo source-asset fidelity; the new mark and hero artwork are vector reconstructions based on the supplied brand reference.
-- Production deployment and live preview URL.
+A successful static build is necessary but does not, by itself, satisfy launch readiness.
