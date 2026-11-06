@@ -1,0 +1,9 @@
+---
+import DocsLayout from "../../../layouts/DocsLayout.astro";
+---
+<DocsLayout title="Aurora Developer Guide" description="Developer workflow and contribution information for Aurora Website." heading="Developer guide" eyebrow="DOCUMENTATION / DEVELOPERS">
+<p class="docs-kicker">WEBSITE DEVELOPMENT</p><h2>Work from the repository.</h2><p>The Aurora Website repository uses Astro, TypeScript strict mode, static output and native CSS. The repository is the source of truth for this workstream.</p><h2>Local environment</h2><p>Use Node.js 22.22.0 or newer and npm. From a local clone:</p><pre><code>npm install
+npm run dev</code></pre><h2>Validation</h2><pre><code>npm run check
+npm run build
+npm run preview</code></pre><p>The check script validates the public status registry and runs Astro checks. The build creates static files in <code>dist/</code>.</p><h2>Contribution discipline</h2><ul><li>Inspect the branch and working tree before editing.</li><li>Keep changes small and reviewable.</li><li>Do not add unsupported product claims or fake metrics.</li><li>Run checks and inspect the rendered result before proposing a merge.</li></ul><p><a href="https://github.com/Pokejoueur/aurora-website">Open the website repository ↗</a></p>
+</DocsLayout>
