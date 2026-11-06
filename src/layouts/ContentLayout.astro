@@ -3,12 +3,17 @@ import SiteLayout from "./SiteLayout.astro";
 interface Props { title: string; description: string; eyebrow: string; heading: string; lead: string; }
 const { title, description, eyebrow, heading, lead } = Astro.props;
 const labels: Record<string, string> = {
-  ecosystem: "Ecosystem", os: "Aurora OS", browser: "Aurora Browser", platform: "Aurora Platform",
-  engineering: "Engineering", development: "Development", docs: "Documentation", community: "Community",
+  ecosystem: "Ecosystem", os: "Aurora OS", browser: "Lumen Browser", platform: "Aurora Platform",
+  engineering: "Engineering", architecture: "Architecture", security: "Security", privacy: "Privacy",
+  decisions: "Technical decisions", development: "Development", roadmap: "Roadmap", changelog: "Changelog",
+  verification: "Verification", docs: "Documentation", "getting-started": "Getting started",
+  "user-guide": "User guide", "developer-guide": "Developer guide", reference: "Reference", faq: "FAQ",
+  community: "Community", contributing: "Contributing", feedback: "Feedback", downloads: "Downloads",
+  legal: "Legal", licenses: "Licenses", accessibility: "Accessibility", "add-ons": "Add-ons", extensions: "Extensions",
 };
 const segments = Astro.url.pathname.split("/").filter(Boolean).slice(1);
 const crumbs = segments.map((segment, index) => ({
-  label: labels[segment] ?? segment,
+  label: labels[segment] ?? segment.replaceAll("-", " "),
   href: "/en/" + segments.slice(0, index + 1).join("/") + "/",
 }));
 ---
