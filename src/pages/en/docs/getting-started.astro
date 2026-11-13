@@ -1,25 +1,46 @@
 ---
 import DocsLayout from "../../../layouts/DocsLayout.astro";
 ---
-<DocsLayout title="Getting Started with Aurora" description="A practical orientation guide for users and contributors exploring Aurora." heading="Getting started" eyebrow="DOCUMENTATION / FIRST STEPS">
-<p class="docs-kicker">START HERE</p>
-<h2>First, choose what you want to do.</h2>
-<p>Aurora is an independent computing ecosystem with two primary product workstreams: Aurora OS and Lumen, the Aurora Browser. This website is the public place to understand the projects, follow verified progress and find documentation.</p>
+<DocsLayout title="Getting Started with Aurora — A Simple Guide" description="A plain-language introduction to Aurora OS, current availability, downloads and how to follow the project." heading="Getting started" eyebrow="DOCUMENTATION / FIRST STEPS">
+<p class="docs-kicker">WELCOME TO AURORA</p>
+<h2>New to Aurora? Start here.</h2>
+<p>Aurora is a project to build an operating system and a web browser. You do not need to be a programmer to understand what we are building or follow its progress.</p>
+
+<h2>What is Aurora?</h2>
+<p><strong>Aurora OS</strong> is the operating system. It is being built from scratch in Rust. The goal is to make it reliable, private and secure by default, while allowing people to choose how their computer is set up.</p>
+<p><strong>Lumen</strong> is the web browser being developed as part of the Aurora project. It is a separate application from the operating system.</p>
+
+<div class="docs-callout">
+  <strong>Can I install Aurora on my computer today?</strong>
+  <p>Not yet. There is currently no verified public installer or tested installation guide. Aurora OS is still in development. Please do not download or install unofficial files claiming to be an Aurora release.</p>
+  <p><a href="/en/downloads/">Go to the official Downloads page</a> to check availability.</p>
+</div>
+
+<h2>What can I do now?</h2>
 <div class="docs-audience-grid docs-audience-grid-compact">
   <article class="docs-audience-card">
-    <p class="docs-kicker">I WANT TO USE AURORA</p>
-    <h3>Explore the products.</h3>
-    <p>Read the <a href="/en/ecosystem/os/">Aurora OS overview</a> or the <a href="/en/ecosystem/browser/">Lumen overview</a>, then check <a href="/en/development/">current status</a> and <a href="/en/downloads/">verified downloads</a>.</p>
-    <p class="docs-inline-status">No verified public installation release is currently listed.</p>
+    <p class="docs-kicker">LEARN</p>
+    <h3>Discover the operating system.</h3>
+    <p>Read the <a href="/en/ecosystem/os/">Aurora OS overview</a> to understand its goals and technical direction.</p>
   </article>
   <article class="docs-audience-card">
-    <p class="docs-kicker">I WANT TO CONTRIBUTE</p>
-    <h3>Start with the code and evidence.</h3>
-    <p>Read the <a href="/en/docs/developer-guide/">developer guide</a>, review the <a href="/en/engineering/architecture/">architecture</a> and follow the <a href="/en/community/contributing/">contribution workflow</a>.</p>
-    <p class="docs-inline-status">The website repository is public. The Aurora OS repository is private.</p>
+    <p class="docs-kicker">FOLLOW</p>
+    <h3>See what is ready.</h3>
+    <p>Check the <a href="/en/development/">development status</a>. It explains what has evidence and what is still being worked on.</p>
+  </article>
+  <article class="docs-audience-card">
+    <p class="docs-kicker">GET HELP</p>
+    <h3>Find an answer.</h3>
+    <p>Visit the <a href="/en/docs/faq/">frequently asked questions</a> or the <a href="/en/community/feedback/">feedback page</a>.</p>
+  </article>
+  <article class="docs-audience-card">
+    <p class="docs-kicker">CONTRIBUTE</p>
+    <h3>Help with the public website.</h3>
+    <p>The <a href="/en/community/contributing/">contribution guide</a> explains how to help with the public website. The Aurora OS source repository is currently private.</p>
   </article>
 </div>
-<h2>Understand project status</h2>
-<p>Do not assume that a described feature is ready to use. The <a href="/en/development/">development pages</a> distinguish implementation, testing, integration and planned work. A passing website build does not verify Aurora OS or Lumen.</p>
-<div class="docs-callout"><strong>Before installing</strong><p>Only use release files linked from the <a href="/en/downloads/">downloads page</a>. If no verified artifact and matching instructions are listed, there is no supported public installation path yet.</p></div>
+
+<h2>When an installer is available</h2>
+<p>The official download page will include a step-by-step guide written for people who have never installed an operating system before. It will explain how to check whether your computer is supported, prepare an installation USB drive, protect your existing files, install Aurora and recover if something goes wrong.</p>
+<p>We will publish those steps only after they have been tested with the release they describe. Until then, the safest choice is to wait for an official release.</p>
 </DocsLayout>
