@@ -1,18 +1,21 @@
 ---
 import DocsLayout from "../../../layouts/DocsLayout.astro";
 ---
-<DocsLayout title="Aurora OS & Lumen FAQ — Availability, Status, Contributing" description="Answers about Aurora OS, the Lumen browser, Rust, repository access, releases and project status." heading="Aurora OS and Lumen: frequently asked questions" eyebrow="DOCUMENTATION / FAQ">
+<DocsLayout title="Aurora OS & Lumen FAQ — Availability, Status, Contributing" description="Answers about Aurora OS, Lumen, installation availability, releases, repository access and project status." heading="Aurora: frequently asked questions" eyebrow="DOCUMENTATION / FAQ">
 <h2>What is Aurora?</h2>
-<p>Aurora is an independent computing project with two product workstreams: Aurora OS, a from-scratch operating-system project written in Rust with a capability-based microkernel direction, and Lumen, its web browser. Both are in development.</p>
+<p>Aurora is an independent computing project with two product workstreams: Aurora OS, an operating-system project being built from scratch in Rust, and Lumen, its web browser. Both are in development.</p>
+
+<h2>Can I install Aurora OS on my computer today?</h2>
+<p>No. There is currently no verified public installer or tested installation guide. Aurora OS is still in development. Please do not install unofficial files claiming to be an Aurora release. The <a href="/en/downloads/">Downloads page</a> is the official place to check availability.</p>
+
+<h2>Will I need to be a computer expert to install Aurora?</h2>
+<p>That is not the goal. Aurora is intended to be approachable for everyday users as well as configurable for people who want more control. Before an installation release is announced, the project should provide clear hardware requirements, step-by-step instructions, warnings about existing files and a tested recovery procedure. Those materials are not available yet.</p>
 
 <h2>What is Aurora OS?</h2>
 <p>Aurora OS is an operating-system project being developed from scratch in Rust. Its stated architectural direction is a capability-based microkernel. These are project direction statements, not proof that specific kernel mechanisms or user-facing features are implemented or tested. See the <a href="/en/ecosystem/os/">Aurora OS overview</a> and <a href="/en/engineering/architecture/">architecture page</a>.</p>
 
 <h2>What is Lumen?</h2>
 <p>Lumen is the web-browser workstream of the Aurora ecosystem. Its rendering engine, supported platforms, compatibility and privacy behavior are not yet documented as verified product capabilities. Read the <a href="/en/ecosystem/browser/">Lumen overview</a>.</p>
-
-<h2>Can I install Aurora OS or use Lumen today?</h2>
-<p>No verified public release is currently listed for either product. Check <a href="/en/downloads/">Downloads</a> for release information. Do not treat concept visuals or development descriptions as usable software.</p>
 
 <h2>Is Aurora OS open source?</h2>
 <p>The Aurora OS repository is currently private. The <a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">Aurora Website repository</a> is public, but it contains the website source, not the OS implementation. No public commitment or timeline for opening the OS repository is currently published.</p>
@@ -24,13 +27,13 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
 <p>Rust is the project's chosen implementation language. A detailed, public rationale tied to the project's compiler, runtime and kernel constraints has not yet been published, so this website does not claim specific safety or performance outcomes from that choice.</p>
 
 <h2>How is Aurora different from Linux, Redox OS, seL4 or Fuchsia?</h2>
-<p>These projects have different scopes, histories and technical implementations. Aurora's public material currently describes its intended from-scratch Rust and capability-based microkernel direction, but does not provide enough implementation evidence for a meaningful feature-by-feature comparison. Such a comparison should wait until concrete architecture and test evidence can be cited.</p>
+<p>These projects have different scopes, histories and technical implementations. Aurora's public material currently describes its intended from-scratch Rust and capability-based microkernel direction, but does not provide enough implementation evidence for a meaningful feature-by-feature comparison.</p>
 
 <h2>Is this the Russian Aurora OS or the KDE Aurora distribution?</h2>
 <p>No. This website describes the independent Aurora computing project and is not presented as the official website of the Russian Aurora mobile operating system or the KDE Aurora distribution. The shared name should not be taken as evidence of affiliation.</p>
 
 <h2>Who is behind Aurora?</h2>
-<p>A verified public team or maintainer biography is not currently published on this website. We will not invent names, roles or professional credentials. Project ownership and maintainer information should be added when the project owner has approved what can be made public.</p>
+<p>A verified public team or maintainer biography is not currently published on this website. We will not invent names, roles or professional credentials.</p>
 
 <h2>Where can I follow verified progress?</h2>
 <p>Use the <a href="/en/development/">development status page</a>. It distinguishes project-reported stages from implementation, testing, integration and verification evidence.</p>
