@@ -1,23 +1,35 @@
 ---
 import ContentLayout from "../../layouts/ContentLayout.astro";
 ---
-<ContentLayout title="Download Aurora OS & Lumen — Release Status | Aurora" description="Check the verified release and download status for Aurora OS and Lumen. No stable public product release is currently listed." eyebrow="DOWNLOADS / RELEASES" heading="Aurora downloads and release status" lead="This is the official release entry point for Aurora OS and Lumen. Only verified artifacts with version, compatibility, integrity and release information will be listed.">
+<ContentLayout title="Download Aurora OS — Official Releases & Installation Status" description="Find official Aurora OS downloads, release availability and safe installation guidance. No verified public installer is currently available." eyebrow="DOWNLOADS / GET AURORA" heading="Get Aurora" lead="This is the official place to find Aurora downloads. When an installation release is ready, you will find the file and simple, tested instructions here.">
 <section class="section shell">
   <div class="release-panel">
-    <p class="eyebrow">PUBLIC RELEASE STATUS</p>
-    <h2>No stable public release listed.</h2>
-    <p class="content-copy">No verified Aurora OS installer, system image, Lumen browser build or signed release artifact is published through this website at this time. Do not use unofficial package links as substitutes.</p>
-    <div class="release-requirements"><span>VERSION</span><span>PLATFORM / ARCHITECTURE</span><span>CHECKSUMS</span><span>SIGNATURE</span><span>RELEASE NOTES</span></div>
-    <p class="evidence-note">A release entry will be added only when the corresponding artifact and verification record exist.</p>
+    <p class="eyebrow">AURORA OS / DOWNLOAD AVAILABILITY</p>
+    <h2>There is no public installer yet.</h2>
+    <p class="content-copy">Aurora OS is still being developed. You cannot install it as an everyday operating system from this website today. We have not published a verified installer or system image with tested installation and recovery instructions.</p>
+    <p class="content-copy">We would rather tell you clearly than ask you to download an experimental file that could damage data or leave your computer unable to start.</p>
+    <div class="release-requirements"><span>OFFICIAL INSTALLER: NOT AVAILABLE</span><span>SUPPORTED COMPUTERS: NOT PUBLISHED</span><span>INSTALL GUIDE: NOT READY</span><span>RECOVERY GUIDE: NOT READY</span></div>
+    <p class="evidence-note">This page will link directly to official release files only after the project has verified the artifact, supported hardware, checksums, signatures and installation procedure.</p>
   </div>
 </section>
 <section class="section shell article-content">
-  <h2>What to do while releases are unavailable</h2>
-  <ul class="content-list">
-    <li><a href="/en/development/">Follow development status</a> and distinguish reported project stages from verified implementation.</li>
-    <li><a href="/en/docs/faq/">Read the FAQ</a> for availability, repository access and contribution information.</li>
-    <li><a href="/en/community/">Visit the community page</a> for currently verified feedback and contribution entry points.</li>
-    <li><a href="/en/engineering/architecture/">Review the architecture direction</a> without treating design goals as released functionality.</li>
-  </ul>
+  <h2>What should I do now?</h2>
+  <ol class="content-list">
+    <li><strong>New to Aurora?</strong> Read the <a href="/en/docs/getting-started/">Getting started guide</a> for a simple introduction.</li>
+    <li><strong>Want to know what is being built?</strong> Visit the <a href="/en/ecosystem/os/">Aurora OS page</a>.</li>
+    <li><strong>Want to follow progress?</strong> Check the <a href="/en/development/">development status</a>.</li>
+    <li><strong>Have a question?</strong> Read the <a href="/en/docs/faq/">FAQ and help page</a>.</li>
+  </ol>
+  <div class="docs-callout">
+    <strong>Please protect your computer and files.</strong>
+    <p>Do not install files described as unofficial Aurora installers, and do not erase or repartition a disk based on instructions for another operating system. Wait until this page provides an official download and instructions written for that exact release.</p>
+  </div>
+  <h2>What will happen when Aurora is ready?</h2>
+  <p class="content-copy">The download page will guide you through each step in everyday language. It will explain which computers are supported, what you need, how to prepare a USB drive, how to check the download, how to start the installer, and how to get help or recover if something goes wrong.</p>
+  <p class="content-copy">Installation instructions will be tested against a specific release. They will explain clearly whether installation changes or erases anything on your computer. We will not ask you to guess.</p>
+</section>
+<section class="section shell product-destination">
+  <div><p class="eyebrow"><span class="eyebrow-line"></span> FIRST TIME HERE?</p><h2>Start with the simple guide.</h2><p class="content-copy">You do not need to know how operating systems work to understand the project. The Getting started page explains what Aurora is and what you can do today.</p></div>
+  <a class="button button-primary" href="/en/docs/getting-started/">Getting started <span aria-hidden="true">↘</span></a>
 </section>
 </ContentLayout>
