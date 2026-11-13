@@ -4,8 +4,9 @@ interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
 const navigation = [
   { label: "Products", href: "/en/ecosystem/" },
-  { label: "About", href: "/en/about/" },
   { label: "Getting started", href: "/en/docs/getting-started/" },
+  { label: "Downloads", href: "/en/downloads/" },
+  { label: "About", href: "/en/about/" },
   { label: "For developers", href: "/en/docs/developer-guide/" },
   { label: "Engineering", href: "/en/engineering/" },
   { label: "Status", href: "/en/development/" },
@@ -41,7 +42,7 @@ const navigation = [
           {navigation.map((item) => <a href={item.href} aria-current={Astro.url.pathname === item.href || (item.href !== "/en/ecosystem/" && Astro.url.pathname.startsWith(item.href)) ? "page" : undefined}>{item.label}</a>)}
           <a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">Website source <span class="nav-arrow" aria-hidden="true">↗</span></a>
         </nav>
-        <a class="header-status" href="/en/development/"><span class="status-dot"></span> IN DEVELOPMENT</a>
+        <a class="button button-primary header-download" href="/en/downloads/">Download Aurora</a>
       </div>
     </header>
     <main id="main"><slot /></main>
@@ -61,5 +62,9 @@ const navigation = [
       </div>
       <div class="shell footer-bottom"><span>© {new Date().getFullYear()} Aurora Project</span><span>Public information · Evidence-led development</span><a href="/en/development/">Project status ↘</a></div>
     </footer>
+    <style>
+      .header-download { min-height: 42px; padding-inline: 14px; white-space: nowrap; font-size: 9px; }
+      @media (max-width: 900px) { .header-download { display: none; } }
+    </style>
   </body>
 </html>
