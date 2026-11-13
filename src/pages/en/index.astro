@@ -12,8 +12,8 @@ const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser
           <h1>An operating system<br />and browser, <span>built deliberately.</span></h1>
           <p class="home-cinema-description">Aurora OS is a from-scratch operating-system project written in Rust, following a capability-based microkernel direction. Lumen is its web browser. Both are in development.</p>
           <div class="home-cinema-actions">
-            <a class="button button-primary" href="/en/development/">Follow verified progress <span aria-hidden="true">↘</span></a>
-            <a class="text-link" href="/en/engineering/architecture/">Read the architecture</a>
+            <a class="button button-primary" href="/en/downloads/">Download Aurora <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="/en/docs/getting-started/">New here? Start here</a>
           </div>
         </div>
         <div class="home-cinema-art">
@@ -29,8 +29,8 @@ const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser
       <div class="home-cinema-product-copy">
         <p class="home-cinema-section-label">01 / OPERATING SYSTEM</p>
         <h2>Aurora <span>OS</span></h2>
-        <p>A from-scratch operating-system project written in Rust, with a capability-based microkernel direction. The OS repository is private; public implementation evidence has not yet been independently reviewed on this website.</p>
-        <div class="home-cinema-status"><i></i><span>IN DEVELOPMENT · PUBLIC EVIDENCE NOT VERIFIED</span></div>
+        <p>A from-scratch operating-system project written in Rust, with a capability-based microkernel direction. Aurora is being designed around privacy, security, reliability and user choice. Its source repository is private, and there is no verified public installer yet.</p>
+        <div class="home-cinema-status"><i></i><span>IN DEVELOPMENT · NO PUBLIC INSTALLER</span></div>
         <a class="home-cinema-link" href="/en/ecosystem/os/">EXPLORE AURORA OS <span>↘</span></a>
       </div>
       <div class="home-concept home-concept-os" role="img" aria-label="Conceptual visual representing Aurora OS, not a product screenshot">
@@ -57,8 +57,9 @@ const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser
   </section>
 
   <section class="home-cinema-end shell">
-    <p>Progress is reported with explicit evidence boundaries. No public release is currently verified.</p>
+    <p>New to Aurora? Start with a plain-language overview, check what is available, or follow verified development progress.</p>
     <div class="home-cinema-actions">
+      <a class="home-cinema-link" href="/en/docs/getting-started/">GETTING STARTED <span>↘</span></a>
       <a class="home-cinema-link" href="/en/development/">VIEW DEVELOPMENT STATUS <span>↘</span></a>
       <a class="home-cinema-link" href="/en/docs/faq/">READ THE FAQ <span>↘</span></a>
     </div>
@@ -89,6 +90,7 @@ const browserStatus = status.entries.find((entry) => entry.id === "lumen-browser
       .home-cinema-product, .home-cinema-product + .home-cinema-product { padding-block: 52px; }
       .home-concept { min-height: 340px; }
       .home-cinema-end { min-height: 210px; padding-block: 55px 70px; }
+      .home-cinema-end .home-cinema-actions { align-items: flex-start; flex-direction: column; gap: 8px; }
     }
   </style>
 </SiteLayout>
