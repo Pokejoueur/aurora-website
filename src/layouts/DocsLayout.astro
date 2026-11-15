@@ -1,19 +1,12 @@
 ---
 import SiteLayout from "./SiteLayout.astro";
 interface Props { title: string; description: string; heading: string; eyebrow: string; }
-const { title, description, heading, eyebrow } = Astro.props;
-const links = [
-  ["Overview", "/en/docs/"], ["Getting started", "/en/docs/getting-started/"],
-  ["User guide", "/en/docs/user-guide/"], ["Developer guide", "/en/docs/developer-guide/"],
-  ["Reference", "/en/docs/reference/"], ["FAQ", "/en/docs/faq/"],
-];
+const { title, description } = Astro.props;
 ---
-<SiteLayout title={title} description={description}>
-  <div class="content-page">
-    <section class="content-hero shell docs-hero"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/docs/">Documentation</a><span>/</span><span aria-current="page">{heading}</span></nav><p class="eyebrow"><span class="eyebrow-line"></span>{eyebrow}</p><h1>{heading}</h1><p class="content-meta">AURORA / DOCUMENTATION / EN</p></section>
-    <div class="shell docs-shell">
-      <aside class="docs-sidebar" aria-label="Documentation navigation"><p>DOCUMENTATION</p>{links.map(([label, href]) => <a href={href} aria-current={Astro.url.pathname === href ? "page" : undefined}>{label}</a>)}<p>ENGINEERING</p><a href="/en/engineering/architecture/">Architecture</a><a href="/en/engineering/security/">Security</a><a href="/en/engineering/decisions/">ADRs</a></aside>
-      <article class="docs-article"><slot /></article>
-    </div>
-  </div>
+<SiteLayout title={title} description={description} noindex>
+  <section class="section shell article-content" style="min-height:60vh;padding-top:clamp(70px,12vw,140px)">
+    <h1>Documentation is not available yet.</h1>
+    <p class="content-copy">Aurora is still in development and has no public release. User and developer documentation will be published when there is a release to document.</p>
+    <p><a class="text-link" href="/en/ecosystem/">Explore the Aurora ecosystem ↗</a></p>
+  </section>
 </SiteLayout>
