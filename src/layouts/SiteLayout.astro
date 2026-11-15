@@ -39,7 +39,8 @@ const navigation = [
           <img class="brand-mark" src="/aurora-mark.svg" alt="" width="44" height="44" />
           <span class="brand-name">AURORA</span>
         </a>
-        <nav class="main-nav" aria-label="Main navigation">
+        <button class="mobile-menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false"><span class="mobile-menu-label">Menu</span><span class="mobile-menu-icon" aria-hidden="true"><i></i><i></i></span></button>
+        <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
           {navigation.map((item) => <a href={item.href} aria-current={Astro.url.pathname === item.href || (item.href !== "/en/ecosystem/" && Astro.url.pathname.startsWith(item.href)) ? "page" : undefined}>{item.label}</a>)}
           <a href="https://github.com/Pokejoueur/aurora-website" target="_blank" rel="noreferrer">Website source <span class="nav-arrow" aria-hidden="true">↗</span></a>
         </nav>
@@ -63,15 +64,102 @@ const navigation = [
       </div>
       <div class="shell footer-bottom"><span>© {new Date().getFullYear()} Aurora Project</span><span>Public information · Evidence-led development</span><a href="/en/development/">Project status ↘</a></div>
     </footer>
+
+    <script>
+      const menuToggle = document.querySelector(".mobile-menu-toggle");
+      const primaryNavigation = document.querySelector("#primary-navigation");
+
+      if (menuToggle && primaryNavigation) {
+        const closeMenu = () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          primaryNavigation.removeAttribute("data-open");
+        };
+
+        menuToggle.addEventListener("click", () => {
+          const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+          menuToggle.setAttribute("aria-expanded", String(!isOpen));
+          if (isOpen) primaryNavigation.removeAttribute("data-open");
+          else primaryNavigation.setAttribute("data-open", "true");
+        });
+
+        primaryNavigation.addEventListener("click", (event) => {
+          if (event.target.closest("a")) closeMenu();
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") closeMenu();
+        });
+
+        window.matchMedia("(min-width: 981px)").addEventListener("change", closeMenu);
+      }
+    </script>
     <style>
       .header-download { min-height: 42px; padding-inline: 14px; white-space: nowrap; font-size: 9px; }
-      @media (max-width: 900px) { .header-download { display: none; } }
-      @media (max-width: 680px) {
-        .main-nav { gap: 10px; }
-        .main-nav a[href="/en/ecosystem/"],
-        .main-nav a[href="/en/about/"],
-        .main-nav a[href="/en/docs/developer-guide/"],
-        .main-nav a[href="/en/engineering/"] { display: none; }
+      .mobile-menu-toggle { display: none; }
+      @media (max-width: 980px) {
+        .reference-header .header-inner {
+          position: relative;
+          width: min(100% - 48px, 1120px);
+          min-height: 72px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 0 16px;
+          padding-block: 8px;
+        }
+        .reference-header .brand { min-width: 0; height: 54px; border: 0; padding: 0; }
+        .reference-header .brand-mark { width: 38px; height: 38px; }
+        .reference-header .main-nav {
+          order: 3;
+          display: none;
+          width: 100%;
+          height: auto;
+          flex: 0 0 100%;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0 20px;
+          margin: 8px 0 0;
+          padding: 8px 0 12px;
+          border-top: 1px solid var(--line);
+        }
+        .reference-header .main-nav[data-open="true"] { display: grid; }
+        .reference-header .main-nav a {
+          min-height: 46px;
+          display: flex;
+          align-items: center;
+          padding: 8px 2px;
+          border-bottom: 1px solid var(--line-soft);
+          font-size: 10px;
+        }
+        .reference-header .main-nav a:last-child { display: flex; }
+        .mobile-menu-toggle {
+          display: inline-flex;
+          min-width: 84px;
+          min-height: 42px;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          padding: 0 12px;
+          border: 1px solid var(--line);
+          border-radius: 0;
+          color: var(--text);
+          background: transparent;
+          font: 9px var(--mono);
+          letter-spacing: .1em;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+        .mobile-menu-icon { display: grid; width: 14px; gap: 4px; }
+        .mobile-menu-icon i { display: block; width: 14px; height: 1px; background: var(--accent); transition: transform .16s ease; }
+        .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-icon i:first-child { transform: translateY(2.5px) rotate(45deg); }
+        .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-icon i:last-child { transform: translateY(-2.5px) rotate(-45deg); }
+        .header-download { display: none; }
+      }
+      @media (max-width: 520px) {
+        .reference-header .header-inner { width: calc(100% - 36px); }
+        .reference-header .main-nav { grid-template-columns: 1fr; }
+        .reference-header .main-nav a { min-height: 42px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .mobile-menu-icon i { transition: none; }
       }
     </style>
   </body>
