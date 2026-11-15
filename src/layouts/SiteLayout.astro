@@ -5,8 +5,6 @@ interface Props { title: string; description: string; noindex?: boolean; }
 const { title, description, noindex = false } = Astro.props;
 const navigation = [
   { label: "Ecosystem", href: "/en/ecosystem/" },
-  { label: "Aurora OS", href: "/en/ecosystem/os/" },
-  { label: "Lumen", href: "/en/ecosystem/browser/" },
   { label: "Availability", href: "/en/downloads/" },
   { label: "About", href: "/en/about/" },
 ];
