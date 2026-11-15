@@ -1,0 +1,386 @@
+/*
+ * Content-page spacing system.
+ * Scoped to editorial, documentation and utility pages; the cinematic homepage
+ * intentionally keeps its own composition.
+ */
+:root {
+  --content-width: 1120px;
+  --content-gutter: clamp(20px, 5vw, 64px);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 88px;
+  --space-10: 112px;
+}
+
+.content-page {
+  --page-gap: clamp(56px, 7vw, 88px);
+  --group-gap: clamp(24px, 3vw, 36px);
+}
+
+.content-page .shell {
+  width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2)));
+  margin-inline: auto;
+}
+
+.content-page .content-hero {
+  padding-top: clamp(64px, 8vw, 104px);
+  padding-bottom: clamp(44px, 5.5vw, 68px);
+  border-bottom: 0;
+}
+
+.content-page .breadcrumbs {
+  gap: 12px;
+  margin-bottom: clamp(32px, 4vw, 44px);
+  line-height: 1.6;
+}
+
+.content-page .content-hero > .eyebrow {
+  margin-bottom: 22px;
+}
+
+.content-page .content-hero h1 {
+  max-width: 850px;
+  font-size: clamp(42px, 6.2vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -.065em;
+  text-wrap: balance;
+}
+
+.content-page .content-lead {
+  max-width: 660px;
+  margin-top: 24px;
+  font-size: clamp(14px, 1.25vw, 16px);
+  line-height: 1.85;
+}
+
+.content-page .content-meta {
+  margin-top: 38px;
+  line-height: 1.6;
+}
+
+.content-page .section {
+  padding-top: var(--page-gap);
+  padding-bottom: var(--page-gap);
+}
+
+.content-page .section + .section {
+  padding-top: clamp(28px, 4vw, 48px);
+}
+
+.content-page .article-content {
+  max-width: 900px;
+}
+
+.content-page .article-content > h2 {
+  max-width: 760px;
+  margin: 0 0 20px;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+.content-page .article-content > h2:not(:first-child) {
+  margin-top: clamp(48px, 6vw, 68px);
+}
+
+.content-page .article-content > p,
+.content-page .article-content > ol,
+.content-page .article-content > ul {
+  max-width: 760px;
+}
+
+.content-page .content-copy,
+.content-page .content-list {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.content-page .content-copy + .content-copy {
+  margin-top: 18px;
+}
+
+.content-page .content-columns {
+  gap: clamp(32px, 6vw, 72px);
+}
+
+.content-page .content-columns h2 {
+  margin-bottom: 18px;
+}
+
+.content-page .principle-grid,
+.content-page .docs-audience-grid,
+.content-page .docs-card-grid {
+  gap: 1px;
+  background: var(--line);
+}
+
+.content-page .principle-card,
+.content-page .docs-audience-card,
+.content-page .docs-card-grid > a {
+  background: var(--bg);
+}
+
+.content-page .principle-card {
+  min-height: 220px;
+  padding: clamp(20px, 2.5vw, 28px);
+}
+
+.content-page .principle-card h3 {
+  margin-top: 38px;
+  line-height: 1.35;
+}
+
+.content-page .principle-card p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.content-page .docs-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.content-page .docs-audience-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.content-page .docs-audience-card h2 {
+  max-width: 440px;
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+
+.content-page .docs-audience-card > p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.content-page .docs-audience-card ul {
+  width: 100%;
+  margin: auto 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.content-page .docs-audience-card li + li {
+  margin-top: 12px;
+}
+
+.content-page .docs-audience-card li a {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.content-page .docs-search {
+  max-width: 760px;
+  margin: clamp(52px, 6vw, 72px) 0 28px;
+}
+
+.content-page .docs-card-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.content-page .docs-card-grid > a {
+  min-height: 168px;
+  padding: clamp(20px, 2.5vw, 28px);
+}
+
+.content-page .docs-card-grid > a strong {
+  margin-top: 14px;
+  font-size: 18px;
+}
+
+.content-page .docs-card-grid > a small {
+  max-width: 390px;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.content-page .status-table th,
+.content-page .status-table td {
+  padding-block: 20px;
+}
+
+.content-page .status-table tbody td:last-child {
+  max-width: 440px;
+  line-height: 1.8;
+}
+
+.content-page .status-definitions {
+  max-width: 900px;
+}
+
+.content-page .status-definitions h2 {
+  margin-bottom: 32px;
+}
+
+.content-page .status-definitions dl > div {
+  gap: 28px;
+  padding-block: 20px;
+}
+
+.content-page .release-panel {
+  max-width: 900px;
+  padding: clamp(26px, 4vw, 44px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.content-page .release-panel h2 {
+  max-width: 680px;
+  margin: 18px 0 22px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -.055em;
+}
+
+.content-page .release-panel .content-copy {
+  max-width: 700px;
+}
+
+.content-page .release-requirements {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+  margin-top: 30px;
+  padding-block: 22px;
+  border-block: 1px solid var(--line);
+}
+
+.content-page .release-requirements span {
+  color: var(--muted);
+  font: 9px/1.7 var(--mono);
+}
+
+.content-page .docs-callout {
+  margin-top: clamp(32px, 4vw, 44px);
+  padding: 24px 28px;
+  border-left: 2px solid var(--accent);
+  background: var(--surface);
+}
+
+.content-page .docs-callout p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.content-page .documentation-band {
+  padding-block: clamp(64px, 8vw, 96px);
+}
+
+.content-page .documentation-band-inner {
+  gap: clamp(32px, 5vw, 64px);
+}
+
+.content-page .community-panel {
+  padding: clamp(28px, 4vw, 48px);
+}
+
+.content-page .product-destination {
+  padding-block: clamp(42px, 5vw, 60px);
+}
+
+.content-page .product-destination .content-copy {
+  max-width: 620px;
+}
+
+.content-page .breadcrumbs a,
+.content-page .docs-audience-card li a,
+.content-page .content-copy a,
+.content-page .content-list a {
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .content-page {
+    --page-gap: 64px;
+  }
+
+  .content-page .docs-audience-grid,
+  .content-page .docs-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-page .docs-audience-card {
+    min-height: 0;
+  }
+
+  .content-page .docs-card-grid > a {
+    min-height: 140px;
+  }
+
+  .content-page .release-requirements {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .content-page .content-hero h1 {
+    font-size: clamp(40px, 10vw, 62px);
+  }
+
+  .content-page .status-table th,
+  .content-page .status-table td {
+    padding-block: 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .content-page {
+    --page-gap: 52px;
+  }
+
+  .content-page .content-hero {
+    padding-top: 52px;
+    padding-bottom: 34px;
+  }
+
+  .content-page .breadcrumbs {
+    margin-bottom: 30px;
+  }
+
+  .content-page .content-meta {
+    margin-top: 28px;
+  }
+
+  .content-page .article-content > h2:not(:first-child) {
+    margin-top: 44px;
+  }
+
+  .content-page .docs-audience-card {
+    padding: 22px;
+  }
+
+  .content-page .docs-callout {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content-page * {
+    scroll-behavior: auto;
+    transition-duration: .01ms;
+  }
+}
