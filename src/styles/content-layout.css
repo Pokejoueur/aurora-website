@@ -384,3 +384,280 @@
     transition-duration: .01ms;
   }
 }
+
+
+/* Mobile layout corrections: prioritize readable flow over compressed desktop grids. */
+@media (max-width: 760px) {
+  html { scroll-padding-top: 16px; }
+  body { overflow-x: clip; }
+
+  .content-page {
+    --content-gutter: 22px;
+    --page-gap: 58px;
+  }
+
+  .content-page .shell {
+    width: calc(100% - (var(--content-gutter) * 2));
+  }
+
+  .content-page .content-hero {
+    padding-top: 48px;
+    padding-bottom: 34px;
+  }
+
+  .content-page .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    margin-bottom: 30px;
+    font-size: 10px;
+  }
+
+  .content-page .content-hero > .eyebrow {
+    margin-bottom: 17px;
+  }
+
+  .content-page .content-hero h1 {
+    max-width: 100%;
+    font-size: clamp(38px, 10vw, 58px);
+    line-height: 1.02;
+    letter-spacing: -.06em;
+    overflow-wrap: anywhere;
+  }
+
+  .content-page .content-lead {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .content-page .content-meta {
+    margin-top: 24px;
+    font-size: 8px;
+    letter-spacing: .08em;
+  }
+
+  .content-page .section {
+    padding-block: var(--page-gap);
+  }
+
+  .content-page .section + .section {
+    padding-top: 24px;
+  }
+
+  .content-page .article-content,
+  .content-page .status-definitions,
+  .content-page .release-panel {
+    width: 100%;
+    max-width: none;
+  }
+
+  .content-page .article-content > h2 {
+    font-size: clamp(25px, 7vw, 32px);
+    line-height: 1.12;
+  }
+
+  .content-page .article-content > h2:not(:first-child) {
+    margin-top: 42px;
+  }
+
+  .content-page .article-content > p,
+  .content-page .article-content > ol,
+  .content-page .article-content > ul {
+    max-width: none;
+  }
+
+  .content-page .content-copy,
+  .content-page .content-list {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .content-page .content-columns,
+  .content-page .principle-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .content-page .principle-card {
+    min-height: 0;
+    padding: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .content-page .principle-card h3 {
+    margin-top: 24px;
+  }
+
+  .content-page .docs-audience-grid,
+  .content-page .docs-card-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .content-page .docs-audience-card {
+    gap: 14px;
+    padding: 22px;
+  }
+
+  .content-page .docs-card-grid > a {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .content-page .docs-search {
+    margin-top: 34px;
+    padding: 16px;
+  }
+
+  .content-page .status-table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .content-page .status-table th,
+  .content-page .status-table td {
+    min-width: 110px;
+    padding: 12px;
+    vertical-align: top;
+  }
+
+  .content-page .status-table th:first-child,
+  .content-page .status-table td:first-child {
+    min-width: 135px;
+  }
+
+  .content-page .status-definitions dl > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-block: 16px;
+  }
+
+  .content-page .release-panel {
+    padding: 22px;
+  }
+
+  .content-page .release-panel h2 {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .content-page .release-requirements {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .content-page .docs-callout {
+    padding: 18px 20px;
+  }
+
+  .content-page .documentation-band {
+    padding-block: 58px;
+  }
+
+  .content-page .documentation-band-inner {
+    gap: 28px;
+  }
+
+  .content-page .community-panel {
+    padding: 24px;
+  }
+
+  .content-page pre,
+  .content-page .article-content pre,
+  .content-page .docs-article pre {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre;
+    font-size: 11px;
+  }
+
+  .content-page img,
+  .content-page video,
+  .content-page iframe {
+    max-width: 100%;
+  }
+
+  .content-page :where(.grid, .content-grid, .card-grid) {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .content-page {
+    --content-gutter: 18px;
+    --page-gap: 48px;
+  }
+
+  .content-page .content-hero {
+    padding-top: 40px;
+    padding-bottom: 28px;
+  }
+
+  .content-page .breadcrumbs {
+    margin-bottom: 25px;
+  }
+
+  .content-page .content-meta {
+    margin-top: 20px;
+  }
+
+  .content-page .content-columns {
+    gap: 28px;
+  }
+
+  .content-page .docs-audience-card,
+  .content-page .docs-card-grid > a {
+    padding: 19px;
+  }
+
+  .content-page .release-panel {
+    padding: 19px;
+  }
+
+  .content-page .status-table th,
+  .content-page .status-table td {
+    min-width: 100px;
+    padding: 10px;
+  }
+}
+
+/* Keep the shared footer legible without squeezing four link groups into narrow columns. */
+@media (max-width: 680px) {
+  .reference-footer-inner {
+    width: calc(100% - 40px);
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-block: 24px;
+  }
+
+  .reference-footer-inner > p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-link-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 18px;
+    padding-top: 22px;
+  }
+
+  .footer-link-groups > div { min-width: 0; }
+  .footer-link-groups a { overflow-wrap: anywhere; }
+
+  .footer-bottom {
+    width: calc(100% - 40px);
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding-block: 16px 22px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer-link-groups { grid-template-columns: 1fr; }
+}
