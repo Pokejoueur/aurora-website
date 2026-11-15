@@ -1,14 +1,14 @@
 ---
 import SiteLayout from "./SiteLayout.astro";
-interface Props { title: string; description: string; eyebrow: string; heading: string; lead: string; }
-const { title, description, eyebrow, heading, lead } = Astro.props;
+interface Props { title: string; description: string; eyebrow?: string; heading: string; lead: string; }
+const { title, description, heading, lead } = Astro.props;
 const labels: Record<string, string> = {
   ecosystem: "Ecosystem", os: "Aurora OS", browser: "Lumen Browser", platform: "Aurora Platform",
   engineering: "Engineering", architecture: "Architecture", security: "Security", privacy: "Privacy",
   decisions: "Technical decisions", development: "Development", roadmap: "Roadmap", changelog: "Changelog",
   verification: "Verification", docs: "Documentation", "getting-started": "Getting started",
   "user-guide": "User guide", "developer-guide": "Developer guide", reference: "Reference", faq: "FAQ",
-  community: "Community", contributing: "Contributing", feedback: "Feedback", downloads: "Downloads",
+  community: "Community", contributing: "Contributing", feedback: "Feedback", downloads: "Availability",
   legal: "Legal", licenses: "Licenses", accessibility: "Accessibility", "add-ons": "Add-ons", extensions: "Extensions",
 };
 const segments = Astro.url.pathname.split("/").filter(Boolean).slice(1);
@@ -21,10 +21,8 @@ const crumbs = segments.map((segment, index) => ({
   <div class="content-page">
     <section class="content-hero shell">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/en/">Home</a>{crumbs.map((crumb, index) => <><span aria-hidden="true">/</span>{index === crumbs.length - 1 ? <span aria-current="page">{crumb.label}</span> : <a href={crumb.href}>{crumb.label}</a>}</>)}</nav>
-      <p class="eyebrow"><span class="eyebrow-line"></span>{eyebrow}</p>
       <h1>{heading}</h1>
       <p class="content-lead">{lead}</p>
-      <p class="content-meta">AURORA / PUBLIC INFORMATION / EN</p>
     </section>
     <slot />
   </div>
