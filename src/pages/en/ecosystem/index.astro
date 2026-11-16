@@ -1,13 +1,16 @@
 ---
 import ContentLayout from "../../../layouts/ContentLayout.astro";
 ---
-<ContentLayout title="Aurora Ecosystem" description="Explore Aurora OS and Lumen, the Aurora Browser, and understand their current development and availability." eyebrow="ECOSYSTEM / OVERVIEW" heading="Two products. One ecosystem." lead="Aurora OS and Lumen are the two product workstreams. This website explains what they are, what is being developed and where to find verified information.">
+<ContentLayout title="The Aurora Ecosystem" description="Aurora is a computing ecosystem centered on Aurora OS, with Lumen as its browser workstream." heading="One ecosystem, centered on Aurora OS." lead="Aurora brings its operating system, browser and supporting software under one direction. Aurora OS is the foundation; Lumen is being developed as part of the same ecosystem.">
   <section class="section shell">
-    <div class="project-grid">
-      <article class="project-card"><p class="project-type">OPERATING SYSTEM</p><h2>Aurora OS</h2><p class="project-description">An operating-system project built from scratch in Rust. Its goals include privacy, security, reliability and a configurable experience. It is in development and has no verified public installer yet.</p><a class="text-link" href="/en/ecosystem/os/">Explore Aurora OS ↗</a></article>
-      <article class="project-card"><p class="project-type">WEB BROWSER</p><h2>Lumen / Aurora Browser</h2><p class="project-description">The browser workstream of the Aurora ecosystem. Its implementation, compatibility and security properties will be published as evidence becomes available.</p><a class="text-link" href="/en/ecosystem/browser/">Explore Lumen ↗</a></article>
-    </div>
-    <div class="docs-callout"><strong>THE PUBLIC PLATFORM</strong><p>Aurora Website is not a third product. It is the shared public platform for project information, documentation, downloads when verified releases exist, and engineering transparency.</p></div>
-    <div class="product-destination"><div><p class="eyebrow"><span class="eyebrow-line"></span> WANT TO TRY AURORA?</p><h2>Check whether it is ready to install.</h2><p class="content-copy">The Downloads page always shows the current public release status and links only to official files.</p></div><a class="button button-primary" href="/en/downloads/">Go to downloads <span aria-hidden="true">↘</span></a></div>
+    <article class="ecosystem-feature">
+      <div><h2>Aurora OS</h2><p class="content-copy">The core of the ecosystem. A from-scratch operating-system project written in Rust, designed around a capability-based microkernel direction. It is in development and has no public release yet.</p><a class="button button-primary" href="/en/ecosystem/os/">Explore Aurora OS <span aria-hidden="true">↘</span></a></div>
+      <div class="ecosystem-secondary"><span>THE FOUNDATION</span><strong>Operating system</strong><small>In development · Not released</small></div>
+    </article>
+    <article class="ecosystem-feature ecosystem-feature-secondary">
+      <div><h2>Lumen Browser</h2><p class="content-copy">The web browser workstream within Aurora. It is a companion application in the ecosystem, not a separate platform competing with Aurora OS.</p><a class="text-link" href="/en/ecosystem/browser/">Explore Lumen ↗</a></div>
+      <div class="ecosystem-secondary"><span>PART OF AURORA</span><strong>Web browser</strong><small>In development · Not released</small></div>
+    </article>
+    <div class="ecosystem-note"><h2>One project. Connected components.</h2><p class="content-copy">Aurora Website is the public home for the ecosystem. It is not another product. More components may be introduced as they become real, usable parts of Aurora.</p></div>
   </section>
 </ContentLayout>
