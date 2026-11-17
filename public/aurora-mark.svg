@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">Aurora mark</title>
-  <path fill="#f4f8fb" d="M32 5 59 59 49 53 32 19 15 53 5 59 32 5Z"/>
-  <path fill="#00d5df" d="m32 25 3.2 14.2L49 42.5l-13.8 3.3L32 60l-3.2-14.2L15 42.5l13.8-3.3L32 25Z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#050505"/><circle cx="31" cy="31" r="21" fill="#f4f4f4"/><circle cx="40" cy="23" r="19" fill="#050505"/><path d="M12 48h40" stroke="#777" stroke-width="1"/><circle cx="47" cy="12" r="2" fill="#f4f4f4"/></svg>
