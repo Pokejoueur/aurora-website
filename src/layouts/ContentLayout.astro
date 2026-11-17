@@ -4,7 +4,7 @@ interface Props { title: string; description: string; eyebrow?: string; heading:
 const { title, description, heading, lead } = Astro.props;
 const isTechnicalDocumentation = Astro.url.pathname.startsWith("/en/engineering/");
 const labels: Record<string, string> = {
-  ecosystem: "Ecosystem", os: "Aurora OS", browser: "Lumen Browser", platform: "Aurora Platform",
+  ecosystem: "Ecosystem", os: "Kryos OS", browser: "Veckt Browser", platform: "Kryos Platform",
   engineering: "Engineering", architecture: "Architecture", security: "Security", privacy: "Privacy",
   decisions: "Technical decisions", development: "Development", roadmap: "Roadmap", changelog: "Changelog",
   verification: "Verification", docs: "Documentation", "getting-started": "Getting started",
@@ -22,8 +22,8 @@ const crumbs = segments.map((segment, index) => ({
   {isTechnicalDocumentation ? (
     <section class="section shell article-content" style="min-height:60vh;padding-top:clamp(70px,12vw,140px)">
       <h1>Technical documentation is not available yet.</h1>
-      <p class="content-copy">Aurora is still in development and has no public release. Technical documentation will be published when there is a release to document.</p>
-      <p><a class="text-link" href="/en/ecosystem/">Explore the Aurora ecosystem ↗</a></p>
+      <p class="content-copy">Kryos is still in development. Technical documentation will be published when there is a release to document.</p>
+      <p><a class="text-link" href="/en/ecosystem/">Explore the Kryos ecosystem ↗</a></p>
     </section>
   ) : (
   <div class="content-page">
